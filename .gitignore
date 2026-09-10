@@ -31,3 +31,6 @@ next-env.d.ts
 # Capturas de QA geradas durante o desenvolvimento — nao sao fonte.
 /_screens
 tsconfig.tsbuildinfo
+
+# O modelo entra; os arquivos com valor de verdade, nao.
+!.env.example
