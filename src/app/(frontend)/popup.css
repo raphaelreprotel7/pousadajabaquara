@@ -1,0 +1,167 @@
+/* ============================================================
+   POP-UPS
+   Folha separada de propósito: o styles.css é cópia literal do
+   site estático e continua intocado. Tudo aqui é construído com
+   os tokens do design system — nenhum valor de cor ou fonte cru.
+   ============================================================ */
+
+.popup-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  padding: 24px;
+  pointer-events: none;
+}
+.popup-layer--center {
+  place-items: center;
+  background: rgba(15, 15, 15, 0.62);
+  pointer-events: auto;
+  animation: popup-fade 0.25s ease-out;
+}
+.popup-layer--corner {
+  align-items: end;
+  justify-items: end;
+}
+
+@keyframes popup-fade {
+  from { opacity: 0 }
+  to   { opacity: 1 }
+}
+@keyframes popup-rise {
+  from { opacity: 0; transform: translateY(16px) }
+  to   { opacity: 1; transform: none }
+}
+
+.popup {
+  position: relative;
+  pointer-events: auto;
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--gray-line);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  animation: popup-rise 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+}
+.popup--sm { max-width: 420px }
+.popup--md { max-width: 620px }
+.popup--lg { max-width: 860px }
+
+.popup-layer--corner .popup { max-width: 380px }
+
+/* tema escuro — mesmos tokens do banner de newsletter */
+.popup--dark {
+  background: var(--ink-3);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+.popup--dark .popup__title { color: #fff }
+.popup--dark .popup__text  { color: rgba(255, 255, 255, 0.66) }
+.popup--dark .popup__close { color: rgba(255, 255, 255, 0.7) }
+.popup--dark .field label  { color: rgba(255, 255, 255, 0.55) }
+.popup--dark .field input,
+.popup--dark .field textarea {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+.popup--dark .consent { color: rgba(255, 255, 255, 0.6) }
+
+/* fechar */
+.popup__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--gray-soft);
+  transition: color 0.2s;
+}
+.popup__close:hover { color: var(--red) }
+
+/* imagem */
+.popup__media {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: #eaeaea;
+}
+.popup--img-top .popup__media { aspect-ratio: 16 / 7 }
+
+.popup--img-side { display: grid; grid-template-columns: 0.85fr 1fr }
+.popup--img-side .popup__media { height: 100%; min-height: 320px }
+
+/* corpo */
+.popup__body { padding: 34px 36px 36px }
+.popup-layer--corner .popup__body { padding: 26px 26px 28px }
+
+.popup__eyebrow {
+  font-family: var(--ff-head);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin: 0 0 12px;
+}
+.popup__title {
+  font-family: var(--ff-head);
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.popup__title strong { font-weight: 600; color: var(--red) }
+
+.popup__text {
+  color: var(--gray-text);
+  font-weight: 300;
+  font-size: 14.5px;
+  line-height: 1.8;
+  margin: 0 0 24px;
+}
+.popup__text:last-child { margin-bottom: 0 }
+
+.popup__actions { display: flex; gap: 12px; flex-wrap: wrap }
+
+/* formulário dentro do pop-up: campos empilhados */
+.popup__form { display: grid; gap: 14px }
+.popup__form .field label {
+  font-family: var(--ff-head);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray-soft);
+}
+.popup__form .field input,
+.popup__form .field textarea {
+  border: 1px solid var(--gray-line);
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: var(--ff-body);
+  outline: none;
+  width: 100%;
+}
+.popup__form .field input:focus,
+.popup__form .field textarea:focus { border-color: var(--red) }
+.popup__form textarea { min-height: 110px; resize: vertical }
+
+@media (max-width: 720px) {
+  .popup-layer { padding: 14px }
+  .popup-layer--corner { align-items: end; justify-items: stretch }
+  .popup-layer--corner .popup { max-width: none }
+  /* no celular a imagem lateral vira topo */
+  .popup--img-side { grid-template-columns: 1fr }
+  .popup--img-side .popup__media { min-height: 0; aspect-ratio: 16 / 8 }
+  .popup__body { padding: 26px 22px 28px }
+  .popup__title { font-size: 18px }
+}

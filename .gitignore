@@ -1,0 +1,33 @@
+node_modules
+.next
+out
+build
+dist
+
+.env
+.env*.local
+
+# Banco SQLite local
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Uploads do storage local
+/public/media
+
+# Tipos gerados (rode `npm run generate:types` após clonar)
+# src/payload-types.ts
+
+.DS_Store
+Thumbs.db
+*.log
+.vercel
+next-env.d.ts
+
+.vercel
+.env*
+
+# Capturas de QA geradas durante o desenvolvimento — nao sao fonte.
+/_screens
+tsconfig.tsbuildinfo

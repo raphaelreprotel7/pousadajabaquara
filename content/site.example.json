@@ -1,0 +1,310 @@
+{
+  "_leia_me": [
+    "Exemplo COMPLETO da forma do arquivo. Copie para content/site.json e troque",
+    "tudo por conteúdo real do cliente — nada aqui deve sobreviver ao copiar.",
+    "",
+    "Referências: '@media:arquivo.jpg' (imagem em content/imagens/),",
+    "'@doc:colecao:chave' (id de outro doc, por slug ou título),",
+    "'@form:Contato' (formulário criado pelo `npm run seed`),",
+    "{ '@rich': ['parágrafo 1', 'parágrafo 2'] } (campo rich text).",
+    "",
+    "A ordem dos itens em cada lista vira a ordem no site."
+  ],
+
+  "designSystem": {
+    "name": "Pousada Exemplo — padrão",
+    "isActive": true,
+    "colors": {
+      "brand": "#1F5C4A",
+      "brandDark": "#164236",
+      "ink": "#1E1E1E",
+      "inkSoft": "#6E6E6E",
+      "inkMute": "#9A9A9A",
+      "surface": "#F6F4EF",
+      "line": "#E3DED4",
+      "footer": "#22302B",
+      "dark": "#131A17",
+      "accent": "#D9C9A8",
+      "whatsapp": "#25D366"
+    },
+    "typography": {
+      "displayFamily": "'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif",
+      "bodyFamily": "'Lato','Montserrat',system-ui,sans-serif",
+      "webfontUrl": "",
+      "baseSize": 16.5,
+      "baseLineHeight": 1.75,
+      "headingSize": 28.5
+    },
+    "layout": {
+      "container": 1180,
+      "sectionSpacing": 92,
+      "heroHeight": 640,
+      "pageHeroHeight": 400
+    },
+    "shape": { "buttonRadius": 0, "cardRadius": 0, "cardShadow": "none" }
+  },
+
+  "site": {
+    "hotelName": "Pousada Exemplo",
+    "tagline": "o melhor preço garantido",
+    "logo": "@media:logo.png",
+    "favicon": "@media:favicon.png",
+    "phoneLabel": "48 3333-0000",
+    "phoneE164": "+554833330000",
+    "reservationsLabel": "48 99999-0000",
+    "reservationsE164": "+5548999990000",
+    "whatsapp": "5548999990000",
+    "email": "reservas@pousadaexemplo.com.br",
+    "address": "Rua das Flores, 100 — Centro, Cidade - UF, 88000-000",
+    "socials": [
+      {
+        "network": "instagram",
+        "handle": "@pousadaexemplo",
+        "url": "https://instagram.com/pousadaexemplo"
+      },
+      {
+        "network": "facebook",
+        "handle": "/pousadaexemplo",
+        "url": "https://facebook.com/pousadaexemplo"
+      }
+    ],
+    "latitude": -27.5954,
+    "longitude": -48.548,
+    "mapZoom": 16
+  },
+
+  "booking": {
+    "engineBaseUrl": "https://book.omnibees.com/hotelresults",
+    "hotelChain": "0000",
+    "hotelId": "0000",
+    "currencyId": "16",
+    "language": "pt-BR",
+    "maxGuests": 5,
+    "defaultGuests": 2
+  },
+
+  "header": {
+    "nav": [
+      { "label": "Início", "href": "/" },
+      { "label": "A pousada", "href": "/sobre-nos" },
+      { "label": "Acomodações", "href": "/acomodacoes" },
+      { "label": "Localização", "href": "/localizacao" },
+      { "label": "Fotos", "href": "/fotos" },
+      { "label": "Contato", "href": "/contato" }
+    ],
+    "promoLabel": "Promoções",
+    "promoHref": "/promocoes",
+    "bookLabel": "Faça uma reserva",
+    "bookUsesEngine": true
+  },
+
+  "footer": {
+    "about": "Duas ou três linhas sobre a pousada, no tom da marca.",
+    "contactTitle": "Contato",
+    "phoneCaption": "Contato da pousada",
+    "reservationsCaption": "Central de reservas",
+    "columns": [
+      {
+        "title": "Informações",
+        "links": [
+          { "label": "Nossa Localização", "href": "/localizacao" },
+          { "label": "Sobre nós", "href": "/sobre-nos" },
+          { "label": "Contato", "href": "/contato" }
+        ]
+      },
+      {
+        "title": "Links úteis",
+        "links": [
+          { "label": "Políticas de Privacidade", "href": "/politica-de-privacidade" },
+          { "label": "Políticas de Reserva", "href": "/politica-de-reserva" }
+        ]
+      }
+    ],
+    "bottomText": "Pousada Exemplo © 2026 — Todos os direitos reservados · Desenvolvido por Reprotel"
+  },
+
+  "newsletter": {
+    "background": "@media:newsletter.jpg",
+    "homeTitle": "Descubra experiências exclusivas",
+    "homeSubtitle": "Ofertas e novidades direto no seu e-mail.",
+    "innerTitle": "Receba as melhores ofertas no seu email",
+    "innerSubtitle": "Cadastre-se e receba em primeira mão promoções e novidades.",
+    "form": "@form:Newsletter"
+  },
+
+  "testimonialsSection": { "title": "O que dizem nossos hóspedes", "source": "auto", "limit": 3 },
+
+  "floatingActions": {
+    "showWhatsapp": true,
+    "showActionBar": true,
+    "actionBar": [
+      { "label": "Ligar", "action": "phone" },
+      { "label": "WhatsApp", "action": "whatsapp" },
+      { "label": "Reservar", "action": "engine" }
+    ],
+    "showCookie": true
+  },
+
+  "photoCategories": [
+    { "title": "Acomodações" },
+    { "title": "Estrutura" },
+    { "title": "Café da manhã" },
+    { "title": "Arredores" }
+  ],
+
+  "media": [
+    { "file": "logo.png", "alt": "Logotipo da Pousada Exemplo" },
+    { "file": "favicon.png", "alt": "Favicon" },
+    { "file": "fachada.jpg", "alt": "Fachada da pousada ao entardecer", "category": "Estrutura" },
+    { "file": "hero.jpg", "alt": "Vista do jardim a partir da varanda", "category": "Estrutura" },
+    { "file": "suite-casal-01.jpg", "alt": "Suíte casal com cama king", "category": "Acomodações" },
+    { "file": "cafe-01.jpg", "alt": "Mesa do café da manhã", "category": "Café da manhã" },
+    { "file": "newsletter.jpg", "alt": "Varanda ao amanhecer" }
+  ],
+
+  "amenities": [
+    { "title": "Wi-Fi de alta velocidade", "icon": "i-wifi", "scope": "quarto" },
+    { "title": "Ar-condicionado", "icon": "i-ac", "scope": "quarto" },
+    { "title": "TV a cabo", "icon": "i-tv", "scope": "quarto" },
+    { "title": "Frigobar", "icon": "i-minibar", "scope": "quarto" },
+    { "title": "Estacionamento", "icon": "i-parking", "scope": "hotel" },
+    { "title": "Café da manhã incluso", "icon": "i-coffee", "scope": "hotel" }
+  ],
+
+  "differentials": [
+    {
+      "title": "Café da manhã colonial servido na varanda",
+      "kind": "destaque",
+      "image": "@media:cafe-01.jpg"
+    },
+    { "title": "Estacionamento gratuito", "kind": "venda", "icon": "i-parking" },
+    { "title": "Aceitamos pets", "kind": "venda", "icon": "i-paw" }
+  ],
+
+  "attractions": [
+    { "title": "Centro histórico", "distanceMeters": 450, "kind": "cultura" },
+    { "title": "Praia central", "distanceMeters": 1700, "kind": "geral" },
+    { "title": "Rodoviária", "distanceMeters": 2300, "kind": "transporte" }
+  ],
+
+  "testimonials": [
+    {
+      "title": "Atendimento impecável",
+      "quote": "Texto exato da avaliação — nunca reescrever nem inventar.",
+      "author": "Nome do hóspede",
+      "source": "google",
+      "rating": 5,
+      "url": "https://..."
+    }
+  ],
+
+  "faqs": [
+    {
+      "question": "Qual o horário do check-in?",
+      "answer": { "@rich": ["Check-in a partir das 14h e check-out até as 12h."] },
+      "category": "politicas"
+    }
+  ],
+
+  "suites": [
+    {
+      "title": "Suíte Casal",
+      "shortName": "Casal",
+      "summary": "Uma linha sobre a acomodação, para o card do carrossel.",
+      "description": { "@rich": ["Parágrafo descrevendo a suíte."] },
+      "photos": [{ "image": "@media:suite-casal-01.jpg" }],
+      "amenities": ["@doc:amenities:Wi-Fi de alta velocidade", "@doc:amenities:Ar-condicionado"],
+      "maxGuests": 2,
+      "engineCode": ""
+    }
+  ],
+
+  "offers": [],
+  "postCategories": [],
+  "posts": [],
+  "popups": [],
+
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "showBookingBar": true,
+      "showTestimonials": true,
+      "showNewsletter": true,
+      "newsletterVariant": "home",
+      "layout": [
+        { "blockType": "hero", "image": "@media:hero.jpg" },
+        {
+          "blockType": "about",
+          "image": "@media:fachada.jpg",
+          "eyebrow": "A pousada",
+          "title": "Título da seção",
+          "text": "Texto de apresentação vindo do material do cliente.",
+          "ctaLabel": "Faça uma reserva",
+          "ctaUsesEngine": true
+        },
+        { "blockType": "differentials", "title": "O que torna sua estadia inesquecível" },
+        {
+          "blockType": "suitesCarousel",
+          "title": "Acomodações",
+          "text": "Chamada das acomodações.",
+          "linkLabel": "Ver todas",
+          "linkHref": "/acomodacoes"
+        },
+        {
+          "blockType": "cityBand",
+          "title": "Encante-se com",
+          "ghost": "Cidade",
+          "text": "Texto sobre a região.",
+          "image": "@media:fachada.jpg"
+        },
+        { "blockType": "offers", "limit": 2 },
+        {
+          "blockType": "social",
+          "title": "Siga a Pousada Exemplo nas redes sociais",
+          "images": [{ "image": "@media:cafe-01.jpg" }, { "image": "@media:hero.jpg" }]
+        }
+      ]
+    },
+    {
+      "title": "Acomodações",
+      "slug": "acomodacoes",
+      "layout": [
+        { "blockType": "pageHero", "image": "@media:suite-casal-01.jpg" },
+        {
+          "blockType": "roomList",
+          "intro": {
+            "title": "Nossas acomodações",
+            "text": "Texto de abertura da listagem.",
+            "ctaLabel": "Faça uma reserva"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Localização",
+      "slug": "localizacao",
+      "layout": [
+        { "blockType": "pageHero", "image": "@media:fachada.jpg" },
+        {
+          "blockType": "location",
+          "eyebrow": "Onde estamos",
+          "title": "Localização privilegiada",
+          "text": "Texto sobre a localização.",
+          "poiTitle": "Pontos de interesse",
+          "poiLimit": 9,
+          "showContactCards": true,
+          "showMap": true
+        }
+      ]
+    },
+    {
+      "title": "Fotos",
+      "slug": "fotos",
+      "layout": [
+        { "blockType": "pageHero", "image": "@media:hero.jpg" },
+        { "blockType": "gallery", "title": "Galeria de fotos", "showFilters": true }
+      ]
+    }
+  ]
+}

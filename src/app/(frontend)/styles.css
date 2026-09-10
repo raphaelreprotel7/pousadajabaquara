@@ -1,0 +1,1432 @@
+/* ============================================================
+   POUSADA RECANTO DO JABAQUARA — FOLHA ESTRUTURAL
+
+   Layout, grid e componentes. As cores e medidas do :root abaixo são
+   só a base neutra: o Design System ativo entra depois (DesignTokens)
+   e sobrescreve tudo. Para mudar a aparência, edite o tema no admin —
+   não esta folha.
+   ============================================================ */
+:root{
+  --red:#3A3A3A;
+  --red-dark:#1F1F1F;
+  --ink:#1E1E1E;
+  --ink-2:#2A2A2A;
+  --ink-3:#141414;
+  --gray-bg:#F4F4F4;
+  --gray-line:#E2E2E2;
+  --gray-text:#6E6E6E;
+  --gray-soft:#9A9A9A;
+  --white:#FFFFFF;
+  --pink:#E4E4E4;
+  --wa:#25D366;
+  --shell:1180px;
+  --ff-head:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ff-body:'Lato','Montserrat',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:var(--ff-body);
+  font-size:16.5px;
+  line-height:1.75;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select,textarea{font:inherit}
+
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.shell{width:100%;max-width:var(--shell);margin:0 auto;padding:0 24px}
+.sec{padding:92px 0}
+.sec--tight{padding:64px 0}
+.sec--gray{background:var(--gray-bg)}
+
+/* ============================================================
+   IMAGE PLACEHOLDERS
+   ============================================================ */
+.ph{
+  position:relative;
+  background:repeating-linear-gradient(45deg,#E9E9E9 0 12px,#E2E2E2 12px 24px);
+  border:1px solid var(--gray-line);
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.ph::after{
+  content:attr(data-ph);
+  font-family:var(--ff-head);
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:#8B8B8B;
+  background:rgba(255,255,255,.82);
+  border:1px solid rgba(0,0,0,.06);
+  padding:7px 12px;text-align:center;max-width:80%;line-height:1.4;z-index:1;
+}
+.ph--dark{background:repeating-linear-gradient(45deg,#333 0 12px,#2B2B2B 12px 24px);border-color:#3A3A3A}
+.ph--dark::after{color:#D6D6D6;background:rgba(0,0,0,.5);border-color:rgba(255,255,255,.14)}
+
+/* Imagens reais — mesmo encaixe dos placeholders */
+.img{display:block;width:100%;object-fit:cover;background:#EAEAEA}
+
+/* ============================================================
+   TYPE / BUTTONS
+   ============================================================ */
+.eyebrow{
+  font-family:var(--ff-head);font-size:11px;font-weight:600;
+  letter-spacing:.32em;text-transform:uppercase;color:var(--gray-soft);margin:0 0 14px;
+}
+.h-section{
+  font-family:var(--ff-head);font-size:28.5px;font-weight:400;
+  letter-spacing:.22em;text-transform:uppercase;margin:0;line-height:1.4;
+}
+.h-section strong{font-weight:600;color:var(--red)}
+.h-block{
+  font-family:var(--ff-head);font-size:26.5px;font-weight:400;
+  letter-spacing:.16em;text-transform:uppercase;margin:0 0 20px;line-height:1.45;
+}
+.h-block strong{font-weight:600;color:var(--red)}
+.section-head{text-align:center;margin-bottom:56px}
+.section-head .lede{margin-top:16px}
+.lede{color:var(--gray-text);font-weight:300;font-size:16px;margin:0}
+.body-text{color:var(--gray-text);font-weight:300;margin:0 0 26px;max-width:60ch}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--ff-head);font-size:12px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;padding:15px 30px;
+  transition:background .2s,color .2s,border-color .2s;white-space:nowrap;
+}
+.btn svg{width:14px;height:14px;fill:currentColor}
+.btn--red{background:var(--red);color:#fff}
+.btn--red:hover{background:var(--red-dark)}
+.btn--dark{background:var(--ink);color:#fff;border:1px solid rgba(255,255,255,.22)}
+.btn--dark:hover{background:#000}
+.btn--ghost{border:1px solid var(--gray-line);color:var(--ink);background:#fff}
+.btn--ghost:hover{border-color:var(--ink)}
+.btn--wa{background:var(--wa);color:#fff}
+.btn--wa:hover{background:#1FAF52}
+.btn--block{width:100%}
+
+.link-arrow{
+  font-family:var(--ff-head);font-size:12px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink);
+  border-bottom:1px solid var(--gray-line);padding-bottom:6px;
+  display:inline-flex;gap:10px;align-items:center;
+}
+.link-arrow:hover{color:var(--red);border-color:var(--red)}
+.link-arrow--sm{font-size:10.5px;color:var(--gray-text)}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.topbar{
+  position:absolute;top:0;left:0;right:0;z-index:50;
+  background:rgba(20,20,20,.82);backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.topbar__inner{max-width:1320px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;gap:32px}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand__mark{
+  width:26px;height:26px;flex-shrink:0;background:var(--red);
+  display:grid;place-items:center;
+  font-family:var(--ff-head);font-size:14.5px;font-weight:700;color:#fff;
+}
+.brand__logo{height:34px;width:auto;display:block}
+.footer .brand__logo{height:40px}
+.brand__text{line-height:1.1}
+.brand__text b{display:block;font-family:var(--ff-head);font-size:12px;font-weight:700;letter-spacing:.2em;color:#fff}
+.brand__text span{display:block;font-family:var(--ff-head);font-size:8px;font-weight:400;letter-spacing:.34em;color:rgba(255,255,255,.55)}
+.nav{display:flex;align-items:center;gap:26px;margin-left:auto}
+.nav a{font-family:var(--ff-head);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.82)}
+.nav a:hover,.nav a.is-active{color:#fff}
+.nav a.is-active{border-bottom:1px solid var(--red);padding-bottom:3px}
+.topbar__cta{display:flex;align-items:center;flex-shrink:0}
+.topbar__cta .btn{padding:11px 20px;font-size:10.5px}
+.burger{display:none;margin-left:auto;flex-direction:column;gap:5px;padding:8px}
+.burger span{display:block;width:22px;height:1.5px;background:#fff}
+
+/* Menu mobile */
+.mobilenav{
+  display:none;position:fixed;inset:0;z-index:120;min-height:100dvh;background:rgb(15,15,15);
+  padding:90px 32px 40px;flex-direction:column;gap:4px;
+  overflow-y:auto;overscroll-behavior:contain;
+}
+.mobilenav.is-open{display:flex}
+.mobilenav a{
+  font-family:var(--ff-head);font-size:14.5px;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:#fff;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.09);
+}
+.mobilenav__close{position:absolute;top:22px;right:26px;font-size:31px;color:#fff;line-height:1}
+
+/* ============================================================
+   HERO (home)
+   ============================================================ */
+.hero{position:relative;background:var(--ink-3)}
+.hero__media{height:var(--hero-height,640px);border:0}
+.hero__media::after{font-size:13px;letter-spacing:.22em}
+.hero__scrim{
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,0) 38%,rgba(0,0,0,.18) 100%);
+}
+
+/* ============================================================
+   PAGE HERO (páginas internas)
+   ============================================================ */
+.pagehero{position:relative;background:var(--ink-3)}
+.pagehero__media{height:var(--page-hero-height,400px);border:0}
+.pagehero__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.34) 60%,rgba(0,0,0,.5) 100%)}
+.pagehero__inner{
+  position:absolute;left:0;right:0;top:66px;bottom:120px;z-index:2;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;
+}
+.pagehero__title{
+  font-family:var(--ff-head);font-size:clamp(26px,4.2vw,42px);font-weight:400;
+  letter-spacing:.26em;text-transform:uppercase;color:#fff;margin:0 0 12px;line-height:1.3;
+}
+.pagehero__tag{
+  font-family:var(--ff-head);font-size:11px;font-weight:600;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--pink);margin:0;
+}
+.pagehero__tag::before,.pagehero__tag::after{content:"—";margin:0 12px;color:rgba(255,255,255,.35)}
+
+/* ============================================================
+   MOTOR DE RESERVA
+   ============================================================ */
+.booking{
+  position:absolute;left:50%;bottom:52px;transform:translateX(-50%);
+  width:min(880px,calc(100% - 48px));background:#fff;
+  box-shadow:0 18px 44px rgba(0,0,0,.22);
+  display:grid;grid-template-columns:1fr 1fr 1fr auto;align-items:stretch;z-index:3;
+}
+.booking__field{padding:16px 22px;border-right:1px solid var(--gray-line);display:flex;flex-direction:column;gap:4px;min-width:0}
+.booking__field label{font-family:var(--ff-head);font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-soft)}
+.booking__field .value{font-family:var(--ff-head);font-size:14px;font-weight:500;color:var(--ink);border:0;padding:0;background:none;width:100%;min-width:0;outline:none}
+.booking__field input[type=date]{color-scheme:light}
+.booking__field input[type=date]::-webkit-calendar-picker-indicator{cursor:pointer;opacity:.4}
+.booking__field input[type=date]:hover::-webkit-calendar-picker-indicator{opacity:.8}
+.booking__btn{padding:0 42px}
+
+/* ============================================================
+   HOME — SOBRE
+   ============================================================ */
+.about{background:var(--gray-bg);padding:96px 0}
+.about__grid{display:grid;grid-template-columns:0.85fr 1fr;gap:70px;align-items:center}
+.about__media{aspect-ratio:3/3.45;background-color:#DEDEDE}
+.about__body .eyebrow{color:var(--ink);letter-spacing:.36em}
+.about__title{font-family:var(--ff-head);font-size:29.5px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;margin:0 0 22px;line-height:1.4}
+.about__body p{color:var(--gray-text);font-weight:300;margin:0 0 30px;max-width:52ch}
+
+/* ============================================================
+   HOME — DIFERENCIAIS
+   ============================================================ */
+.features{padding:96px 0 86px}
+.features__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:44px}
+.fcard{position:relative;aspect-ratio:1/1.12;overflow:hidden}
+.fcard .ph,.fcard .img{position:absolute;inset:0;width:100%;height:100%;border:0}
+.fcard__veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 42%,rgba(0,0,0,.62) 100%)}
+.fcard__label{
+  position:absolute;left:24px;right:24px;bottom:26px;z-index:2;
+  font-family:var(--ff-head);font-size:13px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5);
+}
+.features__perks{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.perk{
+  border:1px solid var(--gray-line);background:#fff;padding:22px 12px 20px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.perk:hover{border-color:#CFCFCF;box-shadow:0 8px 20px rgba(0,0,0,.05)}
+.perk__icon{width:30px;height:30px;flex-shrink:0;fill:var(--red);display:block}
+.perk__label{font-family:var(--ff-head);font-size:10px;font-weight:500;letter-spacing:.06em;color:var(--gray-text);line-height:1.6}
+
+/* ============================================================
+   HOME — SUÍTES
+   ============================================================ */
+.suites{padding:20px 0 100px;overflow:hidden}
+.suites__grid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:48px;align-items:start;min-width:0}
+.suites__intro{padding-top:56px}
+.suites__intro h2{font-family:var(--ff-head);font-size:33px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;margin:0 0 20px}
+.suites__intro p{color:var(--gray-text);font-weight:300;font-size:15px;margin:0 0 26px}
+.suites__rail{position:relative;width:100%;max-width:100%;min-width:0;overflow:hidden}
+/* respiro entre os cards: a largura da coluna desconta o gap para continuar
+   mostrando ~3,2 cards e deixando o quarto cortado, sinalizando que há mais */
+.suites__track{display:grid;width:100%;max-width:100%;min-width:0;grid-auto-flow:column;grid-auto-columns:calc(100%/3.3 - 18px);gap:24px;overflow:hidden}
+.suite{min-width:0;background:#fff;border:1px solid var(--gray-line)}
+.suite__media{aspect-ratio:1/0.92;border:0;border-bottom:1px solid var(--gray-line)}
+.suite__body{padding:20px 20px 22px}
+.suite__top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px}
+.suite__name{font-family:var(--ff-head);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin:0}
+.suite__text{color:var(--gray-text);font-weight:300;font-size:12.5px;line-height:1.8;margin:0 0 16px}
+/* setas nas laterais, centradas na faixa da foto — mesma linguagem do
+   carrossel de fotos do quarto. 44px é o alvo mínimo confortável no toque. */
+.rail__nav{display:contents}
+.rail__nav button{
+  position:absolute;top:26%;transform:translateY(-50%);z-index:6;
+  width:44px;height:44px;
+  background:rgba(20,20,20,.55);
+  color:#fff;display:grid;place-items:center;
+  font-size:22px;line-height:1;border:0;
+  box-shadow:0 4px 14px rgba(0,0,0,.28);
+  transition:background .2s,transform .2s;
+}
+.rail__nav button:first-child{left:12px}
+.rail__nav button:last-child{right:12px}
+.rail__nav button:hover{background:var(--red);transform:translateY(-50%) scale(1.07)}
+.rail__nav button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+/* ============================================================
+   HOME — CIDADE + VÍDEO
+   ============================================================ */
+.city{padding:0 0 34px;position:relative;overflow:hidden}
+.city__grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;padding-bottom:10px}
+.city__title{font-family:var(--ff-head);font-size:24px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;margin:0}
+.city__ghost{
+  font-family:var(--ff-head);font-size:clamp(34px,5.8vw,78px);font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;color:rgba(200,16,46,.16);
+  margin:-8px 0 0;line-height:1;user-select:none;white-space:nowrap;
+}
+.city__text{color:var(--gray-text);font-weight:300;font-size:15px;text-align:right;margin:0}
+.cityband{position:relative;background:var(--ink-3)}
+.cityband__media{height:420px;border:0;object-position:center 62%}
+
+/* ============================================================
+   OFERTAS
+   ============================================================ */
+.offers{background:var(--gray-bg);padding:92px 0}
+.offers__grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;align-items:center}
+.offers__intro h2{font-family:var(--ff-head);font-size:29.5px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;margin:0 0 18px}
+.offers__intro h2 strong{font-weight:600;color:var(--red)}
+.offers__intro p{color:var(--gray-text);font-weight:300;font-size:15px;margin:0 0 24px}
+.offers__cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ocard{background:#fff}
+.ocard__media{aspect-ratio:1/0.78;border:0}
+.ocard__body{padding:20px 22px 22px}
+.ocard__title{font-family:var(--ff-head);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin:0 0 10px}
+.ocard__text{color:var(--gray-text);font-weight:300;font-size:12.5px;line-height:1.8;margin:0 0 16px}
+.ocard__foot{display:flex;justify-content:flex-end}
+
+/* ============================================================
+   REDES SOCIAIS
+   ============================================================ */
+.social{padding:100px 0;position:relative;overflow:hidden}
+.social__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+.collage{position:relative;min-height:400px}
+.collage__a{position:absolute;left:6%;top:0;width:52%;aspect-ratio:1/0.82;z-index:2}
+.collage__b{position:absolute;right:2%;top:12%;width:46%;aspect-ratio:1/1.35;z-index:3}
+.shape{position:absolute;background:var(--pink);z-index:1}
+.shape--1{width:64px;height:26px;right:-2%;top:2%;transform:skewX(-28deg)}
+.shape--2{width:64px;height:26px;right:8%;top:9%;transform:skewX(-28deg);background:#E4E4E4}
+.shape--3{width:58px;height:24px;left:0;bottom:8%;transform:skewX(-28deg)}
+.shape--4{width:58px;height:24px;left:10%;bottom:2%;transform:skewX(-28deg);background:#E4E4E4}
+.social__body h2{font-family:var(--ff-head);font-size:27.5px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;margin:0 0 26px;line-height:1.5}
+.social__body h2 strong{font-weight:600;color:var(--red)}
+.social__links{display:flex;flex-direction:column;gap:10px;max-width:330px}
+.slink{
+  background:var(--red);color:#fff;display:flex;align-items:center;gap:12px;padding:13px 20px;
+  font-family:var(--ff-head);font-size:11.5px;font-weight:500;letter-spacing:.1em;transition:background .2s;
+}
+.slink:hover{background:var(--red-dark)}
+.slink svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{background:var(--gray-bg);padding:90px 0}
+.faq__list{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.faq__item{background:#fff;border:1px solid var(--gray-line)}
+.faq__q{width:100%;text-align:left;display:flex;align-items:center;gap:14px;padding:15px 20px;font-family:var(--ff-head);font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--ink)}
+.faq__q::before{content:"+";color:var(--red);font-size:15.5px;font-weight:600;width:12px;flex-shrink:0;line-height:1}
+.faq__item.is-open .faq__q::before{content:"–"}
+.faq__a{display:none;padding:0 20px 18px 46px;color:var(--gray-text);font-weight:300;font-size:14px}
+.faq__a p{margin:0 0 14px}
+.faq__a p:last-child{margin-bottom:0}
+.faq__a strong{color:var(--ink);font-weight:600}
+.faq__item.is-open .faq__a{display:block}
+
+/* ============================================================
+   DEPOIMENTOS
+   ============================================================ */
+.reviews{padding:90px 0}
+.reviews__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:34px}
+.review{background:var(--gray-bg);padding:30px 28px 26px;display:flex;flex-direction:column}
+.review__title{font-family:var(--ff-head);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin:0 0 14px}
+.review__text{color:var(--gray-text);font-weight:300;font-size:13px;line-height:1.95;margin:0 0 22px;flex:1}
+.stars{display:flex;gap:3px;margin-bottom:10px}
+.stars svg{width:12px;height:12px;fill:#E8B004}
+.review__author{font-family:var(--ff-head);font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.dots{display:flex;gap:8px;justify-content:center}
+.dots span{width:7px;height:7px;border-radius:50%;background:#D2D2D2;cursor:pointer}
+.dots span.is-active{background:var(--red)}
+
+/* ============================================================
+   NEWSLETTER
+   ============================================================ */
+.news{position:relative;background:var(--ink-3);overflow:hidden}
+.news__bg{position:absolute;inset:0;width:100%;height:100%;border:0}
+.news__scrim{position:absolute;inset:0;background:rgba(12,12,12,.78)}
+.news__inner{position:relative;z-index:2;padding:76px 0 82px;text-align:center}
+.news h2{font-family:var(--ff-head);font-size:27.5px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin:0 0 12px}
+.news__sub{color:rgba(255,255,255,.66);font-weight:300;font-size:14.5px;margin:0 auto 34px;max-width:60ch}
+.news__form{max-width:660px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.news__row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.news__form input[type=text],.news__form input[type=email],.news__form input[type=tel]{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);
+  color:#fff;padding:13px 15px;font-size:13px;outline:none;width:100%;
+}
+.news__form input::placeholder{color:rgba(255,255,255,.5)}
+.news__form input:focus{border-color:var(--red)}
+.news__check{display:flex;gap:10px;align-items:flex-start;text-align:left;color:rgba(255,255,255,.6);font-weight:300;font-size:11.5px;line-height:1.7}
+.news__check input{margin-top:3px;accent-color:var(--red)}
+.news__check a{text-decoration:underline}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:var(--ink-2);color:rgba(255,255,255,.62);padding:64px 0 0;font-size:13px}
+.footer__top{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;padding-bottom:48px}
+.footer__brand .brand{margin-bottom:18px}
+.footer__brand p{font-weight:300;margin:0 0 20px;max-width:44ch;line-height:1.9;font-size:12.5px}
+.footer__social{display:flex;gap:9px}
+.footer__social a{width:28px;height:28px;border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;transition:background .2s,border-color .2s}
+.footer__social a:hover{background:var(--red);border-color:var(--red)}
+.footer__social svg{width:12px;height:12px;fill:rgba(255,255,255,.8)}
+.footer__h{font-family:var(--ff-head);font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#fff;margin:0 0 18px}
+.footer__contact ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.footer__contact li{display:flex;gap:11px;align-items:flex-start;font-weight:300;font-size:12.5px}
+/* rótulo do telefone: discreto, para o número seguir sendo o destaque */
+.footer__cap{display:inline;font-weight:400;color:rgba(255,255,255,.42);margin-right:6px}
+.footer__contact svg{width:12px;height:12px;fill:var(--red);flex-shrink:0;margin-top:4px}
+.footer__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding:40px 0 46px;border-top:1px solid rgba(255,255,255,.09)}
+.footer__cols ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.footer__cols a{font-weight:300;font-size:12.5px}
+.footer__cols a:hover{color:#fff}
+.footer__bar{border-top:1px solid rgba(255,255,255,.09);padding:20px 0;text-align:center;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+
+/* ============================================================
+   SOBRE NÓS
+   ============================================================ */
+.gallery3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
+.gallery3 .ph,.gallery3 .img{aspect-ratio:1/1.15}
+.gallery2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.gallery2 .ph,.gallery2 .img{aspect-ratio:1/1.05}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split--rev .split__media{order:-1}
+.amen{list-style:none;margin:0 0 32px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+.amen li{display:flex;gap:13px;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray-line);font-weight:300;color:var(--gray-text);font-size:14.5px}
+.amen li::before{content:"";width:9px;height:9px;background:var(--red);flex-shrink:0;transform:skewX(-22deg)}
+.note{
+  font-family:var(--ff-head);font-size:12px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink);border-left:2px solid var(--red);
+  padding-left:14px;margin:0 0 28px;
+}
+
+/* ============================================================
+   ACOMODAÇÕES
+   ============================================================ */
+.room{display:grid;grid-template-columns:1.05fr .95fr;border:1px solid var(--gray-line);background:#fff;margin-bottom:30px;min-width:0;max-width:100%}
+
+/* galeria do quarto — carrossel de uma foto por vez */
+.room__gallery{position:relative;overflow:hidden;aspect-ratio:16/9;background:#EAEAEA;min-width:0;max-width:100%;touch-action:pan-y;overscroll-behavior-x:contain}
+.room__slides{display:flex;width:100%;min-width:0;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform}
+.room__slides .img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;border:0}
+.gnav{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:2;
+  width:34px;height:46px;background:rgba(20,20,20,.5);color:#fff;
+  display:grid;place-items:center;font-size:18.5px;line-height:1;
+  transition:background .2s;
+}
+.gnav:hover{background:var(--red)}
+.gnav--prev{left:0}
+.gnav--next{right:0}
+.gdots{position:absolute;left:0;right:0;bottom:12px;z-index:2;display:flex;gap:6px;justify-content:center}
+.gdots span{
+  width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.55);
+  cursor:pointer;transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.35);
+}
+.gdots span.is-active{background:#fff;width:18px;border-radius:3px}
+.room__body{padding:36px 38px;display:flex;min-width:0;flex-direction:column;justify-content:center}
+.room__name{font-family:var(--ff-head);font-size:18.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin:0 0 8px}
+.room__price{font-family:var(--ff-head);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 18px}
+.room__text{color:var(--gray-text);font-weight:300;font-size:14px;line-height:1.9;margin:0 0 24px}
+.room__amen{list-style:none;margin:0 0 28px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
+.room__amen li{display:flex;gap:10px;align-items:center;font-size:12.5px;font-weight:300;color:var(--gray-text)}
+.room__amen svg{width:16px;height:16px;fill:var(--red);flex-shrink:0}
+.room .btn{align-self:flex-start}
+
+/* ============================================================
+   LOCALIZAÇÃO
+   ============================================================ */
+.poi{list-style:none;margin:0 0 32px;padding:0}
+.poi li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:13px 0;border-bottom:1px solid var(--gray-line)}
+.poi b{font-family:var(--ff-head);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.poi span{font-family:var(--ff-head);font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--red);white-space:nowrap}
+.loc__actions{display:flex;gap:12px;flex-wrap:wrap}
+.info3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.info3 .icard{border:1px solid var(--gray-line);background:#fff;padding:34px 26px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+.info3 .icard svg{width:22px;height:22px;fill:var(--red)}
+.info3 .icard h3{font-family:var(--ff-head);font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;margin:0;color:var(--gray-soft)}
+.info3 .icard p{margin:0;font-family:var(--ff-head);font-size:14.5px;font-weight:500;color:var(--ink);word-break:break-word}
+.mapa{position:relative;line-height:0;background:var(--gray-bg)}
+.mapa__canvas{width:100%;height:440px;background:#EAEAEA}
+
+/* marcador próprio, na cor da marca */
+.mapa-pin{background:none;border:0}
+.mapa-pin svg{width:32px;height:42px;display:block;filter:drop-shadow(0 3px 5px rgba(0,0,0,.35))}
+.mapa .leaflet-popup-content{
+  font-family:var(--ff-body);font-size:13px;line-height:1.6;color:var(--ink);margin:14px 16px;
+}
+.mapa .leaflet-popup-content b{
+  font-family:var(--ff-head);font-size:12px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:4px;
+}
+.mapa .leaflet-container a.leaflet-popup-close-button{color:var(--gray-soft)}
+.mapa .leaflet-control-attribution{font-size:10px}
+
+.mapa__link{
+  position:absolute;right:22px;top:22px;z-index:900;
+  background:#fff;color:var(--ink);
+  font-family:var(--ff-head);font-size:11px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;line-height:1;
+  padding:13px 20px;box-shadow:0 6px 20px rgba(0,0,0,.2);
+  transition:background .2s,color .2s;
+}
+.mapa__link:hover{background:var(--red);color:#fff}
+
+/* ============================================================
+   BLOG
+   ============================================================ */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.post{border:1px solid var(--gray-line);background:#fff;display:flex;flex-direction:column}
+.post__media{aspect-ratio:1/0.64;border:0;border-bottom:1px solid var(--gray-line)}
+.post__body{padding:24px 24px 26px;flex:1;display:flex;flex-direction:column}
+.post__meta{font-family:var(--ff-head);font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.post__meta span{color:var(--gray-soft)}
+.post__title{font-family:var(--ff-head);font-size:15.5px;font-weight:600;letter-spacing:.05em;line-height:1.55;margin:0 0 12px}
+.post__text{color:var(--gray-text);font-weight:300;font-size:13px;line-height:1.9;margin:0 0 20px;flex:1}
+/* artigo do blog */
+.artigo{max-width:800px;margin:0 auto}
+.artigo__media{aspect-ratio:16/9;margin-bottom:44px}
+.artigo__lead{
+  font-size:19px;font-weight:300;color:var(--ink);line-height:1.7;
+  margin:0 0 34px;padding-left:18px;border-left:2px solid var(--red);
+}
+.artigo__corpo{color:var(--gray-text);font-weight:300;font-size:16.5px;line-height:1.9}
+.artigo__corpo p{margin:0 0 26px}
+.artigo__corpo p:last-child{margin-bottom:0}
+.artigo__corpo h2{
+  font-family:var(--ff-head);font-size:17px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink);margin:48px 0 18px;line-height:1.5;
+}
+.pagehero__title--artigo{font-size:clamp(19px,2.6vw,31px);letter-spacing:.12em;max-width:22ch}
+
+.pagination{display:flex;gap:8px;justify-content:center;margin-top:46px}
+.pagination a{width:36px;height:36px;border:1px solid var(--gray-line);display:grid;place-items:center;font-family:var(--ff-head);font-size:12px;font-weight:600;color:var(--gray-text)}
+.pagination a:hover{border-color:var(--ink);color:var(--ink)}
+.pagination a.is-active{background:var(--red);border-color:var(--red);color:#fff}
+
+/* ============================================================
+   FOTOS
+   ============================================================ */
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:42px}
+.filters button{
+  font-family:var(--ff-head);font-size:11px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;padding:11px 26px;border:1px solid var(--gray-line);
+  color:var(--gray-text);background:#fff;transition:all .2s;
+}
+.filters button:hover{border-color:var(--ink);color:var(--ink)}
+.filters button.is-active{background:var(--red);border-color:var(--red);color:#fff}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery .g{aspect-ratio:1/0.74;cursor:pointer;transition:opacity .2s}
+.gallery .g:hover{opacity:.86}
+.gallery .g[hidden]{display:none}
+
+/* ============================================================
+   PROMOÇÕES — estado vazio
+   ============================================================ */
+.empty{max-width:660px;margin:0 auto;text-align:center;border:1px solid var(--gray-line);background:#fff;padding:64px 44px}
+.empty__mark{width:52px;height:52px;margin:0 auto 24px;background:var(--red);display:grid;place-items:center}
+.empty__mark svg{width:24px;height:24px;fill:#fff}
+.empty h2{font-family:var(--ff-head);font-size:20px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin:0 0 16px;line-height:1.5}
+.empty p{color:var(--gray-text);font-weight:300;font-size:15px;margin:0 0 28px}
+
+/* ============================================================
+   CONTATO
+   ============================================================ */
+.contact__grid{display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:start}
+.cform{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field--full{grid-column:1/-1}
+.field label{font-family:var(--ff-head);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-soft)}
+.field input,.field textarea{border:1px solid var(--gray-line);background:#fff;padding:13px 14px;font-size:14.5px;outline:none;font-family:var(--ff-body);width:100%}
+.field input:focus,.field textarea:focus{border-color:var(--red)}
+.field textarea{min-height:150px;resize:vertical;line-height:1.7}
+.consent{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;color:var(--gray-text);font-weight:300;font-size:12px;line-height:1.7}
+.consent input{margin-top:3px;accent-color:var(--red)}
+.central{background:var(--ink);color:#fff;padding:38px 34px}
+.central h2{font-family:var(--ff-head);font-size:15.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin:0 0 24px;color:#fff}
+.central ul{list-style:none;margin:0 0 26px;padding:0;display:flex;flex-direction:column;gap:18px}
+.central li{display:flex;gap:13px;align-items:flex-start}
+.central svg{width:15px;height:15px;fill:var(--red);flex-shrink:0;margin-top:4px}
+.central small{display:block;font-family:var(--ff-head);font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:2px}
+.central span{font-size:14.5px;font-weight:300;color:#fff}
+
+/* ============================================================
+   UTILITÁRIOS FLUTUANTES
+   ============================================================ */
+.wa{position:fixed;right:20px;bottom:20px;z-index:80;width:52px;height:52px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.24);transition:transform .2s}
+.wa:hover{transform:scale(1.07)}
+.wa svg{width:27px;height:27px;fill:#fff}
+
+.cookie{
+  position:fixed;left:20px;bottom:20px;z-index:90;max-width:430px;background:#fff;
+  border:1px solid var(--gray-line);box-shadow:0 14px 40px rgba(0,0,0,.16);
+  padding:20px 22px;font-size:12.5px;font-weight:300;color:var(--gray-text);line-height:1.8;
+}
+.cookie[hidden]{display:none}
+.cookie a{text-decoration:underline;color:var(--ink)}
+.cookie__actions{display:flex;gap:10px;margin-top:16px}
+.cookie .btn{padding:10px 20px;font-size:10.5px}
+
+.actionbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:85;background:var(--ink);border-top:1px solid rgba(255,255,255,.1)}
+.actionbar a{display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px 4px;color:rgba(255,255,255,.8);font-family:var(--ff-head);font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.actionbar a:last-child{background:var(--red);color:#fff}
+.actionbar svg{width:15px;height:15px;fill:currentColor}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+/* Entre ~1000 e 1320px o menu inteiro + os dois botões não cabem na linha:
+   o último botão saía para fora da tela. Aperta as medidas em vez de deixar
+   o menu quebrar em duas linhas. */
+@media (max-width:1320px){
+  .nav{gap:18px}
+  .nav a{font-size:13px;letter-spacing:.06em}
+  .topbar__cta{gap:10px}
+  .topbar__cta .btn{padding:0 16px;font-size:12px;height:44px}
+  .brand__logo{height:62px}
+  .topbar__inner{gap:18px}
+}
+/* Abaixo de 1250px, oito itens de menu mais os dois botões não cabem numa
+   linha em tamanho legível — o último botão saía para fora da tela. Em vez de
+   espremer a fonte até ficar ilegível, o menu vira hambúrguer mais cedo. */
+@media (max-width:1250px){
+  .nav{display:none}
+  .burger{display:flex}
+  .topbar__cta{gap:12px}
+  .topbar__cta .btn{padding:0 20px;font-size:12.5px}
+  .brand__logo{height:62px}
+}
+
+@media (max-width:1100px){
+  .nav{display:none}
+  .burger{display:flex}
+  .topbar__cta .btn:first-child{display:none}
+  .features__perks{grid-template-columns:repeat(3,1fr)}
+  .suites__grid{width:100%;max-width:100%;min-width:0;grid-template-columns:minmax(0,1fr);gap:34px}
+  .suites__intro{padding-top:0}
+  .suites__track{grid-auto-columns:calc(100%/2.4 - 18px)}
+  .room{grid-template-columns:1fr}
+  .room__gallery{aspect-ratio:3/2}
+  .posts{grid-template-columns:repeat(2,1fr)}
+  .contact__grid{grid-template-columns:1fr;gap:38px}
+}
+@media (max-width:900px){
+  body{padding-bottom:62px}
+  .about__grid,.offers__grid,.social__grid,.footer__top,.split{grid-template-columns:1fr;gap:40px}
+  .split--rev .split__media{order:0}
+  .city__grid{grid-template-columns:1fr;gap:16px}
+  .city__text{text-align:left}
+  /* relative (não static) para o z-index valer e o motor ficar acima do scrim do banner */
+  .booking{position:relative;left:auto;bottom:auto;transform:none;width:auto;margin:-46px 20px 0;grid-template-columns:1fr 1fr}
+  .booking__field:nth-child(3){grid-column:1/-1;border-right:0}
+  .booking__btn{grid-column:1/-1;padding:16px}
+  /* alturas explícitas: com o motor em fluxo, as camadas absolutas não podem
+     esticar até o fim da section, senão o título cai por cima do formulário */
+  .hero__media,.hero__scrim{height:460px}
+  .cityband__media{height:300px}
+  .mapa__canvas{height:320px}
+  .mapa__link{right:14px;top:14px;padding:11px 16px}
+  .pagehero__media,.pagehero__scrim{height:300px}
+  .pagehero__inner{top:66px;bottom:auto;height:234px}
+  .features__cards,.reviews__grid,.offers__cards,.gallery3,.gallery2,.posts,.gallery,.info3{grid-template-columns:1fr}
+  .amen{grid-template-columns:1fr}
+  .footer__cols{grid-template-columns:1fr}
+  .news__row{grid-template-columns:1fr}
+  .collage{min-height:330px}
+  .cform{grid-template-columns:1fr}
+  .actionbar{display:grid;grid-template-columns:repeat(4,1fr)}
+  .wa{bottom:78px}
+  .cookie{left:12px;right:12px;bottom:78px;max-width:none}
+  .sec{padding:64px 0}
+}
+@media (max-width:700px){
+  /* mantém o CTA de reserva no topo, apenas compacto, para caber ao lado da marca */
+  .topbar__inner{gap:12px;padding:0 16px}
+  .brand__logo{height:26px}
+  .topbar__cta .btn{padding:9px 12px;font-size:9px;letter-spacing:.1em}
+}
+@media (max-width:520px){
+  .h-section,.h-block,.about__title,.offers__intro h2,.social__body h2,.news h2{font-size:21px;letter-spacing:.14em}
+  .features__perks{grid-template-columns:repeat(2,1fr)}
+  .booking{grid-template-columns:1fr}
+  .gallery,.room__amen{grid-template-columns:1fr}
+  .room,.room__gallery,.room__slides,.room__body{width:100%;max-width:100%;min-width:0}
+  .room__slides .img{min-width:100%;max-width:100%}
+  .room__amen li{min-width:0;overflow-wrap:anywhere}
+  .room__body{padding:28px 24px}
+  .suites__track{grid-auto-columns:calc(100%/1.25 - 14px);gap:16px}
+}
+
+/* ============================================================
+   POUSADA RECANTO DO JABAQUARA
+   ------------------------------------------------------------
+   Tudo o que é específico deste cliente mora AQUI, num lugar só,
+   e não espalhado no customCss do Design System. Aprendemos na
+   marra: regras acumuladas no customCss se sobrepunham entre si
+   e a última vencia em silêncio — foi assim que o degradê do card
+   e o alinhamento do mosaico deixaram de funcionar.
+   ============================================================ */
+
+/* ---------------- SISTEMA TIPOGRÁFICO -----------------------
+   Vem do manual de identidade (Social ID). O manual define quatro
+   papéis, e é isso que padroniza o site:
+
+     título corrido   Arapey  itálico   → títulos de seção e de card
+     título destaque  Arapey  regular   → banner de página
+     subtítulo        Questrial         → apoio sob o título
+     corpo            Questrial         → texto, botões, rótulos
+
+   Os tamanhos do manual (150/140/80/44 px) são de peça para redes
+   sociais, onde a tela é gigante — 150px viraria um h2 impossível
+   na web. Então herdamos do manual a FAMÍLIA, o CORTE e a
+   HIERARQUIA, e calibramos os tamanhos pelo PNG da home, que foi
+   medido. As proporções entre os quatro papéis são mantidas.
+
+   Regra prática: nenhum `font-size` solto fora daqui. Tudo passa
+   por um token, para não voltar a ter cada seção com um padrão. */
+:root{
+  --fs-hero:52px;    /* banner de página — "título destaque" */
+  --fs-h2:44px;      /* título de seção  — "título corrido"  */
+  --fs-h3:30px;      /* título de card                        */
+  --fs-h4:20px;      /* título miúdo (depoimento)             */
+  --fs-lead:19px;    /* subtítulo / texto de apoio            */
+  --fs-body:17px;    /* corpo                                 */
+  --fs-small:15px;   /* corpo secundário, links, rodapé       */
+  --fs-mini:13px;    /* legendas e notas                      */
+  --fs-eyebrow:12.5px;
+  --ls-eyebrow:.16em;
+  --lh-titulo:1.16;
+  --lh-corpo:1.65;
+
+  /* Do manual: cor de apoio e degradê da marca. */
+  --apoio:#1A79AD;
+  --degrade-marca:linear-gradient(135deg,#2A5E27 0%,#FCC642 100%);
+}
+
+body{font-family:var(--ff-body);font-size:var(--fs-body);
+  line-height:var(--lh-corpo);color:var(--ink)}
+
+/* --- Títulos: Arapey itálico ("título corrido") --------------- */
+.h-section,.h-block,.about__title,.mosaic__title,.regioncard__title,
+.igstrip__title,.suites__intro h2,.city__title,.room__name,
+.news h2,.review__title,.suite__name,.split__title,.faq h2,
+.offer__title,.post__title,.gallery h2{
+  font-family:var(--ff-head);font-style:italic;font-weight:400;
+  text-transform:none;letter-spacing:0;line-height:var(--lh-titulo);
+}
+.h-section,.suites__intro h2,.mosaic__title,.news h2,.faq h2{font-size:var(--fs-h2);color:var(--red)}
+/* Sobre foto escura o título é branco, nunca verde. */
+.news h2,.pagehero__title,.reviews .h-section{color:#fff}
+.h-block,.regioncard__title,.split__title{font-size:38px;color:var(--red)}
+.h-section strong,.h-block strong{font-weight:400;color:inherit}
+.igstrip__title{font-size:33px;color:var(--red)}
+.suite__name,.room__name,.offer__title,.post__title{font-size:var(--fs-h3)}
+.review__title{font-size:var(--fs-h4)}
+
+/* --- Banner de página: Arapey regular ("título destaque") ----- */
+.pagehero__title{font-family:var(--ff-head);font-style:normal;font-weight:400;
+  text-transform:none;letter-spacing:.02em;font-size:var(--fs-hero);
+  line-height:var(--lh-titulo);color:#fff;text-shadow:0 2px 22px rgba(20,12,6,.55)}
+.pagehero__title--artigo{font-size:38px}
+.pagehero__tag{font-family:var(--ff-body);font-size:var(--fs-eyebrow);
+  letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--pink);
+  text-shadow:0 2px 14px rgba(20,12,6,.6)}
+
+/* --- Sobretítulo: um padrão só, em toda seção ----------------- */
+.eyebrow,p.eyebrow{font-family:var(--ff-body);font-size:var(--fs-eyebrow);font-weight:400;
+  letter-spacing:var(--ls-eyebrow);text-transform:uppercase;
+  color:var(--gray-soft);line-height:1.4;margin:0 0 12px}
+.reviews .eyebrow,.pagehero .eyebrow{color:var(--pink)}
+.rail__hint,.setas .rot{font-family:var(--ff-body);font-size:var(--fs-eyebrow);
+  letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--gray-soft)}
+
+/* --- Subtítulo / apoio sob o título --------------------------- */
+/* Subtítulo: a linha curta de apoio logo abaixo do título. */
+.suites__intro p:not(.eyebrow),.reviews__lead,.news__sub,.lede{
+  font-size:var(--fs-lead);line-height:var(--lh-corpo)}
+/* Corpo: parágrafo descritivo, o texto que se lê de fato. */
+.mosaic__body p:not(.eyebrow),.regioncard__card p:not(.eyebrow),
+.split__text,.about__body p:not(.eyebrow),.faq__a{
+  font-size:var(--fs-body);line-height:var(--lh-corpo)}
+.suites__intro p:not(.eyebrow),.mosaic__body p:not(.eyebrow),
+.regioncard__card p:not(.eyebrow){color:var(--ink)}
+
+/* --- Botões: um padrão só -------------------------------------
+   Mesma família, mesmo tamanho, mesma altura e mesmo raio em todo
+   o site. O que muda entre variantes é só a cor. */
+.btn{
+  font-family:var(--ff-body);font-size:var(--fs-small);font-weight:400;
+  letter-spacing:.02em;text-transform:none;line-height:1;
+  height:52px;padding:0 32px;border-radius:var(--button-radius);
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+}
+.btn--red{background:var(--red);color:#fff;border:1px solid transparent}
+.btn--red:hover{background:var(--red-dark)}
+.btn--ghost{background:transparent;color:var(--ink);border:1px solid var(--gray-line)}
+.btn--ghost:hover{border-color:var(--ink)}
+.btn--ambar{background:var(--pink);color:#3b2d05;border:1px solid transparent}
+.btn--ambar:hover{background:#e9b52f;color:#3b2d05}
+/* No topo os dois botões são menores e em caixa alta, como no layout. */
+.topbar__cta .btn{height:48px;padding:0 24px;font-size:13px;
+  text-transform:uppercase;letter-spacing:.06em}
+.link-arrow{font-family:var(--ff-body);font-size:var(--fs-small);
+  text-transform:none;letter-spacing:.02em}
+
+/* O aviso de cookie usa a versão compacta do mesmo botão, nunca um
+   tamanho próprio. */
+.cookie .btn{height:42px;padding:0 20px;font-size:var(--fs-mini)}
+
+/* --- Rótulos miúdos: chips, notas, legendas ------------------- */
+.suite__chip,.chip,.perk__label{font-family:var(--ff-body);letter-spacing:.09em}
+.suite__chip,.chip{font-size:11.5px;text-transform:uppercase}
+.perk__label{font-size:var(--fs-mini);letter-spacing:.02em;text-transform:none}
+
+.faq .h-section{margin-bottom:46px}
+.igstrip__title{white-space:nowrap;margin:0;line-height:1.2}
+.mosaic__body p{max-width:56ch}
+.mosaic__title{margin:10px 0 16px}
+.news__sub{margin-bottom:34px;color:rgba(255,255,255,.8)}
+.rail__hint{margin-right:6px}
+.regioncard__card p{margin:0 0 26px}
+.regioncard__title{margin:10px 0 16px}
+.review__title{color:#fff}
+.reviews .h-section,.reviews .h-section strong{color:#fff;max-width:13ch}
+.reviews__lead{color:rgba(255,255,255,.85);margin:0 0 32px;max-width:46ch}
+.suite__name{color:#fff}
+.suites__intro h2{margin:10px 0 14px}
+/* 565px cai entre a largura do texto ate "opcoes" (547px) e a que ja
+   inclui "que" (584px) — e o ponto de quebra que o cliente marcou. */
+.suites__intro p:not(.eyebrow){max-width:565px;margin:0 0 18px}
+
+/* ---------------- CABEÇALHO --------------------------------- */
+.topbar{background:transparent;backdrop-filter:none;border-bottom:0}
+.topbar__inner{max-width:var(--shell);height:120px;gap:26px}
+.topbar__cta{gap:14px}
+.nav a{white-space:nowrap}
+.brand__logo{height:74px}
+.nav a{font-family:var(--ff-body);font-size:14px;font-weight:400;letter-spacing:.09em;
+  color:rgba(255,255,255,.93)}
+.nav a.is-active{font-weight:700;color:#fff;border-bottom:0;padding-bottom:0}
+.topbar__cta .btn--red{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.85)}
+.topbar__cta .btn--red:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.topbar__cta .btn--dark{background:var(--red);border:0;color:#fff}
+.topbar__cta .btn--dark:hover{background:var(--red-dark)}
+
+/* ---------------- BARRA DE RESERVA FIXA ---------------------- */
+.booking{border-radius:14px;box-shadow:0 18px 44px rgba(23,33,26,.14)}
+.booking__field label{font-family:var(--ff-body);font-size:10.5px;letter-spacing:.16em}
+.booking__field .value{font-family:var(--ff-body);font-size:15px}
+/* O botão acompanha o arredondamento da barra, só do lado direito —
+   sem isso o canto quadrado do verde vaza para fora da curva branca. */
+/* A barra é um grid de altura própria; o botão preenche a coluna inteira.
+   A altura fixa do sistema de botões o deixava flutuando com faixas brancas
+   em cima e embaixo. */
+.booking .booking__btn{border-radius:0 14px 14px 0;height:auto;align-self:stretch}
+
+.booking--fixa{
+  /* `bottom:auto` é obrigatório: a barra nasce `position:absolute` com
+     `bottom:52px`, e fixa com top E bottom definidos ela estica da primeira
+     à última linha da tela em vez de manter a própria altura. */
+  position:fixed;top:0;bottom:auto;left:50%;transform:translateX(-50%);
+  z-index:60;width:min(1020px,calc(100% - 32px));margin:0;
+  border-radius:0 0 14px 14px;box-shadow:0 10px 30px rgba(23,33,26,.24);
+  animation:descer .28s ease both;
+}
+.booking--fixa .booking__btn{border-radius:0 0 14px 0}
+@keyframes descer{from{transform:translate(-50%,-100%)}to{transform:translate(-50%,0)}}
+
+/* ---------------- SOBRE COM MOSAICO DE 4 FOTOS ---------------
+   Colunas de mesma largura e mesma altura; só a da direita desce,
+   de uma vez. Antes cada foto tinha altura própria e as quatro
+   ficavam desencontradas. */
+.mosaic{padding:130px 0 140px}
+.mosaic__grid{display:grid;grid-template-columns:640px 1fr;gap:88px;align-items:center}
+.mosaic__grid--rev{grid-template-columns:1fr 640px}
+.mosaic__grid--rev .mosaic__tiles{order:2}
+/* Mosaico igual ao layout. Medido no PNG de referência:
+     vão entre as fotos ........ 16px (vertical) e 17px (entre colunas)
+     coluna 1 .................. foto de 288px, depois uma de 320px
+     coluna 2 .................. desce 48px; foto de 320px, depois uma de 288px
+   As duas colunas fecham com a mesma altura (624px). São duas colunas
+   INDEPENDENTES, não uma grade 2x2 — numa grade a altura da linha é a da foto
+   mais alta, e sobrava um vão grande embaixo da menor. As alturas vão em
+   `aspect-ratio` para a proporção se manter em qualquer largura. */
+.mosaic__tiles{display:grid;grid-template-columns:1fr 1fr;column-gap:17px;align-items:start}
+.mosaic__col{display:flex;flex-direction:column;gap:16px;min-width:0}
+.mosaic__col--baixa{margin-top:48px}
+.mosaic__tile{width:100%;height:100%;object-fit:cover;
+  transition:transform .6s ease}
+/* A moldura fixa a caixa e recorta; só a foto amplia por dentro no hover. */
+.mosaic__moldura{display:block;width:100%;overflow:hidden;border-radius:16px;
+  background-color:#dedede}
+.mosaic__col .mosaic__moldura--a{aspect-ratio:296/288}
+.mosaic__col .mosaic__moldura--b{aspect-ratio:296/320}
+.mosaic__col--baixa .mosaic__moldura--a{aspect-ratio:296/320}
+.mosaic__col--baixa .mosaic__moldura--b{aspect-ratio:296/288}
+.mosaic__moldura .mosaic__tile{width:100%;height:100%;border-radius:0}
+.mosaic__moldura:hover .mosaic__tile{transform:scale(1.06)}
+
+.mosaic__body .btn{margin-top:10px}
+
+/* ---------------- DIFERENCIAIS: faixa sangrada de 4 ---------- */
+.features{padding:0}
+.features__cards{width:100vw;margin-left:calc(50% - 50vw);margin-bottom:0;
+  grid-template-columns:repeat(4,1fr);gap:0}
+.fcard{aspect-ratio:auto;height:400px}
+.fcard .img{transition:transform .7s ease}
+.fcard:hover .img{transform:scale(1.06)}
+.fcard__veil{background:linear-gradient(180deg,rgba(20,10,4,.04) 0%,rgba(20,10,4,.30) 100%)}
+/* Rótulo centralizado no bloco, na horizontal e na vertical. */
+.fcard__label{position:absolute;inset:0;left:0;right:0;bottom:0;
+  display:flex;align-items:center;justify-content:center;
+  padding:0 26px;text-align:center;
+  font-family:var(--ff-head);font-style:italic;text-transform:none;
+  letter-spacing:0;font-weight:400;font-size:25px;line-height:1.28;
+  text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.features__perks{padding:86px 0 0}
+
+/* ---------------- CARROSSEL DE ACOMODAÇÕES ------------------- */
+/* O bloco de texto desce (mais respiro acima), os controles sobem para a
+   mesma linha do "Ver todas", e sobra um vão claro entre essa linha e os
+   cards. Antes os controles quase encostavam nas fotos. */
+.suites{background:var(--gray-bg);padding:124px 0 110px}
+.suites__grid{grid-template-columns:1fr;gap:0}
+.suites__intro{padding-top:0;max-width:none;padding-right:280px}
+
+.suites__rail{overflow:visible;padding-top:52px}
+.rail__nav{display:flex;align-items:center;justify-content:flex-end;gap:12px;
+  position:absolute;top:-64px;right:0;z-index:6}
+
+.rail__nav button{position:static;transform:none;width:46px;height:46px;border-radius:50%;
+  background:transparent;border:1px solid var(--gray-line);color:var(--red);
+  box-shadow:none;font-size:20px;transition:background .2s,color .2s,border-color .2s}
+.rail__nav button:last-child{background:var(--red);border-color:var(--red);color:#fff}
+.rail__nav button:hover{transform:none;background:var(--red);border-color:var(--red);color:#fff}
+.suites__track{grid-auto-columns:calc(100%/3 - 18px);gap:26px}
+.suite{background:var(--ink-3);position:relative;
+  border:0;border-radius:var(--card-radius);overflow:hidden;
+  transition:transform .4s ease,box-shadow .4s ease}
+/* Degradê na base da foto: ela funde na cor do painel em vez de terminar
+   numa linha reta, como no layout. */
+.suite::before{content:"";position:absolute;left:0;right:0;top:0;height:232px;
+  z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(46,11,0,0) 42%,rgba(46,11,0,.72) 78%,var(--ink-3) 100%)}
+.suite__body{position:relative;z-index:2}
+.suite:hover{box-shadow:0 22px 46px rgba(20,12,6,.26)}
+.suite__media{aspect-ratio:auto;height:230px;border-bottom:0;transition:transform .6s ease}
+.suite:hover .suite__media{transform:scale(1.05)}
+.suite__body{padding:24px 24px 22px}
+.suite__top{margin-bottom:10px}
+
+.suite__text{color:rgba(255,255,255,.78);font-size:14.5px;line-height:1.6;margin:0 0 16px}
+.suite__chips{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 16px}
+.suite__chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.13);
+  color:#fff;border-radius:5px;padding:7px 12px;font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;font-family:var(--ff-body)}
+.suite__chip svg{width:13px;height:13px;fill:#fff}
+.suite .link-arrow--sm{display:flex;align-items:center;justify-content:center;gap:9px;
+  width:100%;height:46px;background:var(--red);color:#fff;border-radius:var(--button-radius);
+  border:0;font-family:var(--ff-body);font-size:14.5px;letter-spacing:.02em;text-transform:none;
+  transition:background .2s}
+.suite .link-arrow--sm:hover{background:var(--red-dark)}
+
+/* ---------------- REGIÃO: card flutuante sobre foto ---------- */
+.regioncard{position:relative;height:641px;overflow:hidden;display:flex;align-items:center}
+.regioncard__media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.regioncard::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(20,12,6,.34) 0%,rgba(20,12,6,.06) 55%)}
+.regioncard__shell{position:relative;z-index:2;display:flex}
+.regioncard__shell--right{justify-content:flex-end}
+.regioncard__shell--left{justify-content:flex-start}
+.regioncard__card{background:#fff;border-radius:16px;padding:46px 48px;width:576px;max-width:100%;
+  box-shadow:0 22px 54px rgba(20,12,6,.24)}
+
+
+/* ---------------- FAIXA DO INSTAGRAM (carrossel) -------------
+   Medido na referência: container de 1600px, 4 fotos por vez de
+   400px e 485px de altura. Com mais de 4, vira slide. */
+.igstrip{padding:150px 0 96px;overflow:hidden}
+.igstrip .shell{max-width:1600px}
+.igstrip__head{display:flex;align-items:center;gap:34px;margin-bottom:56px}
+.igstrip__rule{flex:1;height:1px;background:var(--red);opacity:.55}
+
+.igstrip__viewport{overflow:hidden}
+.igstrip__track{display:flex;gap:5px;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+/* A moldura é a caixa; a foto amplia por dentro, sem empurrar as vizinhas. */
+.igstrip__moldura{flex:0 0 calc((100% - 15px)/4);width:calc((100% - 15px)/4);
+  height:485px;overflow:hidden;background-color:#dedede;display:block}
+.igstrip__photo{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.igstrip__moldura:hover .igstrip__photo{transform:scale(1.06)}
+.igstrip__nav{display:flex;justify-content:center;gap:10px;margin-top:26px}
+.igstrip__nav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--gray-line);
+  background:transparent;color:var(--red);font-size:19px;cursor:pointer;
+  transition:background .2s,color .2s,border-color .2s}
+.igstrip__nav button:hover{background:var(--red);border-color:var(--red);color:#fff}
+.igstrip__handle{display:flex;align-items:center;justify-content:center;gap:11px;margin-top:34px;
+  font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink)}
+.igstrip__handle svg{width:20px;height:20px;fill:currentColor}
+
+/* ---------------- DEPOIMENTOS: verde, duas colunas ----------- */
+.reviews{background:var(--red);padding:118px 0}
+.reviews .shell{display:grid;grid-template-columns:1fr 1.16fr;gap:96px;align-items:start}
+.reviews .section-head{text-align:left;margin:0;position:sticky;top:130px}
+
+.reviews .eyebrow{color:var(--pink)}
+
+.reviews__cta{border:1px solid rgba(255,255,255,.85);color:#fff;background:transparent}
+.reviews__cta:hover{background:rgba(255,255,255,.14);color:#fff}
+.reviews__grid{grid-template-columns:1fr;gap:24px;margin:0}
+.review{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;padding:28px 32px;transition:background .3s,transform .3s}
+.review:hover{background:rgba(255,255,255,.11);transform:translateX(6px)}
+.review:nth-child(2){margin-left:38px}
+.review .stars{margin-bottom:12px}
+.reviews .stars svg{fill:var(--pink)}
+
+.review__text{color:rgba(255,255,255,.94);font-family:var(--ff-head);font-style:italic;
+  font-size:17px;line-height:1.62}
+.review__author{color:var(--pink)}
+.reviews .dots{display:none}
+
+/* ---------------- DÚVIDAS FREQUENTES ------------------------- */
+.faq{background:#fdfbf7;padding:104px 0 118px}
+.faq .section-head,.faq .h-section{text-align:center}
+
+.faq__list{max-width:860px;margin-left:auto;margin-right:auto}
+.faq__item{border-radius:10px;box-shadow:0 2px 14px rgba(30,41,59,.06);margin-bottom:14px}
+.faq__q{font-family:var(--ff-body);font-size:16.5px;font-style:normal;letter-spacing:.01em;
+  text-transform:none;color:var(--ink);padding:24px 30px;line-height:1.5}
+.faq__a{font-size:15.5px;line-height:1.78;color:var(--gray-text);padding:0 30px 26px}
+
+/* ---------------- NEWSLETTER --------------------------------- */
+.news__inner{padding:150px 0 158px}
+
+.news__scrim{background:rgba(24,16,8,.56)}
+.news__form{gap:14px;max-width:640px}
+.news__row{grid-template-columns:1fr;gap:14px}
+.news__form input[type=text],.news__form input[type=email],.news__form input[type=tel]{
+  background:#fff;border:0;color:var(--ink);height:54px;border-radius:var(--button-radius)}
+.news__form input::placeholder{color:#94a3b8}
+.news__check{color:rgba(255,255,255,.9);font-size:13px}
+.news .btn--block{width:100%}
+
+/* ---------------- RODAPÉ: 4 colunas numa linha --------------- */
+.footer{padding:78px 0 0;font-size:15px}
+.footer .shell{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.35fr;
+  gap:60px;align-items:start}
+.footer__top,.footer__cols{display:contents}
+.footer__cols>*{order:2}
+.footer__contact{order:3}
+.footer__brand p{font-size:15px;line-height:1.7;margin:18px 0 22px;color:rgba(255,255,255,.8)}
+.footer .brand__logo{height:84px}
+.footer__h{font-family:var(--ff-body);font-size:12.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--pink);margin-bottom:22px}
+.footer__cols ul,.footer__contact ul{display:flex;flex-direction:column;gap:14px}
+.footer__cols a,.footer__contact a,.footer__contact span{font-size:15px;line-height:1.6}
+.footer__cap{display:block;font-weight:400;color:rgba(255,255,255,.62);font-size:13px;margin-bottom:2px}
+/* Ícones da coluna de contato e das redes: amarelo do manual. */
+/* Ícones maiores e brancos, centrados na primeira linha do texto. */
+.footer__contact li{align-items:flex-start;gap:14px}
+.footer__contact ul svg{width:19px;height:19px;fill:#fff;margin-top:3px}
+.footer__social{display:flex;gap:16px;margin-top:30px;padding-left:2px}
+/* Sem moldura: só o ícone, branco e do mesmo tamanho dos de contato. */
+.footer__social a{width:auto;height:auto;border:0;border-radius:0;background:none;
+  opacity:.92;transition:opacity .2s}
+.footer__social a:hover{background:none;border:0;opacity:1}
+.footer__social svg{width:21px;height:21px;fill:#fff}
+.footer__bar{margin-top:56px;padding:24px 0;border-top:1px solid rgba(255,255,255,.16);
+  text-align:center;font-size:13px;color:rgba(255,255,255,.66)}
+
+
+/* A nota do horário usava a serifada; vai para a sans do menu. */
+.note{font-family:var(--ff-body);font-style:normal;letter-spacing:.02em;
+  text-transform:none;font-size:var(--fs-small)}
+
+/* ---------------- CABEÇALHO SÓLIDO --------------------------
+   Numa página que não abre com banner, o menu branco caía sobre
+   fundo branco e sumia. Aqui ele ganha o verde da marca. */
+.topbar--solido{background:var(--red);position:relative}
+.topbar--solido .topbar__inner{height:96px}
+.topbar--solido .brand__logo{height:62px}
+.topbar--solido .topbar__cta .btn--red{border-color:rgba(255,255,255,.8)}
+.topbar--solido .topbar__cta .btn--dark{background:#fff;color:var(--red)}
+.topbar--solido .topbar__cta .btn--dark:hover{background:rgba(255,255,255,.88)}
+.topbar--solido + main .sec:first-child{padding-top:64px}
+
+/* ---------------- PONTOS DE INTERESSE -----------------------
+   Estavam na serifada em caixa alta espacejada, a 12px: difícil
+   de ler e fora do sistema. Vão para a sans, em caixa de sentença. */
+.poi b{font-family:var(--ff-body);font-size:var(--fs-small);font-weight:400;
+  letter-spacing:.01em;text-transform:none;color:var(--ink)}
+.poi span{font-family:var(--ff-body);font-size:14px;font-weight:400;
+  letter-spacing:.01em;color:var(--red)}
+.poi li{padding:15px 0}
+
+/* ---------------- CARDS DE CONTATO --------------------------
+   Rótulo pequeno em caixa alta (mesmo padrão dos sobretítulos) e
+   o dado em corpo legível — antes os dois brigavam pelo mesmo peso. */
+.info3 .icard{border-radius:10px;padding:34px 24px;gap:14px}
+.info3 .icard svg{width:26px;height:26px}
+.info3 .icard h3{font-family:var(--ff-body);font-size:var(--fs-eyebrow);
+  font-weight:400;letter-spacing:var(--ls-eyebrow);color:var(--gray-soft)}
+.info3 .icard p{font-family:var(--ff-body);font-size:var(--fs-body);
+  font-weight:400;line-height:1.55;color:var(--ink)}
+
+/* ---------------- LISTA DE COMODIDADES -----------------------
+   O item mais longo pedia 269px e a coluna dava 266 — um item
+   quebrava em duas linhas. Vão menor entre as colunas e corpo um
+   ponto menor resolvem com folga. */
+.amen{gap:0 26px}
+.amen li{font-size:14px}
+
+/* ---------------- LISTA DE COMODIDADES -----------------------
+   Quem tem ícone próprio mostra o ícone; o losango genérico fica
+   só para quem ainda não tem. */
+.amen__com-icone::before{display:none}
+.amen li svg{width:19px;height:19px;fill:var(--red);flex-shrink:0}
+.amen li{align-items:center;gap:12px}
+
+/* ---------------- CARROSSEL DA COLUNA DE MÍDIA ---------------
+   Substitui a foto única ao lado do texto mais a fileira de fotos
+   soltas embaixo. Todas passam por aqui, uma por vez.
+
+   A altura é maior que a da coluna de texto: `align-items:stretch`
+   na grade faz a linha ter a altura do mais alto, e o `min-height`
+   garante que o mais alto seja o carrossel. */
+/* Altura fixa e maior que a da coluna de texto — com `stretch` as duas
+   ficariam iguais, e o pedido era que o carrossel fosse mais alto. */
+.split{align-items:center}
+.split__media{min-width:0}
+.carrossel{position:relative;overflow:hidden;height:520px;
+  border-radius:var(--card-radius);background:#dedede}
+.carrossel__pista{display:flex;height:100%;
+  transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.carrossel__slide{flex:0 0 100%;width:100%;height:100%}
+.carrossel__slide .img{width:100%;height:100%;object-fit:cover;border:0}
+.carrossel__seta{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
+  background:rgba(255,255,255,.88);color:var(--ink);font-size:22px;line-height:1;
+  display:grid;place-items:center;transition:background .2s,color .2s;
+}
+.carrossel__seta:hover{background:var(--red);color:#fff}
+.carrossel__seta--ant{left:16px}
+.carrossel__seta--prox{right:16px}
+.carrossel__pontos{position:absolute;left:0;right:0;bottom:16px;z-index:3;
+  display:flex;justify-content:center;gap:8px}
+.carrossel__pontos button{width:8px;height:8px;padding:0;border:0;border-radius:50%;
+  background:rgba(255,255,255,.55);cursor:pointer;transition:width .25s,background .25s}
+.carrossel__pontos button.is-active{width:22px;border-radius:4px;background:#fff}
+
+/* ---------------- VANTAGENS: 4 colunas, 2 linhas -------------- */
+.features__perks{grid-template-columns:repeat(4,1fr);gap:18px;padding:44px 0 0}
+.perk{padding:26px 18px 24px;border-radius:10px;border-color:var(--gray-line)}
+.perk__icon{width:26px;height:26px}
+/* Sem a faixa de fotos (cardsLimit 0) a grade fica vazia e só somava vão. */
+.features__cards:empty{display:none}
+.features .section-head{margin-bottom:0}
+
+/* ---------------- PAINEL "CENTRAL DE RESERVAS" ---------------
+   O painel nascia no cinza-azulado do template (--ink), que não
+   existe na identidade, e os rótulos vinham na Arapey em caixa
+   alta miúda — a serifada não tem peso forte, então a 9,5px ela
+   fica frágil e borrada. Painel no verde da marca (o mesmo do
+   rodapé logo abaixo) e toda a tipografia na Questrial. */
+.central{background:var(--red);color:#fff;padding:44px 38px;
+  border-radius:var(--card-radius)}
+.central h2{font-family:var(--ff-body);font-style:normal;font-weight:400;
+  font-size:13px;letter-spacing:var(--ls-eyebrow);text-transform:uppercase;
+  color:var(--pink);margin:0 0 28px}
+.central ul{gap:22px;margin-bottom:30px}
+.central li{gap:14px}
+.central svg{width:19px;height:19px;fill:var(--pink);margin-top:2px}
+.central small{font-family:var(--ff-body);font-size:11.5px;font-weight:400;
+  letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62);
+  margin-bottom:4px}
+.central span,.central span a{font-family:var(--ff-body);font-size:var(--fs-small);
+  font-weight:400;line-height:1.5;color:#fff}
+.central span a:hover{color:var(--pink)}
+/* Sobre o verde da marca, o verde do WhatsApp precisa de contorno para
+   não parecer um bloco chapado dentro do outro. */
+.central .btn--wa{border:1px solid rgba(255,255,255,.28)}
+
+/* ---------------- RÓTULOS DE FORMULÁRIO ---------------------
+   Eram Arapey 10px em caixa alta com .2em de espacejamento: no
+   tamanho de um rótulo a serifada não se lê. Questrial, corpo
+   maior e caixa de sentença. */
+.field label{font-family:var(--ff-body);font-style:normal;font-weight:400;
+  font-size:13.5px;letter-spacing:.02em;text-transform:none;color:var(--gray-text)}
+.field input,.field textarea{font-size:var(--fs-small);padding:14px 15px;
+  border-radius:var(--button-radius)}
+.cform{gap:20px}
+
+/* ---------------- MENU EM GAVETA -----------------------------
+   Fundo preto genérico do template → verde da marca, e os itens
+   na mesma fonte do menu do topo. */
+.mobilenav{background:var(--red);padding:96px 30px 44px}
+.mobilenav a{font-family:var(--ff-body);font-style:normal;font-weight:400;
+  font-size:14px;letter-spacing:.1em;text-transform:uppercase;
+  color:#fff;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.mobilenav a:last-child{border-bottom:0}
+
+/* Sem o título da seção, a faixa branca entre o banner e o conteúdo
+   ficava grande demais: o vão do topo da seção existia para separar do
+   título que já não está lá. */
+.shell > .filters:first-child,.shell > .posts:first-child{margin-top:-38px}
+
+/* ---------------- FILTROS DA GALERIA ------------------------- */
+.filters{gap:12px;margin-bottom:48px}
+.filters button{font-family:var(--ff-body);font-style:normal;font-weight:400;
+  font-size:var(--fs-small);letter-spacing:.02em;text-transform:none;
+  padding:13px 26px;border-radius:var(--button-radius);color:var(--gray-text)}
+
+/* ---------------- CARDS DE ACOMODAÇÃO: BOTÃO NO PÉ -----------
+   Os cards já tinham a mesma altura, mas o conteúdo era medido do
+   topo para baixo: o Quádruplo, com uma linha de texto a menos,
+   deixava o botão 23px acima do dos vizinhos. Com a coluna em
+   flex, o botão cola no pé do card e todos ficam na mesma linha,
+   qualquer que seja o tamanho do texto. */
+.suite{display:flex;flex-direction:column}
+.suite__media{flex:0 0 auto}
+.suite__body{flex:1;display:flex;flex-direction:column}
+.suite .link-arrow--sm{margin-top:auto}
+
+/* ---------------- SEÇÃO NO VERDE DA MARCA --------------------
+   Fundo escuro: todo o texto da seção inverte para branco de uma
+   vez. O título era verde sobre cinza — no verde ele sumiria. */
+.sec--verde{background:var(--red)}
+.sec--verde .h-block,.sec--verde .h-block strong,.sec--verde .h-section{color:#fff}
+.sec--verde .eyebrow{color:var(--pink)}
+.sec--verde .body-text,.sec--verde .split__text{color:rgba(255,255,255,.86)}
+.sec--verde .amen li{color:rgba(255,255,255,.92);border-bottom-color:rgba(255,255,255,.2)}
+.sec--verde .amen li svg{fill:var(--pink)}
+.sec--verde .amen li::before{background:var(--pink)}
+.sec--verde .note{color:rgba(255,255,255,.68)}
+/* O verde do botão sobre o verde do fundo não se lê: inverte. */
+.sec--verde .btn--red{background:#fff;color:var(--red)}
+.sec--verde .btn--red:hover{background:rgba(255,255,255,.88)}
+.sec--verde .btn--ghost{color:#fff;border-color:rgba(255,255,255,.6)}
+.sec--verde .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.12)}
+
+/* ---------------- FOTOS DA GALERIA --------------------------- */
+.gallery .g{border-radius:10px}
+
+/* ---------------- CARDS DE ACOMODAÇÃO: BOTÃO ------------------
+   O botão herdava de `.link-arrow`, que é um link sublinhado: vinha
+   com `border-bottom` e `padding-bottom:6px`. Dentro de uma caixa de
+   altura fixa esse padding empurrava o texto 6px para cima — era isso
+   que tirava o texto do centro. Zerados, e a fonte passa a ser a mesma
+   dos demais botões do site. */
+.suite .link-arrow--sm{
+  border:0;padding:0;height:52px;line-height:1;
+  font-family:var(--ff-body);font-size:var(--fs-small);font-weight:400;
+  letter-spacing:.02em;text-transform:none;
+}
+
+/* ---------------- HOVER SEM MEXER NA CAIXA -------------------
+   O zoom na foto do card mudava o enquadramento a cada passagem do
+   mouse. Trocado por um clareamento: a caixa e o corte ficam parados,
+   só a luz da foto muda. */
+.suite__media{transition:filter .35s ease}
+.suite:hover .suite__media{transform:none;filter:brightness(1.08)}
+
+/* ---------------- FAIXA DE DIFERENCIAIS ----------------------
+   Véu mais firme e parelho: as fotos claras (piscina, café) deixavam
+   o rótulo branco quase ilegível no topo. */
+.fcard__veil{background:linear-gradient(180deg,rgba(20,10,4,.40) 0%,rgba(20,10,4,.48) 55%,rgba(20,10,4,.60) 100%)}
+
+/* ---------------- ABERTURA DA LISTA DE QUARTOS ---------------
+   Título à esquerda, texto à direita, e o conjunto encostado nos
+   cards. Empilhado e centralizado, com o botão embaixo, a abertura
+   comia uma tela inteira antes do primeiro quarto. */
+.sec--tight{padding:64px 0 20px}
+.sec--sem-topo{padding-top:0}
+.roomintro{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:64px;align-items:center;text-align:left}
+.roomintro .h-block{margin:0}
+.roomintro .body-text{margin:0;max-width:52ch;color:var(--gray-text)}
+.roomintro .btn{margin-top:22px}
+
+/* ---------------- CENTRAL DE RESERVAS: TÍTULO E ÍCONES -------
+   Em branco, não no amarelo de apoio. */
+.central h2{color:#fff}
+.central svg{fill:#fff}
+
+/* ---------------- CARDS DE QUARTO: LISTA DE ITENS ------------
+   Respiro entre o nome do quarto e a lista, e itens um ponto
+   maiores — a 12,5px com ícone de 16px a lista lia como nota de
+   rodapé ao lado de um título de 28px. */
+.room__name{margin:0 0 26px}
+.room__amen{gap:18px 24px;margin-bottom:32px}
+.room__amen li{font-size:var(--fs-small);gap:12px;line-height:1.45}
+.room__amen svg{width:20px;height:20px}
+
+/* ---------------- CANTOS DOS CARDS COM FOTO ------------------
+   O raio vem do Design System em `.room,.post,.ocard`, mas sem
+   `overflow:hidden` a foto dentro do card continua de canto reto e
+   vaza por cima da curva. É a caixa que precisa recortar. */
+.room,.post,.ocard{overflow:hidden}
+
+/* ---------------- CARDS DE CONTATO: FAIXA VERDE --------------
+   Fundo da seção no verde da marca; os cards seguem brancos. */
+.sec--verde .icard{background:#fff}
+
+/* ---------------- ANIMAÇÕES DE ENTRADA -----------------------
+   O componente Reveal põe is-visible quando a seção entra na tela.
+   Sem JS, nada some: a regra só vale depois que a classe entra. */
+.reveal{opacity:0;transform:translateY(26px);
+  transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+.reveal.is-visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .mosaic__tile,.fcard .img,.suite,.suite__media,.igstrip__photo,.review,.booking--fixa{
+    transition:none;animation:none}
+}
+
+/* ---------------- MOBILE: TOPO FIXO E BARRA DE AÇÕES ---------
+   Três coisas mudam no celular:
+
+   1. A barra de reserva não gruda. Empilhada ela tem ~470px e,
+      fixa no topo, cobria a tela toda — quem decide isso é o
+      componente (matchMedia), porque a âncora precisa parar de
+      reservar espaço junto.
+   2. O menu acompanha a rolagem. Como ele sai do fluxo, o `body`
+      ganha um respiro do mesmo tamanho; e como não há mais banner
+      atrás dele o tempo todo, o fundo é sempre o verde da marca.
+   3. A barra de ações do rodapé tinha 4 colunas para 3 itens: a
+      quarta ficava vazia e empurrava tudo para a esquerda. Entrou
+      "Promoções", e a tipografia passou para a sans do site. */
+@media (max-width:900px){
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:90;background:var(--red)}
+  .topbar__inner{height:64px;gap:10px;padding:0 14px}
+  /* O botão do topo usa a versão compacta: em 390px a versão de 13px em caixa
+     alta ocupava metade da largura da barra. */
+  .topbar__cta .btn{height:38px;padding:0 13px;font-size:10.5px;letter-spacing:.04em}
+  .brand__logo,.topbar--solido .brand__logo{height:44px}
+  .topbar--solido .topbar__inner{height:64px}
+  body{padding-top:64px}
+  /* O menu em gaveta cobre o topo fixo, então começa abaixo dele. */
+  .mobilenav{padding-top:82px}
+
+  /* A barra de reserva não aparece no celular. Empilhada ela tem ~470px e
+     tomava a tela inteira; a reserva fica com o botão "Reservar" da barra de
+     ações, no rodapé. A âncora sai junto, senão o espaço dela continua
+     reservado. */
+  .booking,.booking__ancora{display:none}
+  /* A cor de espera do banner fica na foto, não na seção: sem a barra a seção
+     tem a altura da foto, mas assim nenhuma faixa aparece se algo mudar. */
+  .hero,.pagehero{background:#fff}
+  .hero__media,.pagehero__media{background:var(--ink-3)}
+
+  /* --- Acomodações: a seção era desenhada para duas colunas ---------
+     O `padding-right:280px` da abertura (o vão onde ficam os controles no
+     desktop) sobrava no celular e espremia o texto em 177px. E o
+     `grid-auto-columns` de 1/3 mostrava três cards de 134px lado a lado.
+     Como essas regras moram na folha do cliente, que vem DEPOIS das quebras
+     do template, elas venciam as responsivas — por isso o ajuste tem de
+     estar aqui e não lá em cima. */
+  .suites{padding:64px 0 60px}
+  .suites__intro{padding-right:0}
+  .suites__rail{padding-top:0}
+  .rail__nav{position:static;justify-content:flex-start;margin:0 0 20px}
+  .suites__track{grid-auto-columns:calc(100% - 44px);gap:16px}
+
+  /* --- Instagram ----------------------------------------------------
+     As quebras do template ainda miravam `.igstrip__photo`, o nome antigo
+     de quando a foto era o próprio bloco. Hoje quem tem tamanho é a
+     moldura, e sem regra ela ficava com 97px de largura por 485 de altura. */
+  .igstrip{padding:56px 0 48px}
+  .igstrip__moldura{flex:0 0 100%;width:100%;height:300px}
+  .igstrip__title{font-size:26px;white-space:normal}
+  /* O fio decorativo comia metade da linha e empurrava o título contra a
+     borda direita. No celular fica só o título, alinhado com o resto. */
+  .igstrip__rule{display:none}
+  .igstrip__head{gap:0}
+
+  /* --- Blocos com imagem à esquerda ---------------------------------
+     Empilhado, o texto vem primeiro: a foto sozinha no topo não diz do que
+     a seção trata. Vale para todos os blocos invertidos. */
+  .split--rev .split__media{order:2}
+
+  /* --- Central de reservas ------------------------------------------
+     O e-mail é uma palavra de 40 caracteres sem espaço. Como item de grade
+     nasce com `min-width:auto`, ele impedia a coluna de encolher e o painel
+     furava o respiro lateral, encostando na borda direita. */
+  .contact__grid > *{min-width:0}
+  /* Mesma história no rodapé: com `display:contents`, o e-mail é item de
+     grade e a coluna não encolhia abaixo dele — em 360px o rodapé inteiro
+     ficava 16px mais largo que a tela e o site ganhava rolagem lateral. */
+  .footer__top > *,.footer__cols > *{min-width:0}
+  .footer__contact a,.footer__contact span{overflow-wrap:anywhere}
+  .central{padding:32px 24px}
+  .central span,.central span a{overflow-wrap:anywhere}
+
+  .actionbar{grid-template-columns:repeat(4,1fr);background:var(--ink-3)}
+  .actionbar a{justify-content:center;gap:6px;padding:10px 4px;min-height:64px;
+    font-family:var(--ff-body);font-style:normal;font-size:11px;font-weight:400;
+    letter-spacing:.02em;text-transform:none;line-height:1.2;text-align:center;
+    color:rgba(255,255,255,.86)}
+  .actionbar svg{width:19px;height:19px}
+  .actionbar a:last-child{background:var(--red);color:#fff}
+  body{padding-bottom:64px}
+  .wa{bottom:80px}
+  .cookie{bottom:80px}
+}
+
+/* ---------------- QUEBRAS ------------------------------------ */
+@media (max-width:1100px){
+  .footer .shell{grid-template-columns:1fr 1fr;gap:40px}
+  .igstrip__photo{flex:0 0 calc((100% - 5px)/2);width:calc((100% - 5px)/2);height:340px}
+}
+@media (max-width:900px){
+  .mosaic{padding:64px 0 68px}
+  .mosaic__grid,.mosaic__grid--rev{grid-template-columns:1fr;gap:40px}
+  .mosaic__grid--rev .mosaic__tiles{order:0}
+  .mosaic__col{gap:14px}
+  .mosaic__col--baixa{margin-top:0}
+  .features__cards{grid-template-columns:1fr 1fr}
+  .features__perks{grid-template-columns:1fr 1fr;gap:14px}
+  .carrossel{min-height:300px}
+  .fcard{height:260px}
+  .fcard__label{font-size:19px}
+  .regioncard{height:auto;padding:64px 0}
+  .regioncard__card{padding:32px 26px;width:100%}
+  .igstrip{padding:64px 0 56px}
+  .igstrip__head{gap:18px;margin-bottom:32px}
+  .igstrip__title{font-size:24px;white-space:normal}
+  .igstrip__photo{flex:0 0 100%;width:100%;height:300px}
+  .reviews{padding:64px 0}
+  .reviews .shell{grid-template-columns:1fr;gap:40px}
+  .reviews .section-head{position:static}
+  .review:nth-child(2){margin-left:0}
+  .faq .h-section{font-size:34px}
+  /* O padding próprio zerava o respiro lateral do `.shell` (é o mesmo
+     elemento) e o texto encostava nas bordas da tela. */
+  .news__inner{padding:64px 24px 70px}
+  .news h2{font-size:32px}
+  .footer .shell{grid-template-columns:1fr;gap:34px}
+  .booking--fixa{width:calc(100% - 16px)}
+  .booking .booking__btn,.booking--fixa .booking__btn{border-radius:0 0 14px 14px}
+}

@@ -1,0 +1,1414 @@
+{
+  "_leia_me": [
+    "Pousada Recanto do Jabaquara — Paraty/RJ. Gerado em 2026-09-08.",
+    "FONTE: todo texto vem de _referencia/conteudo.docx, dos contatos do site",
+    "antigo ou do PNG da home. Onde o cliente não forneceu, o campo está VAZIO",
+    "de propósito — ver a lista de pendências em _referencia/coleta.md.",
+    "As fotos são as embutidas no .docx (máx. 937px): servem de referência de",
+    "enquadramento, NÃO são arte final. Trocar quando o acervo em alta chegar,",
+    "mantendo nome de arquivo e alt."
+  ],
+  "designSystem": {
+    "name": "Recanto do Jabaquara — manual de identidade",
+    "isActive": true,
+    "colors": {
+      "brand": "#2a5e27",
+      "brandDark": "#224d20",
+      "ink": "#1f2933",
+      "inkSoft": "#4a5568",
+      "inkMute": "#8a94a6",
+      "surface": "#f4f8fa",
+      "line": "#e2e8f0",
+      "footer": "#2a5e27",
+      "dark": "#2e0b00",
+      "accent": "#fcc642",
+      "whatsapp": "#25D366"
+    },
+    "typography": {
+      "displayFamily": "'Arapey',Georgia,serif",
+      "bodyFamily": "'Questrial',system-ui,-apple-system,'Segoe UI',sans-serif",
+      "webfontUrl": "",
+      "baseSize": 17,
+      "baseLineHeight": 1.65,
+      "headingSize": 44
+    },
+    "layout": {
+      "container": 1390,
+      "sectionSpacing": 104,
+      "heroHeight": 820,
+      "pageHeroHeight": 420
+    },
+    "shape": {
+      "buttonRadius": 7,
+      "cardRadius": 11,
+      "cardShadow": "0 2px 12px rgba(30,41,59,.055)"
+    },
+    "customCss": "/* O estilo deste cliente vive em src/app/(frontend)/styles.css,\n   na seção \"POUSADA RECANTO DO JABAQUARA\". Manter tudo lá evita o que\n   aconteceu antes: regras acumuladas aqui se sobrepunham entre si e a\n   última vencia em silêncio.\n   Este campo segue disponível para um ajuste pontual do editor. */\n"
+  },
+  "site": {
+    "hotelName": "Pousada Recanto do Jabaquara",
+    "tagline": "o melhor preço garantido",
+    "logo": "@media:logo.png",
+    "phoneLabel": "(24) 99264-2862",
+    "phoneE164": "+5524992642862",
+    "reservationsLabel": "(24) 99264-2862",
+    "reservationsE164": "+5524992642862",
+    "whatsapp": "5524992642862",
+    "email": "reservas@pousadarecantodojabaquara.com.br",
+    "address": "Av. Jabaquara 1461, Paraty - RJ, 23970-000",
+    "socials": [
+      {
+        "network": "instagram",
+        "handle": "@recantodojabaquaraparaty",
+        "url": "https://instagram.com/recantodojabaquaraparaty"
+      },
+      {
+        "network": "facebook",
+        "handle": "/pousadarecantodojabaquara",
+        "url": "https://facebook.com/pousadarecantodojabaquara"
+      }
+    ],
+    "mapZoom": 16
+  },
+  "booking": {
+    "engineBaseUrl": "https://book.omnibees.com/hotelresults",
+    "hotelChain": "5467",
+    "hotelId": "9527",
+    "currencyId": 16,
+    "language": "pt-BR",
+    "maxGuests": 5,
+    "defaultGuests": 2
+  },
+  "header": {
+    "nav": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "A Pousada",
+        "href": "/a-pousada"
+      },
+      {
+        "label": "Acomodações",
+        "href": "/acomodacoes"
+      },
+      {
+        "label": "Lazer",
+        "href": "/lazer"
+      },
+      {
+        "label": "Fotos",
+        "href": "/fotos"
+      },
+      {
+        "label": "Localização",
+        "href": "/localizacao"
+      },
+      {
+        "label": "Contato",
+        "href": "/contato"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
+      }
+    ],
+    "promoLabel": "Promoções",
+    "promoHref": "/promocoes",
+    "bookLabel": "Faça uma reserva",
+    "bookUsesEngine": true
+  },
+  "footer": {
+    "about": "Entre a praia e o Centro Histórico, a Pousada Recanto do Jabaquara recebe casais, famílias e grupos no Bairro Jabaquara, em Paraty.",
+    "contactTitle": "Contato",
+    "phoneCaption": "Recepção e reservas",
+    "reservationsCaption": "Central de reservas",
+    "columns": [
+      {
+        "title": "A Pousada",
+        "links": [
+          {
+            "label": "Sobre a pousada",
+            "href": "/a-pousada"
+          },
+          {
+            "label": "Acomodações",
+            "href": "/acomodacoes"
+          },
+          {
+            "label": "Lazer",
+            "href": "/lazer"
+          }
+        ]
+      },
+      {
+        "title": "Paraty",
+        "links": [
+          {
+            "label": "Localização",
+            "href": "/localizacao"
+          },
+          {
+            "label": "Fotos",
+            "href": "/fotos"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          }
+        ]
+      }
+    ],
+    "bottomText": "Pousada Recanto do Jabaquara © 2026 — Todos os direitos reservados."
+  },
+  "newsletter": {
+    "background": "@media:area-estar-pergolado.jpg",
+    "homeTitle": "Receba as ofertas antes de todo mundo",
+    "homeSubtitle": "Cadastre-se para acompanhar promoções, novidades da pousada e dicas de quem vive Paraty todos os dias.",
+    "innerTitle": "Fique por dentro das novidades",
+    "innerSubtitle": "Promoções, dicas de Paraty e novidades da pousada direto no seu e-mail.",
+    "form": "@form:Newsletter"
+  },
+  "testimonialsSection": {
+    "eyebrow": "Avaliações",
+    "title": "O que dizem nossos hóspedes",
+    "lead": "Quem se hospeda no Bairro Jabaquara costuma voltar. Reunimos aqui o que os hóspedes contam sobre a estadia, o café da manhã e o atendimento da equipe.",
+    "ctaLabel": "Ver mais avaliações",
+    "ctaHref": "",
+    "source": "auto",
+    "limit": 3
+  },
+  "floatingActions": {
+    "showWhatsapp": true,
+    "showActionBar": true,
+    "actionBar": [
+      {
+        "label": "Ligar",
+        "action": "phone"
+      },
+      {
+        "label": "WhatsApp",
+        "action": "whatsapp"
+      },
+      {
+        "label": "Promoções",
+        "action": "link",
+        "href": "/promocoes",
+        "icon": "i-promo"
+      },
+      {
+        "label": "Reservar",
+        "action": "engine"
+      }
+    ],
+    "showCookie": true
+  },
+  "photoCategories": [
+    {
+      "title": "Acomodações"
+    },
+    {
+      "title": "Estrutura"
+    },
+    {
+      "title": "Gastronomia"
+    },
+    {
+      "title": "Lazer"
+    },
+    {
+      "title": "Região"
+    }
+  ],
+  "media": [
+    {
+      "file": "logo.png",
+      "alt": "Logotipo da Pousada Recanto do Jabaquara"
+    },
+    {
+      "file": "carregador-carro-eletrico.jpg",
+      "alt": "Carregador sendo conectado a um carro elétrico no estacionamento",
+      "category": "Estrutura"
+    },
+    {
+      "file": "balcao-cafe-completo.jpg",
+      "alt": "Balcão completo do café da manhã em funcionamento",
+      "category": "Gastronomia"
+    },
+    {
+      "file": "bandeja-frios-queijos.jpg",
+      "alt": "Bandeja de frios e queijos organizada no balcão",
+      "category": "Gastronomia"
+    },
+    {
+      "file": "bolo-inteiro-no-prato.jpg",
+      "alt": "Bolo caseiro inteiro servido no prato",
+      "category": "Gastronomia"
+    },
+    {
+      "file": "bolos-caseiros-balcao.jpg",
+      "alt": "Bolos caseiros servidos no balcão do café da manhã",
+      "category": "Gastronomia"
+    },
+    {
+      "file": "bolos-doces-balcao.jpg",
+      "alt": "Bolos e doces do café da manhã dispostos no balcão",
+      "category": "Gastronomia"
+    },
+    {
+      "file": "buffet-frutas-e-frios.jpg",
+      "alt": "Variedade de frutas frescas e frios no buffet do café da manhã",
+      "category": "Gastronomia"
+    },
+    {
+      "file": "buffet-frutas-frios-quentes.jpg",
+      "alt": "Balcão do café da manhã com frutas, frios e pratos quentes",
+      "category": "Gastronomia"
+    },
+    {
+      "file": "cesta-paes-pao-de-queijo.jpg",
+      "alt": "Cesta de pães e pão de queijo recém-servidos",
+      "category": "Gastronomia"
+    },
+    {
+      "file": "cuscuz-no-prato.jpg",
+      "alt": "Cuscuz servido no prato, no café da manhã",
+      "category": "Gastronomia"
+    },
+    {
+      "file": "pratos-quentes-buffet.jpg",
+      "alt": "Pratos quentes do buffet do café da manhã",
+      "category": "Gastronomia"
+    },
+    {
+      "file": "salao-cafe-da-manha.jpg",
+      "alt": "Salão do café da manhã com mesas de madeira, plantas e telhado de sapê",
+      "category": "Gastronomia"
+    },
+    {
+      "file": "piscina-entardecer-guarda-sol.jpg",
+      "alt": "Piscina da pousada ao entardecer, com guarda-sol aberto e espreguiçadeiras junto à área de convivência",
+      "category": "Estrutura"
+    },
+    {
+      "file": "area-estar-pergolado.jpg",
+      "alt": "Área de estar externa com poltronas, pergolado e vegetação",
+      "category": "Lazer"
+    },
+    {
+      "file": "deque-espreguicadeiras-noite.jpg",
+      "alt": "Deque iluminado com espreguiçadeiras e a piscina ao fundo, à noite",
+      "category": "Lazer"
+    },
+    {
+      "file": "espreguicadeiras-deque-sol.jpg",
+      "alt": "Espreguiçadeiras dispostas no deque junto à piscina",
+      "category": "Lazer"
+    },
+    {
+      "file": "piscina-guarda-sois-dia-claro.jpg",
+      "alt": "Piscina com guarda-sóis e espreguiçadeiras em dia claro",
+      "category": "Lazer"
+    },
+    {
+      "file": "piscina-guarda-sois-mesas.jpg",
+      "alt": "Piscina com guarda-sóis, mesas e área de estar coberta",
+      "category": "Lazer"
+    },
+    {
+      "file": "piscina-mesas-area-coberta.jpg",
+      "alt": "Piscina com mesas, guarda-sóis e área de estar coberta",
+      "category": "Lazer"
+    },
+    {
+      "file": "paraty-casario-iluminado-anoitecer.jpg",
+      "alt": "Casario iluminado de Paraty à beira da baía, com a serra ao fundo, ao anoitecer",
+      "category": "Região"
+    },
+    {
+      "file": "paraty-cais-barcos-anoitecer.jpg",
+      "alt": "Cais de Paraty ao anoitecer, com barcos atracados, o casario iluminado e a Igreja de Santa Rita",
+      "category": "Região"
+    },
+    {
+      "file": "pousada-aerea-orla.jpg",
+      "alt": "Vista aérea da pousada no Jabaquara com a orla e a mata ao redor",
+      "category": "Região"
+    },
+    {
+      "file": "praia-jabaquara-aerea-orla.jpg",
+      "alt": "Vista aérea da orla da Praia do Jabaquara com a baía e a ilha ao fundo",
+      "category": "Região"
+    },
+    {
+      "file": "duplo-com-varanda-cama-casal-varanda-mobiliada.jpg",
+      "alt": "Quarto Duplo com Varanda: cama de casal e acesso direto à varanda mobiliada",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-com-varanda-cama-tv-frigobar-varanda.jpg",
+      "alt": "Quarto Duplo com Varanda: cama com TV, frigobar e a varanda ao fundo",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-com-varanda-cama-tv-saida-externa.jpg",
+      "alt": "Quarto Duplo com Varanda: cama, TV e saída para a área externa",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-banheiro-privativo.jpg",
+      "alt": "Banheiro privativo do Quarto Duplo Standard, com box de vidro",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-cabeceira-papel-floral.jpg",
+      "alt": "Cabeceira com papel de parede floral e enxoval claro",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-cama-casal-acesso-externo.jpg",
+      "alt": "Quarto Duplo Standard com cama de casal, enxoval claro e acesso à área externa",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-cama-casal-forro-madeira.jpg",
+      "alt": "Cama de casal sob forro de madeira, com enxoval preparado",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-cama-tv-poltrona.jpg",
+      "alt": "Quarto Duplo Standard com cama, TV e poltrona de apoio",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-varanda-mezanino-area-tv-poltrona.jpg",
+      "alt": "Área de TV com poltrona e janela para a varanda, no Quarto Família",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-varanda-mezanino-cama-mezanino-tv-janela.jpg",
+      "alt": "Cama de casal do mezanino, com TV e janela",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-varanda-mezanino-cama-telhado-madeira-aparente.jpg",
+      "alt": "Cama sob o telhado de madeira aparente, com TV e janelas",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-varanda-mezanino-camas-pe-direito-alto.jpg",
+      "alt": "Camas do pavimento inferior, com pé-direito alto e vigas aparentes",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-varanda-mezanino-dormitorio-mezanino.jpg",
+      "alt": "Dormitório do mezanino com cama de casal e forro de madeira",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-varanda-mezanino-escada-acesso-mezanino.jpg",
+      "alt": "Quarto Família com escada de acesso ao mezanino",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-varanda-mezanino-varanda-vista.jpg",
+      "alt": "Varanda do Quarto Família, com vista para a vegetação e o telhado",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-banheiro-privativo.jpg",
+      "alt": "Banheiro privativo do Quarto Quádruplo Standard, com box de vidro",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-cama-cabeceira-madeira.jpg",
+      "alt": "Quarto Quádruplo Standard com cama de cabeceira em madeira e enxoval preparado",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-camas-cabeceira-iluminada.jpg",
+      "alt": "Quarto Quádruplo Standard com camas, TV e cabeceira iluminada",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-camas-forro-madeira-janela.jpg",
+      "alt": "Quarto Quádruplo Standard com camas sob forro de madeira e janela para o exterior",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-camas-painel-madeira-ventilador.jpg",
+      "alt": "Quarto Quádruplo Standard com camas alinhadas, painel de madeira e ventilador de teto",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-rede-armada-varanda.jpg",
+      "alt": "Rede armada na varanda do Quarto Quádruplo Standard",
+      "category": "Acomodações"
+    },
+    {
+      "file": "triplo-standard-camas-arrumadas-quadros.jpg",
+      "alt": "Quarto Triplo Standard com camas, frigobar e decoração leve",
+      "category": "Acomodações"
+    },
+    {
+      "file": "triplo-standard-camas-escrivaninha-janela.jpg",
+      "alt": "Quarto Triplo Standard com camas, escrivaninha e janela para o verde",
+      "category": "Acomodações"
+    },
+    {
+      "file": "triplo-standard-camas-separadas-poltrona.jpg",
+      "alt": "Quarto Triplo Standard com camas separadas, poltrona de apoio e luz da janela",
+      "category": "Acomodações"
+    },
+    {
+      "file": "triplo-standard-camas-tv-porta.jpg",
+      "alt": "Quarto Triplo Standard com camas arrumadas, TV e saída para a área externa",
+      "category": "Acomodações"
+    },
+    {
+      "file": "triplo-standard-camas-tv-ventilador.jpg",
+      "alt": "Quarto Triplo Standard com camas, TV e ventilador de teto",
+      "category": "Acomodações"
+    },
+    {
+      "file": "baia-paraty-aerea-casario.jpg",
+      "alt": "Vista aérea da baía de Paraty com a mata e o casario ao redor",
+      "category": "Estrutura"
+    },
+    {
+      "file": "deque-iluminado-noite.jpg",
+      "alt": "Deque iluminado com espreguiçadeiras à beira da piscina, à noite",
+      "category": "Estrutura"
+    },
+    {
+      "file": "entrada-estacionamento-interno.jpg",
+      "alt": "Portão de entrada da pousada, com o estacionamento interno ao fundo",
+      "category": "Estrutura"
+    },
+    {
+      "file": "estacionamento-vagas.jpg",
+      "alt": "Estacionamento interno da pousada com carros e a serra ao fundo",
+      "category": "Estrutura"
+    },
+    {
+      "file": "jardim-interno-vegetacao.jpg",
+      "alt": "Jardim interno com vegetação e circulação entre os blocos",
+      "category": "Estrutura"
+    },
+    {
+      "file": "mural-recanto-do-jabaquara.jpg",
+      "alt": "Mural pintado na parede com o nome Recanto do Jabaquara e uma arara",
+      "category": "Estrutura"
+    },
+    {
+      "file": "patio-convivencia-poltronas-plantas.jpg",
+      "alt": "Pátio de convivência com poltronas, plantas e varais decorativos",
+      "category": "Estrutura"
+    },
+    {
+      "file": "patio-palmeira-jardim.jpg",
+      "alt": "Pátio interno com palmeira e jardim entre os blocos da pousada",
+      "category": "Estrutura"
+    },
+    {
+      "file": "pousada-aerea-jabaquara-baia.jpg",
+      "alt": "Vista aérea da pousada no bairro Jabaquara, com a praia e a baía ao fundo",
+      "category": "Estrutura"
+    },
+    {
+      "file": "quarto-forro-madeira-duas-camas.jpg",
+      "alt": "Acomodação com forro de madeira, duas camas e área de estar",
+      "category": "Estrutura"
+    },
+    {
+      "file": "recepcao-balcao-produtos.jpg",
+      "alt": "Balcão da recepção com produtos à venda e ventilador de teto",
+      "category": "Estrutura"
+    },
+    {
+      "file": "recepcao-identidade-visual.jpg",
+      "alt": "Recepção da pousada com a identidade visual na parede",
+      "category": "Estrutura"
+    }
+  ],
+  "amenities": [
+    {
+      "title": "Ar-condicionado",
+      "icon": "i-ac",
+      "scope": "quarto"
+    },
+    {
+      "title": "Ventilador de teto",
+      "icon": "i-fan",
+      "scope": "quarto"
+    },
+    {
+      "title": "TV de tela plana com canais abertos",
+      "icon": "i-tv",
+      "scope": "quarto"
+    },
+    {
+      "title": "Frigobar de uso livre",
+      "icon": "i-minibar",
+      "scope": "quarto"
+    },
+    {
+      "title": "Banheiro privativo",
+      "icon": "i-bath",
+      "scope": "quarto"
+    },
+    {
+      "title": "Roupa de cama e toalhas de banho",
+      "icon": "i-bed",
+      "scope": "quarto"
+    },
+    {
+      "title": "Piscina aquecida para hóspedes",
+      "icon": "i-pool",
+      "scope": "hotel"
+    },
+    {
+      "title": "Estacionamento interno rotativo gratuito",
+      "icon": "i-parking",
+      "scope": "hotel"
+    },
+    {
+      "title": "Carregador para carros elétricos (à parte)",
+      "icon": "i-ev",
+      "scope": "hotel"
+    },
+    {
+      "title": "Serviço diário de limpeza",
+      "icon": "i-clean",
+      "scope": "hotel"
+    },
+    {
+      "title": "Wi-Fi em todos os ambientes",
+      "icon": "i-wifi",
+      "scope": "hotel"
+    },
+    {
+      "title": "Reservas diretas pelo site",
+      "icon": "i-cal",
+      "scope": "hotel"
+    },
+    {
+      "title": "Atendimento por WhatsApp e e-mail",
+      "icon": "i-wa",
+      "scope": "hotel"
+    },
+    {
+      "title": "Gratuidade para crianças de até 4 anos",
+      "icon": "i-tag",
+      "scope": "hotel"
+    }
+  ],
+  "differentials": [
+    {
+      "title": "Piscina aquecida para relaxar",
+      "kind": "destaque",
+      "image": "@media:piscina-guarda-sois-mesas.jpg"
+    },
+    {
+      "title": "35 apartamentos renovados",
+      "kind": "destaque",
+      "image": "@media:quarto-forro-madeira-duas-camas.jpg"
+    },
+    {
+      "title": "Carregador para carros elétricos",
+      "kind": "destaque",
+      "image": "@media:carregador-carro-eletrico.jpg"
+    },
+    {
+      "title": "Café da manhã variado",
+      "kind": "destaque",
+      "image": "@media:buffet-frutas-e-frios.jpg"
+    },
+    {
+      "title": "Estacionamento interno gratuito",
+      "kind": "venda",
+      "icon": "i-parking"
+    },
+    {
+      "title": "Limpeza diária nos quartos",
+      "kind": "venda",
+      "icon": "i-clean"
+    },
+    {
+      "title": "Quartos para grupos e famílias",
+      "kind": "venda",
+      "icon": "i-bed"
+    },
+    {
+      "title": "Desconto de 5% no PIX",
+      "kind": "venda",
+      "icon": "i-card"
+    },
+    {
+      "title": "Parcelamento em até 6x",
+      "kind": "venda",
+      "icon": "i-card"
+    },
+    {
+      "title": "Crianças até 4 anos grátis",
+      "kind": "venda",
+      "icon": "i-tag"
+    },
+    {
+      "title": "Wi-Fi gratuito em todos os ambientes",
+      "kind": "venda",
+      "icon": "i-wifi"
+    },
+    {
+      "title": "Atendimento por WhatsApp",
+      "kind": "venda",
+      "icon": "i-wa"
+    }
+  ],
+  "attractions": [
+    {
+      "title": "Quiosque Aroeira",
+      "distanceMeters": 78,
+      "kind": "geral"
+    },
+    {
+      "title": "Praia do Jabaquara",
+      "distanceMeters": 550,
+      "kind": "geral"
+    },
+    {
+      "title": "Restaurante Batata Baroa",
+      "distanceMeters": 1800,
+      "kind": "geral"
+    },
+    {
+      "title": "Praia do Pontal",
+      "distanceMeters": 2200,
+      "kind": "geral"
+    },
+    {
+      "title": "Forte Defensor Perpétuo",
+      "distanceMeters": 2300,
+      "kind": "cultura"
+    },
+    {
+      "title": "Rodoviária de Paraty",
+      "distanceMeters": 3800,
+      "kind": "transporte"
+    },
+    {
+      "title": "Centro Histórico de Paraty",
+      "distanceMeters": 4000,
+      "kind": "cultura"
+    },
+    {
+      "title": "Igreja de Santa Rita",
+      "distanceMeters": 4300,
+      "kind": "cultura"
+    },
+    {
+      "title": "Praça da Matriz",
+      "distanceMeters": 4400,
+      "kind": "cultura"
+    },
+    {
+      "title": "Cais de Paraty",
+      "distanceMeters": 4900,
+      "kind": "cultura"
+    }
+  ],
+  "testimonials": [
+    {
+      "title": "Funcional, limpa e organizada",
+      "quote": "Totalmente funcional, limpa, organizada, ótimo custo-benefício, especialmente para quem está com o próprio carro. Destaque para a recepção do Feitosa e da Bia, que oferecem visões realistas sobre locais que devem ser visitados e explorados, como as praias de São Gonçalo e Paraty-Mirim.",
+      "author": "A.P",
+      "source": "tripadvisor",
+      "rating": 5
+    },
+    {
+      "title": "Excelente!!",
+      "quote": "Experiência maravilhosa!! Pousada agradável, atendimento excelente, funcionários solícitos e simpáticos, ótimo café da manhã, camas limpas e confortáveis, banheiros amplos, ambiente muito bom, gostei... voltarei com certeza!!!",
+      "author": "E.S",
+      "source": "tripadvisor",
+      "rating": 5
+    },
+    {
+      "title": "Ótima experiência",
+      "quote": "Fiquei por uma semana na pousada, café da manhã de qualidade, quartos limpos, confortáveis, fiquei impressionado com o acabamento geral no lugar. Tudo novo, limpo, tudo bem detalhado. Destaque para o atendimento da Paula, uma linda com a gente, sempre gentil e cheia de boas referências. Foi uma experiência ótima. Gostaria de citar o Feitosa, que foi uma pessoa super disposta e educada com a gente. Sobre a localização, é sim necessário um meio de transporte para ir e vir do centro, mas também é tranquilo para uma caminhada a pé.",
+      "author": "J.P",
+      "source": "tripadvisor",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "question": "O café da manhã está incluso na diária?",
+      "answer": {
+        "@rich": [
+          "Sim. O café da manhã faz parte da estadia e é servido em clima tranquilo, com pães, bolos, frutas, frios, queijos, geleias, ovos, sucos, café, leite e chás."
+        ]
+      },
+      "category": "cafe"
+    },
+    {
+      "question": "A pousada fica próxima a quais pontos turísticos?",
+      "answer": {
+        "@rich": [
+          "A localização facilita passeios a pé e de carro. A Praia do Jabaquara fica a poucos minutos, e o Centro Histórico de Paraty é uma ótima pedida para caminhar entre igrejas, casarões e o Cais de Paraty."
+        ]
+      },
+      "category": "localizacao"
+    },
+    {
+      "question": "O estacionamento é gratuito?",
+      "answer": {
+        "@rich": [
+          "Sim. O estacionamento interno funciona no formato rotativo e sem custo para hóspedes, ajudando no dia a dia de quem chega de carro e quer circular com mais praticidade pela cidade."
+        ]
+      },
+      "category": "geral"
+    },
+    {
+      "question": "A pousada tem piscina?",
+      "answer": {
+        "@rich": [
+          "Sim. A pousada tem piscina aquecida para relaxar entre um passeio e outro. É um espaço gostoso para sentar, conversar e descansar, principalmente no fim de tarde."
+        ]
+      },
+      "category": "geral"
+    },
+    {
+      "question": "A pousada é pet friendly?",
+      "answer": {
+        "@rich": [
+          "Não. Para manter a rotina de limpeza e a experiência de todos os hóspedes, a pousada não recebe pets."
+        ]
+      },
+      "category": "politicas"
+    }
+  ],
+  "suites": [
+    {
+      "title": "Quarto Duplo Standard",
+      "shortName": "Duplo Standard",
+      "summary": "Ar-condicionado, ventilador de teto, TV de tela plana, frigobar de uso livre e banheiro privativo.",
+      "description": {
+        "@rich": [
+          "Quarto para duas pessoas, com uma cama de casal ou duas camas de solteiro.",
+          "Conta com ar-condicionado, ventilador de teto, TV de tela plana com canais abertos, frigobar de uso livre, banheiro privativo, roupa de cama e toalhas de banho."
+        ]
+      },
+      "photos": [
+        {
+          "image": "@media:duplo-standard-cabeceira-papel-floral.jpg"
+        },
+        {
+          "image": "@media:duplo-standard-cama-casal-acesso-externo.jpg"
+        },
+        {
+          "image": "@media:duplo-standard-cama-tv-poltrona.jpg"
+        },
+        {
+          "image": "@media:duplo-standard-cama-casal-forro-madeira.jpg"
+        },
+        {
+          "image": "@media:duplo-standard-banheiro-privativo.jpg"
+        }
+      ],
+      "amenities": [
+        "@doc:amenities:Ar-condicionado",
+        "@doc:amenities:Ventilador de teto",
+        "@doc:amenities:TV de tela plana com canais abertos",
+        "@doc:amenities:Frigobar de uso livre",
+        "@doc:amenities:Banheiro privativo",
+        "@doc:amenities:Roupa de cama e toalhas de banho"
+      ],
+      "maxGuests": 2
+    },
+    {
+      "title": "Quarto Duplo com Varanda",
+      "shortName": "Duplo com Varanda",
+      "summary": "Cama de casal, ar-condicionado, TV de tela plana, frigobar de uso livre e banheiro privativo.",
+      "description": {
+        "@rich": [
+          "Quarto para duas pessoas, com cama de casal e varanda.",
+          "A varanda é voltada para a rua dos fundos, sem vista para o mar. O quarto tem ar-condicionado, TV de tela plana com canais abertos, frigobar de uso livre, banheiro privativo, roupa de cama e toalhas de banho."
+        ]
+      },
+      "photos": [
+        {
+          "image": "@media:duplo-com-varanda-cama-casal-varanda-mobiliada.jpg"
+        },
+        {
+          "image": "@media:duplo-com-varanda-cama-tv-saida-externa.jpg"
+        },
+        {
+          "image": "@media:duplo-com-varanda-cama-tv-frigobar-varanda.jpg"
+        }
+      ],
+      "amenities": [
+        "@doc:amenities:Ar-condicionado",
+        "@doc:amenities:TV de tela plana com canais abertos",
+        "@doc:amenities:Frigobar de uso livre",
+        "@doc:amenities:Banheiro privativo",
+        "@doc:amenities:Roupa de cama e toalhas de banho"
+      ],
+      "maxGuests": 2
+    },
+    {
+      "title": "Quarto Triplo Standard",
+      "shortName": "Triplo Standard",
+      "summary": "Até 3 pessoas, com ar-condicionado, TV de tela plana e frigobar de uso livre.",
+      "description": {
+        "@rich": [
+          "Quarto para até três pessoas, com três camas de solteiro ou uma cama de casal e uma de solteiro.",
+          "Conta com ar-condicionado, TV de tela plana com canais abertos, frigobar de uso livre, banheiro privativo, roupa de cama e toalhas de banho."
+        ]
+      },
+      "photos": [
+        {
+          "image": "@media:triplo-standard-camas-separadas-poltrona.jpg"
+        },
+        {
+          "image": "@media:triplo-standard-camas-tv-porta.jpg"
+        },
+        {
+          "image": "@media:triplo-standard-camas-arrumadas-quadros.jpg"
+        },
+        {
+          "image": "@media:triplo-standard-camas-escrivaninha-janela.jpg"
+        },
+        {
+          "image": "@media:triplo-standard-camas-tv-ventilador.jpg"
+        }
+      ],
+      "amenities": [
+        "@doc:amenities:Ar-condicionado",
+        "@doc:amenities:TV de tela plana com canais abertos",
+        "@doc:amenities:Frigobar de uso livre",
+        "@doc:amenities:Banheiro privativo",
+        "@doc:amenities:Roupa de cama e toalhas de banho"
+      ],
+      "maxGuests": 3
+    },
+    {
+      "title": "Quarto Quádruplo Standard",
+      "shortName": "Quádruplo Standard",
+      "summary": "Até 4 pessoas, com uma cama de casal e duas de solteiro.",
+      "description": {
+        "@rich": [
+          "Quarto para até quatro pessoas, com uma cama de casal e duas camas de solteiro.",
+          "Conta com ar-condicionado, TV de tela plana com canais abertos, frigobar de uso livre, banheiro privativo, roupa de cama e toalhas de banho."
+        ]
+      },
+      "photos": [
+        {
+          "image": "@media:quadruplo-standard-camas-cabeceira-iluminada.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-cama-cabeceira-madeira.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-camas-forro-madeira-janela.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-camas-painel-madeira-ventilador.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-rede-armada-varanda.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-banheiro-privativo.jpg"
+        }
+      ],
+      "amenities": [
+        "@doc:amenities:Ar-condicionado",
+        "@doc:amenities:TV de tela plana com canais abertos",
+        "@doc:amenities:Frigobar de uso livre",
+        "@doc:amenities:Banheiro privativo",
+        "@doc:amenities:Roupa de cama e toalhas de banho"
+      ],
+      "maxGuests": 4
+    },
+    {
+      "title": "Quarto Família com Varanda e Mezanino",
+      "shortName": "Família com Mezanino",
+      "summary": "Duas camas de casal e uma de solteiro, com varanda e mezanino.",
+      "description": {
+        "@rich": [
+          "Quarto para até cinco pessoas, com duas camas de casal e uma cama de solteiro, distribuídas entre o pavimento inferior e o mezanino.",
+          "Tem varanda e mezanino, além de ar-condicionado, TV de tela plana com canais abertos, frigobar de uso livre, banheiro privativo, roupa de cama e toalhas de banho."
+        ]
+      },
+      "photos": [
+        {
+          "image": "@media:familia-varanda-mezanino-escada-acesso-mezanino.jpg"
+        },
+        {
+          "image": "@media:familia-varanda-mezanino-area-tv-poltrona.jpg"
+        },
+        {
+          "image": "@media:familia-varanda-mezanino-cama-telhado-madeira-aparente.jpg"
+        },
+        {
+          "image": "@media:familia-varanda-mezanino-dormitorio-mezanino.jpg"
+        },
+        {
+          "image": "@media:familia-varanda-mezanino-cama-mezanino-tv-janela.jpg"
+        },
+        {
+          "image": "@media:familia-varanda-mezanino-camas-pe-direito-alto.jpg"
+        },
+        {
+          "image": "@media:familia-varanda-mezanino-varanda-vista.jpg"
+        }
+      ],
+      "amenities": [
+        "@doc:amenities:Ar-condicionado",
+        "@doc:amenities:TV de tela plana com canais abertos",
+        "@doc:amenities:Frigobar de uso livre",
+        "@doc:amenities:Banheiro privativo",
+        "@doc:amenities:Roupa de cama e toalhas de banho"
+      ],
+      "maxGuests": 5
+    }
+  ],
+  "postCategories": [
+    {
+      "title": "Paraty"
+    },
+    {
+      "title": "A Pousada"
+    }
+  ],
+  "posts": [
+    {
+      "title": "Seja bem-vindo ao blog do Recanto do Jabaquara",
+      "slug": "blog-boas-vindas",
+      "category": "@doc:post-categories:A Pousada",
+      "image": "@media:patio-convivencia-poltronas-plantas.jpg",
+      "excerpt": "Este espaço foi criado para quem deseja descobrir as belezas de Paraty e aproveitar ao máximo tudo o que a cidade e a nossa pousada têm a oferecer.",
+      "content": {
+        "@rich": [
+          "É com grande alegria que damos as boas-vindas a você, visitante do blog da Pousada Recanto do Jabaquara! Este espaço foi criado para quem deseja descobrir as belezas de Paraty e aproveitar ao máximo tudo o que a cidade e a nossa pousada têm para oferecer. A cada novo conteúdo, vamos compartilhar dicas sobre a região, atrações imperdíveis e detalhes que tornam a experiência de se hospedar em Paraty ainda mais especial.",
+          "Nosso objetivo é ajudar você a planejar cada etapa da viagem, trazendo informações úteis para garantir dias tranquilos e cheios de boas descobertas. A Pousada Recanto do Jabaquara é um refúgio acolhedor, onde conforto e praticidade caminham juntos para criar um ambiente ideal para descansar e recarregar as energias depois de um dia inteiro de passeios. Com quartos recentemente renovados e um atendimento próximo, a pousada foi pensada para receber casais, famílias e grupos de amigos com a mesma atenção.",
+          "As acomodações do Recanto do Jabaquara reúnem tudo o que você precisa para uma estadia completa, com ambientes confortáveis e bem cuidados. Além disso, a piscina aquecida garante momentos de puro relaxamento, seja depois de uma manhã na praia ou de uma tarde inteira caminhando pelas ruas de pedra do centro histórico.",
+          "A região ao redor da pousada é um verdadeiro convite à exploração. Paraty é um destino perfeito para quem busca praias tranquilas, mas também encanta por sua riqueza cultural e histórica. Do Centro Histórico, com seus casarios coloniais e igrejas centenárias, até as trilhas e cachoeiras que levam à Serra da Bocaina, a cidade reserva experiências para todos os gostos. Você pode viver a calma das águas da Baía de Paraty ou se aventurar por caminhos que atravessam a Mata Atlântica.",
+          "Paraty também é rica em tradições locais, com manifestações culturais, festas populares e uma gastronomia que carrega a identidade da região. Se você procura um destino que combine natureza exuberante e uma cidade cheia de história, Paraty é, sem dúvida, uma escolha certeira para a sua próxima viagem.",
+          "Nosso blog vai continuar trazendo conteúdos para inspirar seus próximos passeios por Paraty, com dicas de lazer e tudo o que faz da Pousada Recanto do Jabaquara a companhia ideal para a sua estadia. A cada nova publicação, você vai encontrar boas ideias para aproveitar este destino com ainda mais liberdade.",
+          "Seja bem-vindo ao blog da Pousada Recanto do Jabaquara, e inspire-se para a sua próxima aventura por Paraty conosco!"
+        ]
+      }
+    },
+    {
+      "title": "5 Motivos para se hospedar no Recanto do Jabaquara",
+      "slug": "5-motivos-para-se-hospedar",
+      "category": "@doc:post-categories:A Pousada",
+      "image": "@media:piscina-guarda-sois-dia-claro.jpg",
+      "excerpt": "Descubra os motivos que fazem da Pousada Recanto do Jabaquara o destino ideal para sua hospedagem em Paraty, RJ.",
+      "content": {
+        "@rich": [
+          "Paraty é um destino encantador para quem busca desfrutar de momentos de tranquilidade entre mar, história e natureza. E neste cenário, a Pousada Recanto do Jabaquara oferece tudo o que você precisa para uma hospedagem confortável e inesquecível, seja para uma viagem em casal, em família ou entre amigos.",
+          "Confira abaixo por que a Pousada Recanto do Jabaquara se destaca como uma opção certeira para viver Paraty com conforto:",
+          "Localização privilegiada no Bairro Jabaquara — A pousada fica no Bairro Jabaquara, perto da praia e com fácil acesso ao Centro Histórico de Paraty. Assim, você aproveita o melhor da cidade sem abrir mão do conforto e da praticidade na hora de ir e voltar dos passeios.",
+          "Piscina aquecida para relaxar — Depois de um dia de praia ou de caminhada pelo centro histórico, nada como uma pausa na piscina aquecida. O espaço é perfeito para relaxar ao fim da tarde e recarregar as energias antes do próximo passeio.",
+          "Café da manhã incluso e variado — A hospedagem já inclui um café da manhã completo, com pães, bolos, frutas, frios, queijos, geleias, ovos, sucos, café, leite e chás. O começo ideal para um dia de descobertas por Paraty.",
+          "Estacionamento interno gratuito — Quem viaja de carro encontra um estacionamento interno gratuito, no formato rotativo. A comodidade facilita a rotina de quem quer sair cedo para conhecer as praias e o centro histórico, sem se preocupar com o veículo.",
+          "Quartos renovados para cada tipo de viagem — Os 35 apartamentos foram recentemente renovados, com opções para casais, famílias e pequenos grupos. Cada quarto conta com ar-condicionado, TV de tela plana e frigobar de uso livre, garantindo conforto durante toda a estadia.",
+          "Ao escolher a Pousada Recanto do Jabaquara para sua próxima estadia, você garante uma hospedagem confortável, com boa localização e comodidades pensadas para o seu descanso. Com quartos renovados e atendimento próximo, a pousada equilibra conforto e tranquilidade, num ambiente cercado pela história e pela natureza de Paraty."
+        ]
+      }
+    }
+  ],
+  "pages": [
+    {
+      "title": "Home",
+      "slug": "home",
+      "showBookingBar": true,
+      "showTestimonials": true,
+      "testimonialsAfterBlock": 6,
+      "showNewsletter": true,
+      "newsletterVariant": "home",
+      "seoTitle": "Pousada em Paraty, RJ | Recanto do Jabaquara",
+      "seoDescription": "Pousada em Paraty, RJ com piscina aquecida e café da manhã. Sinta a calma do Jabaquara e reserve direto pelo site oficial.",
+      "layout": [
+        {
+          "blockType": "hero",
+          "image": "@media:piscina-entardecer-guarda-sol.jpg"
+        },
+        {
+          "blockType": "aboutMosaic",
+          "eyebrow": "A Pousada",
+          "title": "Pousada Recanto do Jabaquara",
+          "text": "Escolher uma pousada em Paraty muda o jeito de viver o destino. Na Pousada Recanto do Jabaquara, o descanso começa no Bairro Jabaquara, onde a atmosfera acolhedora e a atenção próxima marcam a estadia desde a chegada. Os quartos renovados convidam a desacelerar depois do mar, das ruas de pedra e dos passeios pela região.\n\nPara quem busca hospedagem em Paraty com tranquilidade, a rotina é simples: chegar, respirar e sentir a cidade no tempo dela. A piscina aquecida marca presença no fim de tarde, e o café da manhã abre o dia com variedade. O resultado é uma experiência que une praticidade e descanso — o ponto de partida ideal para explorar Paraty.",
+          "ctaLabel": "Faça uma reserva",
+          "ctaUsesEngine": true,
+          "images": [
+            {
+              "image": "@media:baia-paraty-aerea-casario.jpg"
+            },
+            {
+              "image": "@media:deque-iluminado-noite.jpg"
+            },
+            {
+              "image": "@media:patio-convivencia-poltronas-plantas.jpg"
+            },
+            {
+              "image": "@media:bolos-doces-balcao.jpg"
+            }
+          ]
+        },
+        {
+          "blockType": "differentials",
+          "title": "",
+          "cardsLimit": 4,
+          "perksLimit": 0
+        },
+        {
+          "blockType": "suitesCarousel",
+          "eyebrow": "Acomodações",
+          "title": "Quartos renovados",
+          "text": "Quartos renovados para descansar com praticidade, em opções que atendem casais, famílias e pequenos grupos.",
+          "linkLabel": "Ver todas",
+          "linkHref": "/acomodacoes"
+        },
+        {
+          "blockType": "regionCard",
+          "eyebrow": "A região",
+          "title": "Encante-se com Paraty",
+          "text": "Paraty combina mar, Mata Atlântica e história viva, formando um cenário onde cada esquina conta uma parte da cultura colonial brasileira. Caminhe pelo Centro Histórico de Paraty e observe de perto a Igreja de Santa Rita, a Praça da Matriz e os casarões que preservam a arquitetura dos séculos XVIII e XIX. Para quem busca onde ficar em Paraty com calma, o Bairro Jabaquara deixa o destino mais leve, com fácil acesso tanto à orla quanto ao movimento do centro. A Baía de Paraty convida a passeios de barco entre ilhas e praias de água tranquila, enquanto o Forte Defensor Perpétuo rende uma vista ampla do litoral e do encontro entre a Mata Atlântica e o mar.",
+          "image": "@media:paraty-casario-iluminado-anoitecer.jpg",
+          "ctaLabel": "Conheça a região",
+          "ctaHref": "/localizacao",
+          "align": "right"
+        },
+        {
+          "blockType": "instagramStrip",
+          "title": "Nos siga no Instagram",
+          "images": [
+            {
+              "image": "@media:area-estar-pergolado.jpg"
+            },
+            {
+              "image": "@media:deque-espreguicadeiras-noite.jpg"
+            },
+            {
+              "image": "@media:patio-palmeira-jardim.jpg"
+            },
+            {
+              "image": "@media:praia-jabaquara-aerea-orla.jpg"
+            },
+            {
+              "image": "@media:piscina-guarda-sois-dia-claro.jpg"
+            },
+            {
+              "image": "@media:mural-recanto-do-jabaquara.jpg"
+            },
+            {
+              "image": "@media:jardim-interno-vegetacao.jpg"
+            }
+          ]
+        },
+        {
+          "blockType": "faq",
+          "title": "Dúvidas Frequentes",
+          "category": "todas"
+        }
+      ]
+    },
+    {
+      "title": "A Pousada",
+      "slug": "a-pousada",
+      "showBookingBar": true,
+      "showTestimonials": true,
+      "showNewsletter": true,
+      "newsletterVariant": "inner",
+      "seoTitle": "Pousada em Paraty, RJ | Estrutura e serviços",
+      "seoDescription": "Hospedagem em Paraty com atendimento acolhedor, piscina aquecida e estacionamento interno. Conheça a pousada e escolha seu quarto.",
+      "layout": [
+        {
+          "blockType": "pageHero",
+          "image": "@media:pousada-aerea-jabaquara-baia.jpg",
+          "title": "A Pousada",
+          "variant": "page"
+        },
+        {
+          "blockType": "aboutMosaic",
+          "eyebrow": "A Pousada",
+          "title": "Pousada Recanto do Jabaquara",
+          "text": "A Pousada Recanto do Jabaquara convida a viver Paraty no ritmo do Bairro Jabaquara, com atmosfera acolhedora, atendimento próximo e espaços pensados para o descanso. Entre a praia e o Centro Histórico, a estadia ganha praticidade: é fácil ir e voltar sem abrir mão da tranquilidade.\n\nDepois de um dia de passeios, a piscina aquecida completa o retorno, e os quartos renovados ajudam a recuperar as energias para o dia seguinte.",
+          "ctaLabel": "Faça uma reserva",
+          "ctaUsesEngine": true,
+          "images": [
+            {
+              "image": "@media:piscina-guarda-sois-dia-claro.jpg"
+            },
+            {
+              "image": "@media:entrada-estacionamento-interno.jpg"
+            },
+            {
+              "image": "@media:patio-palmeira-jardim.jpg"
+            },
+            {
+              "image": "@media:jardim-interno-vegetacao.jpg"
+            }
+          ]
+        },
+        {
+          "blockType": "splitContent",
+          "eyebrow": "Estrutura",
+          "title": "Estrutura e comodidades",
+          "text": "Espaços pensados para o descanso e para a praticidade de quem chega de carro.",
+          "amenitiesScope": "hotel",
+          "background": "brand",
+          "images": [
+            {
+              "image": "@media:recepcao-identidade-visual.jpg"
+            },
+            {
+              "image": "@media:mural-recanto-do-jabaquara.jpg"
+            },
+            {
+              "image": "@media:estacionamento-vagas.jpg"
+            }
+          ]
+        },
+        {
+          "blockType": "splitContent",
+          "eyebrow": "Café da manhã",
+          "title": "A manhã começa aqui",
+          "text": "A manhã na pousada começa com pães, bolos, frutas, frios, queijos, geleias, ovos, sucos, café, leite e chás, com variação no sabor do suco e do bolo.",
+          "note": "Horário: 8h às 10h",
+          "background": "gray",
+          "reverse": true,
+          "images": [
+            {
+              "image": "@media:salao-cafe-da-manha.jpg"
+            },
+            {
+              "image": "@media:balcao-cafe-completo.jpg"
+            },
+            {
+              "image": "@media:cesta-paes-pao-de-queijo.jpg"
+            }
+          ],
+          "gallery": [
+            {
+              "image": "@media:bandeja-frios-queijos.jpg"
+            },
+            {
+              "image": "@media:buffet-frutas-frios-quentes.jpg"
+            },
+            {
+              "image": "@media:pratos-quentes-buffet.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Acomodações",
+      "slug": "acomodacoes",
+      "showBookingBar": true,
+      "showTestimonials": true,
+      "showNewsletter": true,
+      "newsletterVariant": "inner",
+      "seoTitle": "Pousada em Paraty, RJ | Quartos e suítes",
+      "seoDescription": "Onde ficar em Paraty com quartos para casais, famílias e grupos. Ar-condicionado, TV e frigobar. Veja as opções e garanta sua reserva.",
+      "layout": [
+        {
+          "blockType": "pageHero",
+          "image": "@media:quadruplo-standard-camas-cabeceira-iluminada.jpg",
+          "title": "Acomodações",
+          "variant": "page"
+        },
+        {
+          "blockType": "roomList",
+          "intro": {
+            "title": "",
+            "text": "",
+            "ctaLabel": ""
+          }
+        }
+      ]
+    },
+    {
+      "title": "Lazer",
+      "slug": "lazer",
+      "showBookingBar": true,
+      "showTestimonials": true,
+      "showNewsletter": true,
+      "newsletterVariant": "inner",
+      "seoTitle": "Pousada em Paraty, RJ | Piscina aquecida",
+      "seoDescription": "Pousada em Paraty com lazer para desacelerar. Piscina aquecida para relaxar após a praia e os passeios. Confira horários e reserve.",
+      "layout": [
+        {
+          "blockType": "pageHero",
+          "image": "@media:piscina-mesas-area-coberta.jpg",
+          "title": "Lazer",
+          "variant": "page"
+        },
+        {
+          "blockType": "splitContent",
+          "eyebrow": "Lazer",
+          "title": "Lazer na Pousada Recanto do Jabaquara",
+          "text": "Depois da praia e das caminhadas, a vontade é desacelerar. A piscina aquecida convida a mergulhar sem pressa e a sentar ao redor, enquanto a noite chega em Paraty.",
+          "note": "Piscina aquecida — disponível das 10h às 22h",
+          "background": "white",
+          "images": [
+            {
+              "image": "@media:deque-espreguicadeiras-noite.jpg"
+            },
+            {
+              "image": "@media:espreguicadeiras-deque-sol.jpg"
+            },
+            {
+              "image": "@media:piscina-guarda-sois-mesas.jpg"
+            }
+          ],
+          "gallery": [
+            {
+              "image": "@media:area-estar-pergolado.jpg"
+            },
+            {
+              "image": "@media:piscina-guarda-sois-dia-claro.jpg"
+            },
+            {
+              "image": "@media:patio-palmeira-jardim.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Localização",
+      "slug": "localizacao",
+      "showBookingBar": true,
+      "showTestimonials": true,
+      "showNewsletter": true,
+      "newsletterVariant": "inner",
+      "seoTitle": "Pousada em Paraty, RJ | Localização no Jabaquara",
+      "seoDescription": "Hotel em Paraty com acesso ao Centro Histórico e às praias. Veja o que fica perto, como chegar e escolha uma hospedagem em Paraty bem localizada.",
+      "layout": [
+        {
+          "blockType": "pageHero",
+          "image": "@media:pousada-aerea-orla.jpg",
+          "title": "Localização",
+          "variant": "page"
+        },
+        {
+          "blockType": "location",
+          "eyebrow": "Localização",
+          "title": "Localização privilegiada da Pousada Recanto do Jabaquara",
+          "text": "Quem busca uma pousada em Paraty para circular com leveza encontra no Bairro Jabaquara um ponto estratégico. A localização fica perto da praia e com acesso fácil ao Centro Histórico, sem abrir mão da sensação de descanso. O caminho até o Cais de Paraty facilita organizar passeios de escuna, e as igrejas históricas ficam a poucos minutos de carro. A região também favorece roteiros até Trindade, Paraty Mirim e as cachoeiras da Serra da Bocaina. É uma base prática para chegar, estacionar e caminhar com tranquilidade — o ponto de partida ideal para explorar o melhor de Paraty.",
+          "poiTitle": "O que fica perto",
+          "poiLimit": 10,
+          "showContactCards": true,
+          "showMap": false
+        },
+        {
+          "blockType": "regionCard",
+          "eyebrow": "O destino",
+          "title": "Paraty",
+          "text": "Paraty tem ruas de pedra, casarios coloniais e uma energia cultural que aparece em cada caminhada. Comece pelo Centro Histórico de Paraty e siga até a Igreja Matriz de Nossa Senhora dos Remédios e a Igreja de Santa Rita, símbolos da herança colonial da cidade. O Cais de Paraty puxa passeios pela Baía de Paraty, com paradas em ilhas e águas tranquilas.",
+          "image": "@media:paraty-cais-barcos-anoitecer.jpg",
+          "align": "left"
+        },
+        {
+          "blockType": "splitContent",
+          "eyebrow": "A praia",
+          "title": "Praia do Jabaquara",
+          "text": "A Praia do Jabaquara fica em uma faixa tranquila de Paraty e combina bem com dias sem pressa. A areia costuma receber caminhadas longas e paradas para observar o mar. Em alguns trechos, a água é convidativa para atividades como stand up paddle e caiaque. O cenário também favorece o fim de tarde, quando o céu muda de cor e a brisa fica mais fresca.",
+          "background": "gray",
+          "reverse": true,
+          "images": [
+            {
+              "image": "@media:praia-jabaquara-aerea-orla.jpg"
+            },
+            {
+              "image": "@media:pousada-aerea-orla.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Fotos",
+      "slug": "fotos",
+      "showBookingBar": true,
+      "showTestimonials": false,
+      "showNewsletter": true,
+      "newsletterVariant": "inner",
+      "seoTitle": "Pousada em Paraty, RJ | Fotos da pousada",
+      "seoDescription": "Veja as fotos da Pousada Recanto do Jabaquara: quartos, piscina, café da manhã e a região de Paraty.",
+      "layout": [
+        {
+          "blockType": "pageHero",
+          "image": "@media:deque-iluminado-noite.jpg",
+          "title": "Fotos",
+          "variant": "page"
+        },
+        {
+          "blockType": "gallery",
+          "title": "",
+          "showFilters": true,
+          "allLabel": "Todas"
+        }
+      ]
+    },
+    {
+      "title": "Blog",
+      "slug": "blog",
+      "showBookingBar": true,
+      "showTestimonials": false,
+      "showNewsletter": true,
+      "newsletterVariant": "inner",
+      "seoTitle": "Pousada em Paraty, RJ | Blog de viagem e dicas",
+      "seoDescription": "Dicas de viagem para se hospedar em Paraty, roteiros e atrações. Descubra o que fazer em Paraty e acompanhe novidades do destino.",
+      "layout": [
+        {
+          "blockType": "pageHero",
+          "image": "@media:baia-paraty-aerea-casario.jpg",
+          "title": "Blog",
+          "variant": "page"
+        },
+        {
+          "blockType": "postList",
+          "title": "",
+          "limit": 12
+        }
+      ]
+    },
+    {
+      "title": "Promoções",
+      "slug": "promocoes",
+      "showBookingBar": true,
+      "showTestimonials": true,
+      "showNewsletter": true,
+      "newsletterVariant": "inner",
+      "seoTitle": "Pousada em Paraty, RJ | Promoções",
+      "seoDescription": "Ofertas e pacotes da Pousada Recanto do Jabaquara em Paraty. Reserve direto pelo site oficial.",
+      "layout": [
+        {
+          "blockType": "pageHero",
+          "image": "@media:piscina-entardecer-guarda-sol.jpg",
+          "title": "Promoções",
+          "variant": "page"
+        },
+        {
+          "blockType": "offers",
+          "limit": 6
+        },
+        {
+          "blockType": "emptyState",
+          "onlyWhenEmpty": true,
+          "title": "Nenhuma promoção no ar agora",
+          "text": "Fale com a recepção pelo WhatsApp para conhecer as condições da sua data.",
+          "ctaLabel": "Faça uma reserva",
+          "ctaHref": "/contato"
+        }
+      ]
+    }
+  ]
+}

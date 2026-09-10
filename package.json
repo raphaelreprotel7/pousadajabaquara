@@ -1,0 +1,66 @@
+{
+  "name": "recanto-do-jabaquara-payload",
+  "version": "1.0.0",
+  "description": "Site da Pousada Recanto do Jabaquara — Payload CMS 3 + Next.js App Router",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "devsafe": "rimraf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "seed": "npm run db:wal && cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/seed.ts",
+    "seed:site": "npm run db:wal && cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/seed-site.ts",
+    "setup:promotions": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/setup-promotions.ts",
+    "migrate:turso": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/migrate-sqlite-to-turso.ts",
+    "migrate:ghl": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/migrate-ghl.ts",
+    "upload:blob": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/upload-media-to-blob.ts",
+    "trocar:midia": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/trocar-midia.ts",
+    "db:wal": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/db-wal.ts",
+    "remover:midia": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/remover-midia.ts"
+  },
+  "dependencies": {
+    "@payloadcms/db-sqlite": "3.88.0",
+    "@payloadcms/next": "3.88.0",
+    "@payloadcms/plugin-form-builder": "3.88.0",
+    "@payloadcms/plugin-redirects": "3.88.0",
+    "@payloadcms/plugin-seo": "3.88.0",
+    "@payloadcms/richtext-lexical": "3.88.0",
+    "@payloadcms/storage-vercel-blob": "^3.88.0",
+    "@payloadcms/ui": "3.88.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "graphql": "^16.9.0",
+    "leaflet": "^1.9.4",
+    "next": "16.3.0",
+    "payload": "3.88.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sharp": "^0.34.0",
+    "turndown": "^7.2.4"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.12",
+    "@types/node": "^22.9.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/turndown": "^5.0.6",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  },
+  "allowScripts": {
+    "sharp@0.35.3": true,
+    "sharp@0.34.5": true,
+    "esbuild@0.18.20": true,
+    "esbuild@0.28.2": true,
+    "esbuild@0.25.12": true
+  }
+}
