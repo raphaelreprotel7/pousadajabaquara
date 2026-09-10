@@ -97,7 +97,11 @@ export default buildConfig({
     // PAYLOAD_DB_PUSH=false em produção — a partir daí mudança de schema entra
     // por script (ver src/scripts/migrate-ghl.ts) e não por push automático,
     // que é destrutivo.
-    const push = process.env.PAYLOAD_DB_PUSH !== 'false'
+    /* Comparar com a string crua é frágil: um espaço ou um BOM (o PowerShell
+       põe um ao enviar valor por pipe) faria `"﻿false" !== "false"` e o
+       push voltaria a ligar — num banco com dados, isso é destrutivo. */
+    const limpo = (process.env.PAYLOAD_DB_PUSH ?? '').replace(/^﻿/, '').trim()
+    const push = limpo !== 'false'
 
     if (postgres) return postgresAdapter({ pool: { connectionString: postgres }, push })
 
