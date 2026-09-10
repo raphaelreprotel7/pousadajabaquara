@@ -1,4 +1,4 @@
-import 'dotenv/config'
+import { bancoEmUso } from './env'
 import fs from 'node:fs'
 import path from 'node:path'
 import { getPayload } from 'payload'
@@ -78,6 +78,11 @@ const run = async () => {
   }
 
   const dados: Any = JSON.parse(fs.readFileSync(ARQUIVO, 'utf8'))
+  /* Dizer em voz alta onde vai escrever: com `.env.local` apontando para
+     produção, rodar o seed achando que é local é um erro fácil e caro. */
+  console.log(`Banco: ${bancoEmUso()}
+`)
+
   const payload = await getPayload({ config })
 
   const midias = new Map<string, string | number>()
@@ -110,15 +115,30 @@ const run = async () => {
   const midiaId = async (nome: string): Promise<string | number | null> => {
     if (midias.has(nome)) return midias.get(nome)!
 
-    const existente = await payload.find({
+    /* O Payload renomeia o arquivo quando acha o nome ocupado: `logo.png`
+       entra como `logo-1.png`. Procurar pelo nome exato não reencontrava o
+       que já estava lá e cada execução criava uma cópia nova — 62 imagens
+       viraram 124 na primeira vez que o seed rodou duas vezes. Aceitar o
+       sufixo aqui é o que torna o seed idempotente de verdade. */
+    const [base, ext] = [nome.replace(/\.[^.]+$/, ''), nome.slice(nome.lastIndexOf('.'))]
+    const candidatos = await payload.find({
       collection: 'media',
-      where: { filename: { equals: nome } },
-      limit: 1,
+      where: { filename: { like: base } },
+      limit: 50,
       depth: 0,
     })
-    if (existente.docs.length) {
-      midias.set(nome, existente.docs[0].id)
-      return existente.docs[0].id
+    const mesmaOrigem = (arquivo: string) => {
+      if (!arquivo.toLowerCase().endsWith(ext.toLowerCase())) return false
+      const semExt = arquivo.slice(0, -ext.length)
+      if (semExt === base) return true
+      // `logo-1`, `logo-2`: o sufixo que o Payload acrescenta. `logo-antigo`
+      // é outro arquivo e não pode casar.
+      return semExt.startsWith(`${base}-`) && /^\d+$/.test(semExt.slice(base.length + 1))
+    }
+    const achado = (candidatos.docs as Any[]).find((d) => mesmaOrigem(String(d.filename ?? '')))
+    if (achado) {
+      midias.set(nome, achado.id)
+      return achado.id
     }
 
     const arquivo = caminhoImagem(nome)

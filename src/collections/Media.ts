@@ -26,6 +26,13 @@ export const Media: CollectionConfig = {
   },
   upload: {
     staticDir: 'public/media',
+    /* Com o Blob ligado, o disco local não guarda nada — e é preciso dizer
+       isso ao Payload. Sem esta linha ele ainda consulta `staticDir` para ver
+       se o nome está livre: como a pasta local tem as imagens de quando o site
+       rodou aqui, todo upload para produção saía renomeado (`logo-1.png`). Aí
+       o seed, que casa mídia pelo nome do arquivo, nunca reencontrava o que
+       tinha subido e criava uma cópia nova a cada execução. */
+    disableLocalStorage: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
     mimeTypes: ['image/*'],
     imageSizes: [
       { name: 'thumb', width: 480, height: undefined, position: 'centre' },
