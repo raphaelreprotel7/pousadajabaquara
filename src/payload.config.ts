@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url'
 import { buildConfig } from 'payload'
 import sharp from 'sharp'
 
+import { postgresAdapter } from '@payloadcms/db-postgres'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
@@ -75,22 +76,42 @@ export default buildConfig({
     },
   },
 
-  // Troque por postgresAdapter em produção:
-  //   import { postgresAdapter } from '@payloadcms/db-postgres'
-  //   db: postgresAdapter({ pool: { connectionString: process.env.DATABASE_URI } })
-  db: sqliteAdapter({
-    client: {
-      url: process.env.TURSO_DATABASE_URL || process.env.DATABASE_URI || 'file:./recanto-do-jabaquara.db',
-      authToken: process.env.TURSO_AUTH_TOKEN,
-    },
-    // Ligado por padrão porque o projeto nasce com o banco vazio: sem push as
-    // tabelas nunca são criadas e o primeiro seed falha.
-    //
-    // Quando o site entrar no ar, coloque PAYLOAD_DB_PUSH=false no ambiente de
-    // produção — a partir daí mudança de schema entra por script (ver
-    // src/scripts/migrate-ghl.ts) e não por push automático, que é destrutivo.
-    push: process.env.PAYLOAD_DB_PUSH !== 'false',
-  }),
+  /**
+   * O banco é escolhido pela URL, não por edição de código.
+   *
+   * Em produção (Vercel) é Postgres; no desenvolvimento local continua o
+   * arquivo SQLite, que não pede nenhuma infraestrutura para rodar o site.
+   * `POSTGRES_URL` é o nome que a integração de banco da Vercel injeta
+   * sozinha — aceitá-lo evita ter de duplicar a variável no painel.
+   *
+   * O conteúdo não mora no banco, e sim em content/site.json, então trocar de
+   * banco não é migrar dados: é apontar o `seed:site` para o novo endereço.
+   */
+  db: (() => {
+    const postgres =
+      process.env.DATABASE_URI?.startsWith('postgres') ? process.env.DATABASE_URI
+      : process.env.POSTGRES_URL || process.env.DATABASE_URL || ''
+
+    // Ligado por padrão porque o banco nasce vazio: sem push as tabelas nunca
+    // são criadas e o primeiro seed falha. Quando o site entrar no ar, coloque
+    // PAYLOAD_DB_PUSH=false em produção — a partir daí mudança de schema entra
+    // por script (ver src/scripts/migrate-ghl.ts) e não por push automático,
+    // que é destrutivo.
+    const push = process.env.PAYLOAD_DB_PUSH !== 'false'
+
+    if (postgres) return postgresAdapter({ pool: { connectionString: postgres }, push })
+
+    return sqliteAdapter({
+      client: {
+        url:
+          process.env.TURSO_DATABASE_URL ||
+          process.env.DATABASE_URI ||
+          'file:./recanto-do-jabaquara.db',
+        authToken: process.env.TURSO_AUTH_TOKEN,
+      },
+      push,
+    })
+  })(),
 
   editor: lexicalEditor(),
 

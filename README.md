@@ -58,10 +58,24 @@ foi entregue.
 
 ## Publicar
 
+O banco de produção não é uma cópia do banco local: como o conteúdo mora em
+`content/site.json`, basta apontar o seed para o banco novo e rodá-lo. Ele cria
+as tabelas, escreve o conteúdo e sobe as imagens para o Blob.
+
 1. `npm run build` — tem que passar limpo
-2. Banco: `npm run migrate:turso` leva o SQLite local para o Turso
-3. Uploads: `npm run upload:blob` leva `public/media` para o Vercel Blob
-4. Variáveis na Vercel: `PAYLOAD_SECRET`, `NEXT_PUBLIC_SERVER_URL`,
-   `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `BLOB_READ_WRITE_TOKEN`
-5. `PAYLOAD_DB_PUSH=false` em produção — o push automático de schema existe para
-   o projeto nascer com as tabelas; depois que há dados, ele é destrutivo
+2. Crie o Postgres e o Blob no painel da Vercel
+3. `.env.local` com `DATABASE_URI` (conexão **direta**, sem `-pooler`) e
+   `BLOB_READ_WRITE_TOKEN`
+4. `npm run seed:site` — cria o schema, o conteúdo e sobe as imagens
+5. Crie o usuário do admin apontando o `npm run dev` para o mesmo banco, antes
+   de o domínio ir ao ar
+6. Variáveis na Vercel: `PAYLOAD_SECRET` (o mesmo do `.env` local),
+   `NEXT_PUBLIC_SERVER_URL`, `BLOB_READ_WRITE_TOKEN` e, se a integração de banco
+   não injetar `POSTGRES_URL`, também `DATABASE_URI`
+7. `PAYLOAD_DB_PUSH=false` em produção — o push automático de schema existe para
+   o banco nascer com as tabelas; depois que há dados, ele é destrutivo
+
+Turso (SQLite hospedado) continua funcionando como alternativa: preencha
+`TURSO_DATABASE_URL`/`TURSO_AUTH_TOKEN` e o adaptador troca sozinho. Nesse
+caminho existem `npm run migrate:turso` e `npm run upload:blob`, que copiam o
+banco e os uploads locais em vez de refazer o seed.
