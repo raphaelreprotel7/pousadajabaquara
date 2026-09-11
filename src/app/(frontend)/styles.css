@@ -487,9 +487,10 @@ input,select,textarea{font:inherit}
 .mapa__link{
   position:absolute;right:22px;top:22px;z-index:900;
   background:#fff;color:var(--ink);
-  font-family:var(--ff-head);font-size:11px;font-weight:600;
-  letter-spacing:.14em;text-transform:uppercase;line-height:1;
-  padding:13px 20px;box-shadow:0 6px 20px rgba(0,0,0,.2);
+  font-family:var(--ff-body);font-size:var(--fs-small);font-weight:400;
+  letter-spacing:.02em;text-transform:none;line-height:1;
+  padding:14px 20px;border-radius:var(--button-radius);
+  box-shadow:0 6px 20px rgba(0,0,0,.2);
   transition:background .2s,color .2s;
 }
 .mapa__link:hover{background:var(--red);color:#fff}
@@ -837,6 +838,16 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
 /* Sem o card lateral, o formulário não deve esticar a linha inteira:
    passa a uma coluna de leitura confortável. */
 .contact__grid--so-form{grid-template-columns:minmax(0,760px)}
+/* Com foto, volta a duas colunas: o formulário não precisa de 760px e a
+   coluna vazia à direita ficava pedindo alguma coisa. */
+.contact__grid--com-foto{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:stretch}
+.contact__foto{position:relative;min-height:100%;border-radius:var(--card-radius);
+  overflow:hidden;background:#dedede}
+.contact__foto .img{width:100%;height:100%;object-fit:cover;border:0}
+@media (max-width:900px){
+  .contact__grid--com-foto{grid-template-columns:1fr}
+  .contact__foto{min-height:280px;order:-1}
+}
 
 /* ---------------- MENU SUSPENSO ------------------------------
    O item com subitens continua sendo um link — o suspenso é atalho,

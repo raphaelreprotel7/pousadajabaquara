@@ -25,6 +25,7 @@
     "upload:blob": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/upload-media-to-blob.ts",
     "trocar:midia": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/trocar-midia.ts",
     "db:wal": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/db-wal.ts",
+    "db:destravar": "cross-env NODE_OPTIONS=--no-deprecation node src/scripts/destravar-push.mjs",
     "remover:midia": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/remover-midia.ts"
   },
   "dependencies": {

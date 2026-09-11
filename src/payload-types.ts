@@ -420,6 +420,10 @@ export interface Page {
              */
             form?: (number | null) | Form;
             /**
+             * Só aparece quando não há card lateral. Preenche a coluna ao lado do formulário.
+             */
+            image?: (number | null) | Media;
+            /**
              * Vazio, usa o aceite padrão de contato. Numa página de vagas o aceite é outro — os dados servem para avaliar a candidatura, não para receber conteúdo.
              */
             consentText?: string | null;
@@ -1789,6 +1793,7 @@ export interface PagesSelect<T extends boolean = true> {
               title?: T;
               text?: T;
               form?: T;
+              image?: T;
               consentText?: T;
               asideTitle?: T;
               id?: T;

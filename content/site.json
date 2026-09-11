@@ -1266,6 +1266,7 @@
           "title": "Envie sua candidatura",
           "text": "Preencha o formulário abaixo contando um pouco da sua experiência e em que área gostaria de atuar. Guardamos sua mensagem e entramos em contato quando houver uma oportunidade que combine com o seu perfil.",
           "form": "@form:Trabalhe Conosco",
+          "image": "@media:area-estar-pergolado.jpg",
           "consentText": "Concordo que meus dados sejam usados para avaliar minha candidatura.",
           "asideTitle": ""
         }

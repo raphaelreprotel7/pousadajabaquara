@@ -786,6 +786,16 @@ export const ContactBlock: Block = {
       admin: { description: 'Criado em Formulários.' },
     },
     {
+      name: 'image',
+      label: 'Foto ao lado',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description:
+          'Só aparece quando não há card lateral. Preenche a coluna ao lado do formulário.',
+      },
+    },
+    {
       name: 'consentText',
       label: 'Texto do aceite',
       type: 'text',

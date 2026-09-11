@@ -791,17 +791,29 @@ export const RenderBlocks = async ({
 
         /* ---------------------------- LOCALIZAÇÃO ----------------------- */
         case 'location': {
-          const res = await payload.find({
-            collection: 'attractions',
-            locale,
-            depth: 0,
-            limit: b.poiLimit ?? 9,
-            sort: 'distanceMeters',
-          })
+          /* `limit: 0` no Payload significa SEM limite — o oposto do que o
+             editor quer dizer ao zerar o campo. Zero aqui é "nenhum". */
+          const nPoi = b.poiLimit ?? 9
+          const res = nPoi
+            ? await payload.find({
+                collection: 'attractions',
+                locale,
+                depth: 0,
+                limit: nPoi,
+                sort: 'distanceMeters',
+              })
+            : { docs: [] as Any[] }
           const { head, tail } = splitHighlight(b.title ?? '')
+
+          /* Sem título, sem texto e sem pontos de interesse não sobra seção
+             nenhuma — só as duas colunas vazias. É o caso de /contato, que usa
+             este bloco apenas pelo mapa. */
+          const temTexto = Boolean(b.title || b.text || b.eyebrow)
+          const temColunas = temTexto || res.docs.length > 0
 
           return (
             <React.Fragment key={key}>
+              {temColunas ? (
               <section className="sec">
                 <div className="shell split">
                   <div>
@@ -843,6 +855,7 @@ export const RenderBlocks = async ({
                   </div>
                 </div>
               </section>
+              ) : null}
 
               {b.showContactCards ? (
                 <section className="sec sec--verde">
@@ -988,7 +1001,15 @@ export const RenderBlocks = async ({
               {/* Sem título de card lateral, a central de reservas some e o
                   formulário ocupa a largura toda — numa página de vagas, por
                   exemplo, telefone de reservas não tem o que fazer ali. */}
-              <div className={`shell contact__grid${b.asideTitle ? '' : ' contact__grid--so-form'}`}>
+              <div
+                className={`shell contact__grid${
+                  b.asideTitle
+                    ? ''
+                    : b.image
+                      ? ' contact__grid--com-foto'
+                      : ' contact__grid--so-form'
+                }`}
+              >
                 <div>
                   {b.eyebrow ? <p className="eyebrow">{b.eyebrow}</p> : null}
                   <h2 className="h-block">
@@ -1027,6 +1048,16 @@ export const RenderBlocks = async ({
                     </form>
                   )}
                 </div>
+
+                {!b.asideTitle && b.image ? (
+                  <div className="contact__foto">
+                    <img
+                      className="img"
+                      {...imgProps(mediaUrl(b.image), { sizes: SIZES.half })}
+                      alt={mediaAlt(b.image)}
+                    />
+                  </div>
+                ) : null}
 
                 {b.asideTitle ? (
                 <aside className="central">
