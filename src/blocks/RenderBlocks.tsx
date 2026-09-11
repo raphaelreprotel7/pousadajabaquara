@@ -132,7 +132,7 @@ export const RenderBlocks = async ({
                 >
                   {b.title}
                 </h1>
-                {!isArticle && settings?.tagline ? (
+                {!isArticle && b.showTagline !== false && settings?.tagline ? (
                   <p className="pagehero__tag">{settings.tagline}</p>
                 ) : null}
               </div>
@@ -970,7 +970,10 @@ export const RenderBlocks = async ({
           const { head, tail } = splitHighlight(b.title ?? '')
           return (
             <section className="sec" key={key}>
-              <div className="shell contact__grid">
+              {/* Sem título de card lateral, a central de reservas some e o
+                  formulário ocupa a largura toda — numa página de vagas, por
+                  exemplo, telefone de reservas não tem o que fazer ali. */}
+              <div className={`shell contact__grid${b.asideTitle ? '' : ' contact__grid--so-form'}`}>
                 <div>
                   {b.eyebrow ? <p className="eyebrow">{b.eyebrow}</p> : null}
                   <h2 className="h-block">
@@ -982,7 +985,10 @@ export const RenderBlocks = async ({
                     <PayloadForm
                       form={b.form as PayloadFormDoc}
                       variant="contact"
-                      consentText={`Concordo em receber conteúdos sobre o ${settings?.hotelName}.`}
+                      consentText={
+                        b.consentText ||
+                        `Concordo em receber conteúdos sobre o ${settings?.hotelName}.`
+                      }
                     />
                   ) : (
                     <form className="cform">
@@ -1007,6 +1013,7 @@ export const RenderBlocks = async ({
                   )}
                 </div>
 
+                {b.asideTitle ? (
                 <aside className="central">
                   <h2>{b.asideTitle}</h2>
                   <ul>
@@ -1046,6 +1053,7 @@ export const RenderBlocks = async ({
                     WhatsApp
                   </a>
                 </aside>
+                ) : null}
               </div>
             </section>
           )

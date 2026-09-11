@@ -196,6 +196,10 @@ export interface Page {
              */
             title?: string | null;
             variant?: ('page' | 'article') | null;
+            /**
+             * A assinatura do hotel ("o melhor preço garantido") vem das configurações. Desmarque em páginas onde ela não faz sentido, como a de vagas.
+             */
+            showTagline?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'pageHero';
@@ -415,6 +419,13 @@ export interface Page {
              * Criado em Formulários.
              */
             form?: (number | null) | Form;
+            /**
+             * Vazio, usa o aceite padrão de contato. Numa página de vagas o aceite é outro — os dados servem para avaliar a candidatura, não para receber conteúdo.
+             */
+            consentText?: string | null;
+            /**
+             * Vazio, o card não aparece e o formulário ocupa a largura toda — para páginas onde a central de reservas não faz sentido.
+             */
             asideTitle?: string | null;
             id?: string | null;
             blockName?: string | null;
@@ -1566,6 +1577,7 @@ export interface PagesSelect<T extends boolean = true> {
               image?: T;
               title?: T;
               variant?: T;
+              showTagline?: T;
               id?: T;
               blockName?: T;
             };
@@ -1777,6 +1789,7 @@ export interface PagesSelect<T extends boolean = true> {
               title?: T;
               text?: T;
               form?: T;
+              consentText?: T;
               asideTitle?: T;
               id?: T;
               blockName?: T;
@@ -2410,6 +2423,16 @@ export interface Header {
     | {
         label: string;
         href: string;
+        /**
+         * Abrem num menu suspenso sob este item. O item de cima continua sendo um link.
+         */
+        children?:
+          | {
+              label: string;
+              href: string;
+              id?: string | null;
+            }[]
+          | null;
         id?: string | null;
       }[]
     | null;
@@ -2673,6 +2696,13 @@ export interface HeaderSelect<T extends boolean = true> {
     | {
         label?: T;
         href?: T;
+        children?:
+          | T
+          | {
+              label?: T;
+              href?: T;
+              id?: T;
+            };
         id?: T;
       };
   promoLabel?: T;

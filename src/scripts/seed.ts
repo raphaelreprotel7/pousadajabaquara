@@ -80,6 +80,35 @@ const run = async () => {
     },
   )
 
+  /* A area de interesse e um campo livre, nao uma lista: enumerar setores
+     (recepcao, cozinha, camararia...) seria inventar o organograma da pousada.
+     Quem se candidata escreve o que procura. */
+  await upsert(
+    'forms',
+    { title: { equals: 'Trabalhe Conosco' } },
+    {
+      title: 'Trabalhe Conosco',
+      submitButtonLabel: 'Enviar candidatura',
+      confirmationType: 'redirect',
+      redirect: { url: '/contato-obrigado' },
+      fields: [
+        { blockType: 'text', name: 'nome', label: 'Nome', required: true, width: 50 },
+        { blockType: 'text', name: 'sobrenome', label: 'Sobrenome', required: false, width: 50 },
+        { blockType: 'email', name: 'email', label: 'Email', required: true, width: 50 },
+        { blockType: 'text', name: 'telefone', label: 'Telefone', required: true, width: 50 },
+        { blockType: 'text', name: 'area', label: 'Área de interesse', required: false, width: 50 },
+        { blockType: 'text', name: 'cidade', label: 'Onde você mora', required: false, width: 50 },
+        {
+          blockType: 'textarea',
+          name: 'mensagem',
+          label: 'Conte um pouco sobre sua experiência',
+          required: true,
+          width: 100,
+        },
+      ],
+    },
+  )
+
   /* -------------------------------- GLOBALS ------------------------------ */
 
   await payload.updateGlobal({ slug: 'site-settings', data: {} }) // grava os defaults
@@ -213,7 +242,7 @@ const run = async () => {
   )
 
   console.log('Seed concluído:')
-  console.log('  formulários  Newsletter, Contato')
+  console.log('  formulários  Newsletter, Contato, Trabalhe Conosco')
   console.log('  páginas      /contato, /email-obrigado, /contato-obrigado')
   console.log('  globals      header, footer, newsletter, booking, settings')
 

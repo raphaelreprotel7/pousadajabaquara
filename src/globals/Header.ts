@@ -38,6 +38,38 @@ export const Header: GlobalConfig = {
             },
           ],
         },
+        {
+          name: 'children',
+          label: 'Subitens',
+          type: 'array',
+          labels: { singular: 'Subitem', plural: 'Subitens' },
+          admin: {
+            description:
+              'Abrem num menu suspenso sob este item. O item de cima continua sendo um link.',
+          },
+          fields: [
+            {
+              type: 'row',
+              fields: [
+                {
+                  name: 'label',
+                  label: 'Rótulo',
+                  type: 'text',
+                  required: true,
+                  localized: true,
+                  admin: { width: '40%' },
+                },
+                {
+                  name: 'href',
+                  label: 'Destino',
+                  type: 'text',
+                  required: true,
+                  admin: { width: '60%', placeholder: '/trabalhe-conosco' },
+                },
+              ],
+            },
+          ],
+        },
       ],
     },
     {

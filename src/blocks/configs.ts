@@ -75,6 +75,17 @@ export const PageHeroBlock: Block = {
           ],
           admin: { width: '40%' },
         },
+        {
+          name: 'showTagline',
+          label: 'Mostrar a assinatura',
+          type: 'checkbox',
+          defaultValue: true,
+          admin: {
+            width: '100%',
+            description:
+              'A assinatura do hotel ("o melhor preço garantido") vem das configurações. Desmarque em páginas onde ela não faz sentido, como a de vagas.',
+          },
+        },
       ],
     },
   ],
@@ -775,11 +786,25 @@ export const ContactBlock: Block = {
       admin: { description: 'Criado em Formulários.' },
     },
     {
+      name: 'consentText',
+      label: 'Texto do aceite',
+      type: 'text',
+      localized: true,
+      admin: {
+        description:
+          'Vazio, usa o aceite padrão de contato. Numa página de vagas o aceite é outro — os dados servem para avaliar a candidatura, não para receber conteúdo.',
+      },
+    },
+    {
       name: 'asideTitle',
       label: 'Título do card lateral',
       type: 'text',
       localized: true,
       defaultValue: 'Central de reservas',
+      admin: {
+        description:
+          'Vazio, o card não aparece e o formulário ocupa a largura toda — para páginas onde a central de reservas não faz sentido.',
+      },
     },
   ],
 }

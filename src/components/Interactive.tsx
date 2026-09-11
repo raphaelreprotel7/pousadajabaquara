@@ -169,7 +169,7 @@ export const BookingBar = ({ config }: { config: BookingConfig }) => {
 /* MENU MOBILE                                                           */
 /* ===================================================================== */
 
-type NavItem = { label: string; href: string }
+type NavItem = { label: string; href: string; filho?: boolean }
 
 export const MobileNav = ({ items }: { items: NavItem[] }) => {
   const [open, setOpen] = useState(false)
@@ -203,7 +203,12 @@ export const MobileNav = ({ items }: { items: NavItem[] }) => {
         &times;
       </button>
       {items.map((item) => (
-        <a key={item.href + item.label} href={item.href} onClick={() => setOpen(false)}>
+        <a
+          key={item.href + item.label}
+          href={item.href}
+          className={item.filho ? 'mobilenav__filho' : undefined}
+          onClick={() => setOpen(false)}
+        >
           {item.label}
         </a>
       ))}

@@ -87,7 +87,13 @@
       },
       {
         "label": "A Pousada",
-        "href": "/a-pousada"
+        "href": "/a-pousada",
+        "children": [
+          {
+            "label": "Trabalhe Conosco",
+            "href": "/trabalhe-conosco"
+          }
+        ]
       },
       {
         "label": "Acomodações",
@@ -1204,6 +1210,34 @@
               "image": "@media:pratos-quentes-buffet.jpg"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "Trabalhe Conosco",
+      "slug": "trabalhe-conosco",
+      "showBookingBar": false,
+      "showTestimonials": false,
+      "showNewsletter": true,
+      "newsletterVariant": "inner",
+      "seoTitle": "Trabalhe Conosco | Pousada Recanto do Jabaquara",
+      "seoDescription": "Envie sua candidatura para a Pousada Recanto do Jabaquara, em Paraty. Conte sua experiencia e a area em que gostaria de atuar.",
+      "layout": [
+        {
+          "blockType": "pageHero",
+          "image": "@media:recepcao-identidade-visual.jpg",
+          "title": "Trabalhe Conosco",
+          "variant": "page",
+          "showTagline": false
+        },
+        {
+          "blockType": "contact",
+          "eyebrow": "Faça parte da equipe",
+          "title": "Envie sua candidatura",
+          "text": "Preencha o formulário abaixo contando um pouco da sua experiência e em que área gostaria de atuar. Guardamos sua mensagem e entramos em contato quando houver uma oportunidade que combine com o seu perfil.",
+          "form": "@form:Trabalhe Conosco",
+          "consentText": "Concordo que meus dados sejam usados para avaliar minha candidatura.",
+          "asideTitle": ""
         }
       ]
     },

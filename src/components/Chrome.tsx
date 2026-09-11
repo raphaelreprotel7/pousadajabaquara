@@ -41,8 +41,17 @@ export const SiteHeader = ({
   const bookHref = header?.bookUsesEngine ? engineUrl(booking) : '#reserva'
   const external = Boolean(header?.bookUsesEngine)
 
+  /* Na gaveta não há espaço para menu suspenso: os subitens entram logo abaixo
+     do pai, recuados, na ordem em que aparecem no admin. */
   const mobileItems = [
-    ...nav.map((n) => ({ label: n.label, href: n.href })),
+    ...nav.flatMap((n) => [
+      { label: n.label, href: n.href },
+      ...((n.children ?? []) as Any[]).map((f) => ({
+        label: f.label,
+        href: f.href,
+        filho: true,
+      })),
+    ]),
     { label: header?.promoLabel ?? 'Promoções', href: header?.promoHref ?? '/promocoes' },
     { label: header?.bookLabel ?? 'Faça uma reserva', href: bookHref },
   ]
@@ -68,15 +77,38 @@ export const SiteHeader = ({
           </a>
 
           <nav className="nav">
-            {nav.map((item) => (
-              <a
-                key={item.href + item.label}
-                href={item.href}
-                className={item.href === currentPath ? 'is-active' : undefined}
-              >
-                {item.label}
-              </a>
-            ))}
+            {nav.map((item) => {
+              const filhos = (item.children ?? []) as Any[]
+              /* O item com subitens continua sendo um link: quem já sabe onde
+                 quer ir clica direto, e o suspenso é atalho, não obstáculo. */
+              const ativo =
+                item.href === currentPath || filhos.some((f) => f.href === currentPath)
+              const link = (
+                <a href={item.href} className={ativo ? 'is-active' : undefined}>
+                  {item.label}
+                </a>
+              )
+
+              if (!filhos.length) return <span key={item.href + item.label}>{link}</span>
+
+              return (
+                <span className="nav__grupo" key={item.href + item.label}>
+                  {link}
+                  <span className="nav__seta" aria-hidden="true" />
+                  <span className="nav__sub">
+                    {filhos.map((f) => (
+                      <a
+                        key={f.href + f.label}
+                        href={f.href}
+                        className={f.href === currentPath ? 'is-active' : undefined}
+                      >
+                        {f.label}
+                      </a>
+                    ))}
+                  </span>
+                </span>
+              )
+            })}
           </nav>
 
           <MobileNav items={mobileItems} />
