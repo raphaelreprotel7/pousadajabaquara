@@ -34,3 +34,6 @@ tsconfig.tsbuildinfo
 
 # O modelo entra; os arquivos com valor de verdade, nao.
 !.env.example
+
+# Capturas soltas de verificacao, quando um script roda a partir da raiz.
+q-*.png
