@@ -237,21 +237,27 @@ export const SiteFooter = ({ settings, footer }: { settings: Any; footer: Any })
       {(footer?.seals ?? []).length ? (
         <div className="shell footer__selos">
           {(footer.seals as Any[]).map((s) => {
-            const img = (
-              <img
-                className="footer__selo"
-                src={mediaUrl(s.image)}
-                alt={s.label}
-                loading="lazy"
-                decoding="async"
-              />
-            )
+            /* Sem arte oficial, o selo é composto com a letra do site. Dizer a
+               certificação por escrito é honesto; desenhar um brasão parecido
+               com o de um organismo certificador não seria. */
+            const selo =
+              s.style === 'text' ? (
+                <span className="footer__selo footer__selo--texto">{s.label}</span>
+              ) : (
+                <img
+                  className="footer__selo"
+                  src={mediaUrl(s.image)}
+                  alt={s.label}
+                  loading="lazy"
+                  decoding="async"
+                />
+              )
             return s.href ? (
-              <a key={s.label} href={s.href} target="_blank" rel="noopener">
-                {img}
+              <a className="footer__selo-link" key={s.label} href={s.href} target="_blank" rel="noopener">
+                {selo}
               </a>
             ) : (
-              <span key={s.label}>{img}</span>
+              <span className="footer__selo-link" key={s.label}>{selo}</span>
             )
           })}
         </div>

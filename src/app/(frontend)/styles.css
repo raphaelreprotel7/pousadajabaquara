@@ -1106,11 +1106,27 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
   opacity:.92;transition:opacity .2s}
 .footer__social a:hover{background:none;border:0;opacity:1}
 .footer__social svg{width:21px;height:21px;fill:#fff}
-.footer__selos{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
-  gap:26px;margin-top:52px}
-.footer__selo{height:34px;width:auto;opacity:.6;filter:grayscale(1);
-  transition:opacity .25s,filter .25s}
-.footer__selos a:hover .footer__selo,.footer__selos span:hover .footer__selo{opacity:1;filter:none}
+/* `.footer .shell` transforma qualquer `.shell` do rodapé numa grade de quatro
+   colunas, e vence `.footer__selos` por especificidade — os selos viravam itens
+   dessa grade e cada um caía numa coluna. Por isso o seletor duplo. */
+.footer .footer__selos{display:flex;align-items:center;justify-content:center;
+  flex-wrap:wrap;gap:24px;margin-top:52px}
+.footer__selo-link{display:inline-flex;align-items:center}
+/* Alturas iguais para os dois tipos, para lerem como um conjunto.
+   A arte do KAYAK vem num quadrado de fundo opaco, não num PNG recortado:
+   cinza total apagaria a marca e o quadro viraria um borrão sobre o verde.
+   Uma dessaturação parcial basta para ficar discreto sem sumir. */
+.footer__selo{height:64px;width:auto;opacity:.78;filter:grayscale(.3);
+  border-radius:10px;transition:opacity .25s,filter .25s}
+.footer__selo--texto{
+  display:inline-flex;align-items:center;height:64px;padding:0 22px;
+  border:1px solid rgba(255,255,255,.35);border-radius:8px;
+  font-family:var(--ff-body);font-size:12.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(255,255,255,.78);white-space:nowrap;
+  opacity:1;filter:none;transition:border-color .25s,color .25s;
+}
+.footer__selo-link:hover .footer__selo{opacity:1;filter:none}
+.footer__selo-link:hover .footer__selo--texto{border-color:rgba(255,255,255,.7);color:#fff}
 /* Com selos, a linha final encosta neles em vez de abrir outro vão grande. */
 .footer__selos + .footer__bar{margin-top:26px}
 

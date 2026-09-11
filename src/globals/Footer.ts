@@ -121,12 +121,28 @@ export const Footer: GlobalConfig = {
           type: 'row',
           fields: [
             {
+              name: 'style',
+              label: 'Tipo',
+              type: 'select',
+              defaultValue: 'image',
+              options: [
+                { label: 'Imagem', value: 'image' },
+                { label: 'Texto', value: 'text' },
+              ],
+              admin: {
+                width: '20%',
+                description: 'Texto usa a fonte do site, para quando não há arte oficial.',
+              },
+            },
+            {
               name: 'image',
               label: 'Imagem',
               type: 'upload',
               relationTo: 'media',
-              required: true,
-              admin: { width: '40%' },
+              admin: {
+                width: '20%',
+                condition: (_, sibling) => sibling?.style !== 'text',
+              },
             },
             {
               name: 'label',
@@ -134,7 +150,10 @@ export const Footer: GlobalConfig = {
               type: 'text',
               required: true,
               localized: true,
-              admin: { width: '30%', description: 'Lida por leitor de tela.' },
+              admin: {
+                width: '30%',
+                description: 'Em imagem, é o texto alternativo. Em texto, é o que aparece.',
+              },
             },
             {
               name: 'href',

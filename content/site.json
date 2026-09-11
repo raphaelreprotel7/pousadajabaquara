@@ -170,6 +170,17 @@
         ]
       }
     ],
+    "seals": [
+      {
+        "style": "image",
+        "image": "@media:selo-kayak-travel-awards.png",
+        "label": "KAYAK Travel Awards"
+      },
+      {
+        "style": "text",
+        "label": "ISO 9001:2015"
+      }
+    ],
     "bottomText": "Pousada Recanto do Jabaquara © 2026 — Todos os direitos reservados."
   },
   "newsletter": {
@@ -540,6 +551,11 @@
       "file": "recepcao-identidade-visual.jpg",
       "alt": "Recepção da pousada com a identidade visual na parede",
       "category": "Estrutura"
+    },
+    {
+      "file": "selo-kayak-travel-awards.png",
+      "alt": "Selo KAYAK Travel Awards",
+      "category": null
     }
   ],
   "amenities": [

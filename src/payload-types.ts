@@ -2477,9 +2477,13 @@ export interface Footer {
    */
   seals?:
     | {
-        image: number | Media;
         /**
-         * Lida por leitor de tela.
+         * Texto usa a fonte do site, para quando não há arte oficial.
+         */
+        style?: ('image' | 'text') | null;
+        image?: (number | null) | Media;
+        /**
+         * Em imagem, é o texto alternativo. Em texto, é o que aparece.
          */
         label: string;
         /**
@@ -2755,6 +2759,7 @@ export interface FooterSelect<T extends boolean = true> {
   seals?:
     | T
     | {
+        style?: T;
         image?: T;
         label?: T;
         href?: T;
