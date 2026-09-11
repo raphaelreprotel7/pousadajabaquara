@@ -108,6 +108,45 @@ export const Footer: GlobalConfig = {
       ],
     },
     {
+      name: 'seals',
+      label: 'Selos e certificações',
+      type: 'array',
+      labels: { singular: 'Selo', plural: 'Selos' },
+      admin: {
+        description:
+          'Aparecem discretos acima da linha final. Use PNG com fundo transparente; a altura é padronizada em 34px.',
+      },
+      fields: [
+        {
+          type: 'row',
+          fields: [
+            {
+              name: 'image',
+              label: 'Imagem',
+              type: 'upload',
+              relationTo: 'media',
+              required: true,
+              admin: { width: '40%' },
+            },
+            {
+              name: 'label',
+              label: 'Descrição',
+              type: 'text',
+              required: true,
+              localized: true,
+              admin: { width: '30%', description: 'Lida por leitor de tela.' },
+            },
+            {
+              name: 'href',
+              label: 'Link',
+              type: 'text',
+              admin: { width: '30%', description: 'Opcional.' },
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: 'bottomText',
       label: 'Linha final',
       type: 'text',

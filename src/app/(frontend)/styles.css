@@ -989,6 +989,18 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
   transition:background .2s}
 .suite .link-arrow--sm:hover{background:var(--red-dark)}
 
+/* Ícones do que o quarto tem, ao lado da capacidade. Sem moldura: são
+   informação, não botão, e uma fileira de caixinhas competiria com o chip
+   de capacidade e com o botão. */
+.suite__icone{display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;color:rgba(255,255,255,.92)}
+.suite__icone svg{width:18px;height:18px;fill:currentColor}
+.suite__chips{align-items:center;gap:9px 4px}
+.suite__chip{margin-right:5px}
+/* Texto só para leitor de tela: o ícone sozinho não diz nada a quem não vê. */
+.visualmente-oculto{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
 /* ---------------- REGIÃO: card flutuante sobre foto ---------- */
 .regioncard{position:relative;height:641px;overflow:hidden;display:flex;align-items:center}
 .regioncard__media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -1094,6 +1106,14 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
   opacity:.92;transition:opacity .2s}
 .footer__social a:hover{background:none;border:0;opacity:1}
 .footer__social svg{width:21px;height:21px;fill:#fff}
+.footer__selos{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
+  gap:26px;margin-top:52px}
+.footer__selo{height:34px;width:auto;opacity:.6;filter:grayscale(1);
+  transition:opacity .25s,filter .25s}
+.footer__selos a:hover .footer__selo,.footer__selos span:hover .footer__selo{opacity:1;filter:none}
+/* Com selos, a linha final encosta neles em vez de abrir outro vão grande. */
+.footer__selos + .footer__bar{margin-top:26px}
+
 .footer__bar{margin-top:56px;padding:24px 0;border-top:1px solid rgba(255,255,255,.16);
   text-align:center;font-size:13px;color:rgba(255,255,255,.66)}
 

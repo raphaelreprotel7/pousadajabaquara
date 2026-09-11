@@ -237,6 +237,17 @@ const run = async () => {
           form: formContato.id,
           asideTitle: 'Central de reservas',
         },
+        /* Só o mapa: o endereço já está no card ao lado do formulário, e a
+           lista de pontos de interesse é assunto da página de Localização. */
+        {
+          blockType: 'location',
+          eyebrow: '',
+          title: '',
+          text: '',
+          poiLimit: 0,
+          showContactCards: false,
+          showMap: true,
+        },
       ],
     },
   )

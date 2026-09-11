@@ -232,6 +232,31 @@ export const SiteFooter = ({ settings, footer }: { settings: Any; footer: Any })
         </div>
       </div>
 
+      {/* Selos: discretos, acima da linha final. Em cinza, ganham cor ao
+          passar o mouse — presença sem competir com o resto do rodapé. */}
+      {(footer?.seals ?? []).length ? (
+        <div className="shell footer__selos">
+          {(footer.seals as Any[]).map((s) => {
+            const img = (
+              <img
+                className="footer__selo"
+                src={mediaUrl(s.image)}
+                alt={s.label}
+                loading="lazy"
+                decoding="async"
+              />
+            )
+            return s.href ? (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener">
+                {img}
+              </a>
+            ) : (
+              <span key={s.label}>{img}</span>
+            )
+          })}
+        </div>
+      ) : null}
+
       {footer?.bottomText ? <div className="footer__bar">{footer.bottomText}</div> : null}
     </footer>
   )

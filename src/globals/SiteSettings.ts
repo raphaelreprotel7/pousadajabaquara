@@ -228,10 +228,10 @@ export const SiteSettings: GlobalConfig = {
               name: 'tileUrl',
               label: 'URL dos tiles',
               type: 'text',
-              defaultValue: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+              defaultValue: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
               admin: {
                 description:
-                  'Base sem rótulos de comércio. Trocar aqui muda o estilo do mapa.',
+                  'Trocar aqui muda o estilo do mapa. Atenção ao provedor: o CARTO, que era o padrão, passou a exigir chave e devolve tiles escritos "API KEY REQUIRED" — o mapa carrega e parece quebrado.',
               },
             },
             {
@@ -239,7 +239,7 @@ export const SiteSettings: GlobalConfig = {
               label: 'Atribuição',
               type: 'text',
               defaultValue:
-                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &middot; &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
             },
           ],
         },

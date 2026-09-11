@@ -453,14 +453,29 @@ export const RenderBlocks = async ({
                   <h3 className="suite__name">{s.shortName || s.title}</h3>
                 </div>
                 {s.summary ? <p className="suite__text">{s.summary}</p> : null}
-                {s.maxGuests ? (
-                  <div className="suite__chips">
+                {/* Capacidade escrita, e o resto em ícones: no card não cabe a
+                    lista inteira, e o ícone diz "tem ar-condicionado" mais
+                    rápido do que a frase. A lista por extenso está a um clique,
+                    em /acomodacoes. */}
+                <div className="suite__chips">
+                  {s.maxGuests ? (
                     <span className="suite__chip">
                       <Icon name="i-bed" />
                       {s.maxGuests} {s.maxGuests === 1 ? 'pessoa' : 'pessoas'}
                     </span>
-                  </div>
-                ) : null}
+                  ) : null}
+                  {((s.amenities ?? []) as Any[])
+                    /* `i-bed` fora: é o ícone do chip de capacidade, e dois
+                       desenhos de cama lado a lado só confundem. */
+                    .filter((a) => typeof a === 'object' && a?.icon && a.icon !== 'i-bed')
+                    .slice(0, 6)
+                    .map((a) => (
+                      <span className="suite__icone" key={a.id ?? a.icon} title={a.title}>
+                        <Icon name={a.icon} />
+                        <span className="visualmente-oculto">{a.title}</span>
+                      </span>
+                    ))}
+                </div>
                 <a
                   href={`/acomodacoes#${s.slug}`}
                   className="link-arrow link-arrow--sm"

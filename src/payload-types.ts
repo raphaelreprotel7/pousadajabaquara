@@ -2472,6 +2472,23 @@ export interface Footer {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Aparecem discretos acima da linha final. Use PNG com fundo transparente; a altura é padronizada em 34px.
+   */
+  seals?:
+    | {
+        image: number | Media;
+        /**
+         * Lida por leitor de tela.
+         */
+        label: string;
+        /**
+         * Opcional.
+         */
+        href?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   bottomText?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -2679,7 +2696,7 @@ export interface SiteSetting {
   longitude?: number | null;
   mapZoom?: number | null;
   /**
-   * Base sem rótulos de comércio. Trocar aqui muda o estilo do mapa.
+   * Trocar aqui muda o estilo do mapa. Atenção ao provedor: o CARTO, que era o padrão, passou a exigir chave e devolve tiles escritos "API KEY REQUIRED" — o mapa carrega e parece quebrado.
    */
   tileUrl?: string | null;
   tileAttribution?: string | null;
@@ -2733,6 +2750,14 @@ export interface FooterSelect<T extends boolean = true> {
               href?: T;
               id?: T;
             };
+        id?: T;
+      };
+  seals?:
+    | T
+    | {
+        image?: T;
+        label?: T;
+        href?: T;
         id?: T;
       };
   bottomText?: T;
