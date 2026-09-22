@@ -249,6 +249,9 @@
     },
     {
       "title": "Passeios"
+    },
+    {
+      "title": "Paraty"
     }
   ],
   "media": [
@@ -354,12 +357,12 @@
     {
       "file": "paraty-casario-iluminado-anoitecer.jpg",
       "alt": "Casario iluminado de Paraty à beira da baía, com a serra ao fundo, ao anoitecer",
-      "category": "Passeios"
+      "category": "Paraty"
     },
     {
       "file": "paraty-cais-barcos-anoitecer.jpg",
       "alt": "Cais de Paraty ao anoitecer, com barcos atracados, o casario iluminado e a Igreja de Santa Rita",
-      "category": "Passeios"
+      "category": "Paraty"
     },
     {
       "file": "pousada-aerea-orla.jpg",
@@ -504,7 +507,7 @@
     {
       "file": "baia-paraty-aerea-casario.jpg",
       "alt": "Vista aérea da baía de Paraty com a mata e o casario ao redor",
-      "category": "Estrutura"
+      "category": "Paraty"
     },
     {
       "file": "deque-iluminado-noite.jpg",
@@ -914,52 +917,132 @@
     {
       "file": "paraty-aerea-anoitecer-luzes.jpg",
       "alt": "Vista aérea de Paraty ao anoitecer, com as luzes da cidade, a baía e a serra",
-      "category": "Passeios"
+      "category": "Paraty"
     },
     {
       "file": "paraty-cais-barcos-fim-de-tarde.jpg",
       "alt": "Barcos atracados no Cais de Paraty no fim da tarde, com a serra ao fundo",
-      "category": "Passeios"
+      "category": "Paraty"
     },
     {
       "file": "paraty-cais-escunas-serra.jpg",
       "alt": "Escunas atracadas na orla de Paraty, com a serra e as nuvens ao fundo",
-      "category": "Passeios"
+      "category": "Paraty"
     },
     {
       "file": "paraty-centro-rua-bandeirinhas.jpg",
       "alt": "Rua de pedra do Centro Histórico de Paraty, enfeitada com bandeirinhas coloridas",
-      "category": "Passeios"
+      "category": "Paraty"
     },
     {
       "file": "paraty-centro-rua-casario-colorido.jpg",
       "alt": "Rua do Centro Histórico de Paraty, com casario branco, portas coloridas e bandeirinhas",
-      "category": "Passeios"
+      "category": "Paraty"
     },
     {
       "file": "paraty-centro-rua-pedras-visitantes.jpg",
       "alt": "Visitantes caminhando pela rua de pedra do Centro Histórico de Paraty",
-      "category": "Passeios"
+      "category": "Paraty"
     },
     {
       "file": "paraty-centro-rua-portas-coloridas.jpg",
       "alt": "Casario colonial de Paraty com portas e janelas coloridas, na rua de pedra",
-      "category": "Passeios"
+      "category": "Paraty"
     },
     {
       "file": "paraty-igreja-santa-rita-reflexo.jpg",
       "alt": "A Igreja de Santa Rita refletida na água, em Paraty",
-      "category": "Passeios"
+      "category": "Paraty"
     },
     {
       "file": "paraty-igreja-santa-rita-silhueta.jpg",
       "alt": "A Igreja de Santa Rita recortada contra o céu do entardecer, em Paraty",
-      "category": "Passeios"
+      "category": "Paraty"
     },
     {
       "file": "paraty-orla-igreja-matriz-serra.jpg",
       "alt": "A orla de Paraty vista da água, com o casario, a igreja e a Serra da Bocaina ao fundo",
-      "category": "Passeios"
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-cachoeira-do-toboga-escorrega.jpg",
+      "alt": "Visitante escorregando pela laje da Cachoeira do Tobogã, em Paraty",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-centro-noite-casario-iluminado.jpg",
+      "alt": "Casario do Centro Histórico de Paraty iluminado à noite",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-centro-noite-lampiao-reflexo.jpg",
+      "alt": "Rua de pedra do Centro Histórico de Paraty à noite, com o lampião refletido na água",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-centro-rua-casario-arvores.jpg",
+      "alt": "Rua do Centro Histórico de Paraty, com casario colonial e árvores",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-forte-defensor-perpetuo.jpg",
+      "alt": "Canhão e o casario do Forte Defensor Perpétuo, em Paraty",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-ilha-dos-cocos-agua-turquesa.jpg",
+      "alt": "Ilha dos Cocos, com as pedras à beira d'água e o mar turquesa da baía de Paraty",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-lagoa-azul-barco-pedras.jpg",
+      "alt": "Lancha na Lagoa Azul, entre as pedras e a mata da baía de Paraty",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-lagoa-azul-escuna-ilha.jpg",
+      "alt": "Escuna fundeada na Lagoa Azul, junto à ilha coberta de Mata Atlântica",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-praca-da-matriz-casarao.jpg",
+      "alt": "Casarão colonial na Praça da Matriz, em Paraty",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-praia-da-lula-barcos.jpg",
+      "alt": "Praia da Lula, com barcos ancorados e a faixa de areia cercada de mata",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-praia-do-cachadaco-trindade.jpg",
+      "alt": "Praia do Cachadaço, em Trindade, com banhistas na areia e o costão coberto de mata",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-praia-do-sono-aerea.jpg",
+      "alt": "Vista aérea da Praia do Sono, com a areia em meia-lua e a mata ao redor",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-praia-vermelha-enseada-aerea.jpg",
+      "alt": "Vista aérea da enseada da Praia Vermelha, cercada de Mata Atlântica",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-quilombo-do-campinho-capela.jpg",
+      "alt": "Capela do Quilombo do Campinho da Independência, em Paraty",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-saco-do-mamangua-enseada.jpg",
+      "alt": "Enseada tranquila do Saco do Mamanguá, com a serra ao fundo",
+      "category": "Paraty"
+    },
+    {
+      "file": "paraty-saco-do-mamangua-pico.jpg",
+      "alt": "O Pico do Pão de Açúcar visto das águas do Saco do Mamanguá",
+      "category": "Paraty"
     }
   ],
   "amenities": [
