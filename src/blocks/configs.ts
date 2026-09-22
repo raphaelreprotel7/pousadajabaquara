@@ -206,7 +206,10 @@ export const SplitContentBlock: Block = {
       name: 'images',
       label: 'Imagens',
       type: 'array',
-      maxRows: 3,
+      /* Eram 3, de quando o bloco mostrava uma foto grande e uma fileira
+         pequena embaixo. Hoje todas passam por um carrossel, uma por vez, e o
+         teto de 3 só impedia usar o material que o cliente tem. */
+      maxRows: 12,
       fields: [
         {
           name: 'image',

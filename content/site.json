@@ -821,6 +821,91 @@
       "file": "selo-iso-9001-2015-qms.png",
       "alt": "Selo de certificação ISO 9001:2015",
       "category": null
+    },
+    {
+      "file": "passeio-escuna-01-escuna-ancorada-ilha.jpg",
+      "alt": "A Escuna Capitão Gancho ancorada em água esverdeada, junto a uma ilha da baía de Paraty",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-escuna-02-praia-escunas-aerea.jpg",
+      "alt": "Vista aérea de praia da baía de Paraty com escunas atracadas e banhistas na água",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-escuna-03-peixes-agua-clara.jpg",
+      "alt": "Cardume de peixes visto da superfície, na água clara da baía de Paraty",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-escuna-04-ilha-aerea.jpg",
+      "alt": "Vista aérea de ilha da baía de Paraty, com escuna fundeada na água turquesa",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-escuna-05-enseada-praia-aerea.jpg",
+      "alt": "Vista aérea de enseada da baía de Paraty, com praia de areia clara e barcos ancorados",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-escuna-06-ilha-barco-aerea.jpg",
+      "alt": "Vista aérea de ilha cercada de mar aberto, com barcos ancorados na enseada",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-jeep-01-jipe-alambique-pedra-branca.jpg",
+      "alt": "Jipe da Aventura Turismo em frente ao alambique Pedra Branca, com a serra ao fundo",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-jeep-02-cachoeira-toboga.jpg",
+      "alt": "Cachoeira do Tobogã: a laje larga de pedra com a água escorrendo e visitantes ao fundo",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-jeep-03-cachoeira-poco.jpg",
+      "alt": "Quedas d'água caindo em poço natural cercado de mata, na Serra da Bocaina",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-jeep-04-alambique-barris-cachaca.jpg",
+      "alt": "Barris de carvalho empilhados no armazém de um alambique de Paraty",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-jeep-05-cachoeira-mata.jpg",
+      "alt": "Cachoeira entre a vegetação da Mata Atlântica, com antúrios em primeiro plano",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-jeep-06-cachoeira-laje.jpg",
+      "alt": "Cachoeira sobre laje de pedra, com a mata fechada nas duas margens",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-jeep-07-frota-jipes.jpg",
+      "alt": "Jipes da Aventura Turismo enfileirados, com a orla ao fundo",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-trindade-01-enseada-vila-aerea.jpg",
+      "alt": "Vista aérea de uma enseada de Trindade, com a praia, a vila e a Mata Atlântica ao redor",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-trindade-02-praia-mata-atlantica.jpg",
+      "alt": "Praia de Trindade com areia clara, mar calmo e o morro coberto de Mata Atlântica",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-trindade-03-praia-estrada-aerea.jpg",
+      "alt": "Vista aérea de praia em Trindade, com a estrada e a mata ao lado da faixa de areia",
+      "category": "Região"
+    },
+    {
+      "file": "passeio-trindade-04-jipe-laje-praia.jpg",
+      "alt": "Jipe da Aventura Turismo sobre a laje de pedra, à beira da praia em Trindade",
+      "category": "Região"
     }
   ],
   "amenities": [
@@ -1765,7 +1850,7 @@
           "text": "Durante sua estadia na Pousada Recanto do Jabaquara, aproveite para conhecer as belezas naturais de Paraty com a Aventura Turismo, agência especializada em passeios pela região.\n\nA agência oferece experiências para diferentes estilos de viajantes, passando pelo mar, pelas cachoeiras, pela Mata Atlântica, pelos alambiques tradicionais e pelas praias paradisíacas de Trindade.\n\nPara tornar sua estadia ainda mais especial, a Pousada Recanto do Jabaquara apresenta algumas das principais opções de passeios:",
           "images": [
             {
-              "image": "@media:paraty-cais-barcos-anoitecer.jpg"
+              "image": "@media:passeio-jeep-07-frota-jipes.jpg"
             }
           ]
         },
@@ -1778,7 +1863,22 @@
           "text": "Conheça a beleza da Baía de Paraty a bordo da Escuna Capitão Gancho, em um passeio perfeito para quem deseja aproveitar o mar, relaxar e conhecer algumas das paisagens mais bonitas da região.\n\nDurante a navegação, são realizadas paradas em praias e ilhas, sendo elas Praia da Lula, Praia Vermelha, Ilha dos Cocos, Lagoa Azul e Ilha Comprida, com tempo para mergulhar, nadar, relaxar nas águas tranquilas e apreciar a natureza.\n\nÉ uma experiência para aproveitar Paraty de um jeito diferente, cercado pelo mar, pela Mata Atlântica e por cenários que tornam o passeio inesquecível.\n\nUma ótima opção para famílias, casais e grupos de amigos que querem passar um dia agradável no mar.",
           "images": [
             {
-              "image": "@media:baia-paraty-aerea-casario.jpg"
+              "image": "@media:passeio-escuna-01-escuna-ancorada-ilha.jpg"
+            },
+            {
+              "image": "@media:passeio-escuna-02-praia-escunas-aerea.jpg"
+            },
+            {
+              "image": "@media:passeio-escuna-03-peixes-agua-clara.jpg"
+            },
+            {
+              "image": "@media:passeio-escuna-04-ilha-aerea.jpg"
+            },
+            {
+              "image": "@media:passeio-escuna-05-enseada-praia-aerea.jpg"
+            },
+            {
+              "image": "@media:passeio-escuna-06-ilha-barco-aerea.jpg"
             }
           ]
         },
@@ -1789,7 +1889,22 @@
           "text": "Para quem gosta de natureza, aventura e cultura local, o Jeep Tour pelas cachoeiras e alambiques é uma das experiências mais completas em Paraty.\n\nO passeio percorre a região da Serra da Bocaina, passando por belas cachoeiras e poços naturais, além de pontos históricos relacionados ao antigo Caminho do Ouro.\n\nO roteiro também inclui a visita a alambiques tradicionais de Paraty, onde é possível conhecer um pouco mais sobre a produção da famosa cachaça da região e, conforme o local, participar de degustações de cachaças e licores.\n\nEntre os locais visitados estão a Cachoeira Pedra Branca, Poço da Usina, Cachoeira do Tobogã e Poço do Tarzan, além dos alambiques e outros pontos do roteiro. O passeio conta com acompanhamento de guia/motorista local credenciado pelo Cadastur.\n\nNatureza, história, aventura e os sabores de Paraty em um único passeio.",
           "images": [
             {
-              "image": "@media:paraty-casario-iluminado-anoitecer.jpg"
+              "image": "@media:passeio-jeep-01-jipe-alambique-pedra-branca.jpg"
+            },
+            {
+              "image": "@media:passeio-jeep-02-cachoeira-toboga.jpg"
+            },
+            {
+              "image": "@media:passeio-jeep-03-cachoeira-poco.jpg"
+            },
+            {
+              "image": "@media:passeio-jeep-04-alambique-barris-cachaca.jpg"
+            },
+            {
+              "image": "@media:passeio-jeep-05-cachoeira-mata.jpg"
+            },
+            {
+              "image": "@media:passeio-jeep-06-cachoeira-laje.jpg"
             }
           ]
         },
@@ -1802,7 +1917,16 @@
           "text": "A poucos quilômetros de Paraty está Trindade, um dos destinos mais procurados da região para quem deseja conhecer praias cercadas pela Mata Atlântica e paisagens naturais impressionantes.\n\nO passeio leva você para conhecer algumas das principais praias de Trindade, com tempo para aproveitar o mar, caminhar, relaxar e contemplar a natureza.\n\nEntre os lugares que podem fazer parte do roteiro estão a Praia dos Ranchos, Praia do Meio, Praia do Cachadaço e a Piscina Natural do Caixa d’Aço, de acordo com o roteiro e as condições do passeio.\n\nTrindade é uma excelente escolha para quem quer passar um dia em contato com a natureza e descobrir um dos lugares mais encantadores do litoral da Costa Verde.",
           "images": [
             {
-              "image": "@media:praia-jabaquara-aerea-orla.jpg"
+              "image": "@media:passeio-trindade-01-enseada-vila-aerea.jpg"
+            },
+            {
+              "image": "@media:passeio-trindade-02-praia-mata-atlantica.jpg"
+            },
+            {
+              "image": "@media:passeio-trindade-03-praia-estrada-aerea.jpg"
+            },
+            {
+              "image": "@media:passeio-trindade-04-jipe-laje-praia.jpg"
             }
           ]
         },
