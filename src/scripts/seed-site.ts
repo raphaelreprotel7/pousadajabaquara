@@ -137,6 +137,28 @@ const run = async () => {
     }
     const achado = (candidatos.docs as Any[]).find((d) => mesmaOrigem(String(d.filename ?? '')))
     if (achado) {
+      /* Reaproveitar o arquivo não pode significar congelar os metadados: a
+         categoria e o texto alternativo vivem no manifesto, e mudá-los lá não
+         chegava ao banco — renomear uma aba criava a aba nova e deixava as
+         fotos na antiga. Aqui o manifesto volta a mandar. */
+      const meta: Any = (dados.media ?? []).find((m: Any) => m.file === nome) ?? {}
+      const categoria = meta.category ? await docId('photo-categories', meta.category) : null
+      const atual: Any = achado
+      const catAtual = typeof atual.category === 'object' ? atual.category?.id : atual.category
+      const mudou =
+        (meta.alt && meta.alt !== atual.alt) ||
+        (categoria && String(categoria) !== String(catAtual ?? ''))
+      if (mudou) {
+        await payload.update({
+          collection: 'media',
+          id: achado.id,
+          data: {
+            ...(meta.alt ? { alt: meta.alt } : {}),
+            ...(categoria ? { category: categoria } : {}),
+          } as Any,
+        })
+        conta('media:atualizada')
+      }
       midias.set(nome, achado.id)
       return achado.id
     }

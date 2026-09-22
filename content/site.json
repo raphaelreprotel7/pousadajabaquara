@@ -164,6 +164,10 @@
             "href": "/localizacao"
           },
           {
+            "label": "Passeios",
+            "href": "/passeios"
+          },
+          {
             "label": "Fotos",
             "href": "/fotos"
           },
@@ -244,7 +248,7 @@
       "title": "Lazer"
     },
     {
-      "title": "Região"
+      "title": "Passeios"
     }
   ],
   "media": [
@@ -350,22 +354,22 @@
     {
       "file": "paraty-casario-iluminado-anoitecer.jpg",
       "alt": "Casario iluminado de Paraty à beira da baía, com a serra ao fundo, ao anoitecer",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "paraty-cais-barcos-anoitecer.jpg",
       "alt": "Cais de Paraty ao anoitecer, com barcos atracados, o casario iluminado e a Igreja de Santa Rita",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "pousada-aerea-orla.jpg",
       "alt": "Vista aérea da pousada no Jabaquara com a orla e a mata ao redor",
-      "category": "Região"
+      "category": "Estrutura"
     },
     {
       "file": "praia-jabaquara-aerea-orla.jpg",
       "alt": "Vista aérea da orla da Praia do Jabaquara com a baía e a ilha ao fundo",
-      "category": "Região"
+      "category": "Estrutura"
     },
     {
       "file": "duplo-com-varanda-cama-casal-varanda-mobiliada.jpg",
@@ -700,7 +704,7 @@
     {
       "file": "pousada-aerea-baia-serra.jpg",
       "alt": "Vista aérea da pousada com a orla do Jabaquara, a baía de Paraty e a serra ao fundo",
-      "category": "Região"
+      "category": "Estrutura"
     },
     {
       "file": "pousada-aerea-piscina-telhados.jpg",
@@ -825,87 +829,87 @@
     {
       "file": "passeio-escuna-01-escuna-ancorada-ilha.jpg",
       "alt": "A Escuna Capitão Gancho ancorada em água esverdeada, junto a uma ilha da baía de Paraty",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-escuna-02-praia-escunas-aerea.jpg",
       "alt": "Vista aérea de praia da baía de Paraty com escunas atracadas e banhistas na água",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-escuna-03-peixes-agua-clara.jpg",
       "alt": "Cardume de peixes visto da superfície, na água clara da baía de Paraty",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-escuna-04-ilha-aerea.jpg",
       "alt": "Vista aérea de ilha da baía de Paraty, com escuna fundeada na água turquesa",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-escuna-05-enseada-praia-aerea.jpg",
       "alt": "Vista aérea de enseada da baía de Paraty, com praia de areia clara e barcos ancorados",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-escuna-06-ilha-barco-aerea.jpg",
       "alt": "Vista aérea de ilha cercada de mar aberto, com barcos ancorados na enseada",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-jeep-01-jipe-alambique-pedra-branca.jpg",
       "alt": "Jipe da Aventura Turismo em frente ao alambique Pedra Branca, com a serra ao fundo",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-jeep-02-cachoeira-toboga.jpg",
       "alt": "Cachoeira do Tobogã: a laje larga de pedra com a água escorrendo e visitantes ao fundo",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-jeep-03-cachoeira-poco.jpg",
       "alt": "Quedas d'água caindo em poço natural cercado de mata, na Serra da Bocaina",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-jeep-04-alambique-barris-cachaca.jpg",
       "alt": "Barris de carvalho empilhados no armazém de um alambique de Paraty",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-jeep-05-cachoeira-mata.jpg",
       "alt": "Cachoeira entre a vegetação da Mata Atlântica, com antúrios em primeiro plano",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-jeep-06-cachoeira-laje.jpg",
       "alt": "Cachoeira sobre laje de pedra, com a mata fechada nas duas margens",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-jeep-07-frota-jipes.jpg",
       "alt": "Jipes da Aventura Turismo enfileirados, com a orla ao fundo",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-trindade-01-enseada-vila-aerea.jpg",
       "alt": "Vista aérea de uma enseada de Trindade, com a praia, a vila e a Mata Atlântica ao redor",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-trindade-02-praia-mata-atlantica.jpg",
       "alt": "Praia de Trindade com areia clara, mar calmo e o morro coberto de Mata Atlântica",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-trindade-03-praia-estrada-aerea.jpg",
       "alt": "Vista aérea de praia em Trindade, com a estrada e a mata ao lado da faixa de areia",
-      "category": "Região"
+      "category": "Passeios"
     },
     {
       "file": "passeio-trindade-04-jipe-laje-praia.jpg",
       "alt": "Jipe da Aventura Turismo sobre a laje de pedra, à beira da praia em Trindade",
-      "category": "Região"
+      "category": "Passeios"
     }
   ],
   "amenities": [
