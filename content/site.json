@@ -556,6 +556,261 @@
       "file": "selo-kayak-travel-awards.png",
       "alt": "Selo KAYAK Travel Awards",
       "category": null
+    },
+    {
+      "file": "duplo-standard-01-cabeceira-floral-poltrona.jpg",
+      "alt": "Quarto Duplo Standard com cabeceira de papel floral, cama de casal e poltrona de apoio",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-02-parede-listrada.jpg",
+      "alt": "Quarto Duplo Standard com parede listrada e cama de casal preparada",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-03-cabeceira-floral-ar.jpg",
+      "alt": "Quarto Duplo Standard com cabeceira floral, ar-condicionado e enxoval claro",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-04-lambri-madeira-cama.jpg",
+      "alt": "Quarto Duplo Standard com lambri de madeira na parede e cama de casal",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-05-cabeceira-floral-tv.jpg",
+      "alt": "Quarto Duplo Standard com cabeceira floral, TV de tela plana e luminárias de cabeceira",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-06-lambri-janela.jpg",
+      "alt": "Quarto Duplo Standard com lambri de madeira, cama de casal e janela com cortina",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-07-parede-clara-poltrona.jpg",
+      "alt": "Quarto Duplo Standard em tons claros, com TV, poltrona verde e planta",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-08-lambri-poltrona-verde.jpg",
+      "alt": "Quarto Duplo Standard com lambri de madeira, cama de casal e poltrona verde",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-09-armario-frigobar.jpg",
+      "alt": "Armário aberto do Quarto Duplo Standard, com cabides, frigobar e toalhas",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-10-acesso-externo-deque.jpg",
+      "alt": "Acesso externo do Quarto Duplo Standard, com deque de madeira",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-11-banheiro-marmore.jpg",
+      "alt": "Banheiro do Quarto Duplo Standard com bancada de mármore e box de vidro",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-12-banheiro-box-vidro.jpg",
+      "alt": "Banheiro do Quarto Duplo Standard com box de vidro e amenities sobre a bancada",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-standard-13-banheiro-nicho.jpg",
+      "alt": "Banheiro do Quarto Duplo Standard com nicho no box e bancada clara",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-varanda-01-listrado-cama-casal.jpg",
+      "alt": "Quarto Duplo com Varanda: parede listrada e cama de casal preparada",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-varanda-02-cama-saida-varanda.jpg",
+      "alt": "Quarto Duplo com Varanda: cama de casal com saída direta para a varanda mobiliada",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-varanda-03-cama-tv-porta.jpg",
+      "alt": "Quarto Duplo com Varanda: cama, TV de tela plana e porta de entrada",
+      "category": "Acomodações"
+    },
+    {
+      "file": "duplo-varanda-04-tv-armario-varanda.jpg",
+      "alt": "Quarto Duplo com Varanda: TV, armário e a varanda ao fundo",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-mezanino-01-varanda-vista-verde.jpg",
+      "alt": "Varanda do Quarto Família com vista para a mata",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-mezanino-02-escada-mezanino.jpg",
+      "alt": "Quarto Família com escada de madeira para o mezanino e duas camas",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-mezanino-03-escada-poltrona-rosa.jpg",
+      "alt": "Quarto Família com escada para o mezanino, camas e poltrona rosa",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-mezanino-04-duas-camas-ventilador.jpg",
+      "alt": "Quarto Família com duas camas, ventilador de teto e telhado de madeira aparente",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-mezanino-05-area-tv-poltrona.jpg",
+      "alt": "Área de TV do Quarto Família, com poltrona e janela para a varanda",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-mezanino-06-camas-tv-porta.jpg",
+      "alt": "Quarto Família com camas, TV de tela plana e telhado de madeira",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-mezanino-07-mezanino-telhado-madeira.jpg",
+      "alt": "Mezanino do Quarto Família, sob o telhado de madeira aparente",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-mezanino-08-mezanino-tv-janela.jpg",
+      "alt": "Mezanino do Quarto Família com cama de casal, TV e janela",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-mezanino-09-dormitorio-mezanino.jpg",
+      "alt": "Dormitório do mezanino do Quarto Família, com cama de casal preparada",
+      "category": "Acomodações"
+    },
+    {
+      "file": "familia-mezanino-10-banheiro-box.jpg",
+      "alt": "Banheiro do Quarto Família, com box de vidro e bancada de granito",
+      "category": "Acomodações"
+    },
+    {
+      "file": "pousada-aerea-baia-serra.jpg",
+      "alt": "Vista aérea da pousada com a orla do Jabaquara, a baía de Paraty e a serra ao fundo",
+      "category": "Região"
+    },
+    {
+      "file": "pousada-aerea-piscina-telhados.jpg",
+      "alt": "Vista aérea da pousada, com a piscina no pátio interno e a mata ao redor",
+      "category": "Estrutura"
+    },
+    {
+      "file": "quadruplo-standard-01-painel-ripado-camas.jpg",
+      "alt": "Quarto Quádruplo Standard com painel ripado de madeira, luz indireta e camas preparadas",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-02-forro-madeira-floral.jpg",
+      "alt": "Quarto Quádruplo Standard com forro de madeira e almofadas floridas",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-03-lambri-luz-indireta.jpg",
+      "alt": "Quarto Quádruplo Standard com lambri de madeira e luz indireta na cabeceira",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-04-camas-almofadas-floridas.jpg",
+      "alt": "Quarto Quádruplo Standard com camas, almofadas floridas e luminária de leitura",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-05-painel-ripado-ventilador.jpg",
+      "alt": "Quarto Quádruplo Standard com painel ripado, ventilador de teto e camas alinhadas",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-06-janela-camas-antigas.jpg",
+      "alt": "Quarto Quádruplo Standard com janela para o verde e camas preparadas",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-07-entrada-corredor.jpg",
+      "alt": "Entrada do Quarto Quádruplo Standard, com cabeceira iluminada e poltrona verde",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-08-palhinha-escrivaninha.jpg",
+      "alt": "Quarto Quádruplo Standard com parede de palhinha, escrivaninha e cadeira de madeira",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-09-poltrona-verde-varanda.jpg",
+      "alt": "Quarto Quádruplo Standard com poltrona verde e saída para a varanda",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-10-camas-cadeira-madeira.jpg",
+      "alt": "Quarto Quádruplo Standard com camas, cadeira de madeira e luz de cabeceira",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-11-mezanino-ventilador.jpg",
+      "alt": "Quarto Quádruplo Standard com ventilador de teto, TV e painel de madeira",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-12-quatro-camas-janela.jpg",
+      "alt": "Quarto Quádruplo Standard com quatro camas e janela para a área externa",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-13-tv-armario-madeira.jpg",
+      "alt": "Quarto Quádruplo Standard com TV, armário de madeira e acesso ao banheiro",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-14-banheiro-verde.jpg",
+      "alt": "Banheiro do Quarto Quádruplo Standard, com parede verde e box de vidro",
+      "category": "Acomodações"
+    },
+    {
+      "file": "quadruplo-standard-15-rede-varanda.jpg",
+      "alt": "Rede armada na varanda do Quarto Quádruplo Standard",
+      "category": "Acomodações"
+    },
+    {
+      "file": "triplo-standard-01-listrado-tres-camas.jpg",
+      "alt": "Quarto Triplo Standard com parede listrada e três camas preparadas",
+      "category": "Acomodações"
+    },
+    {
+      "file": "triplo-standard-02-listrado-poltrona-azul.jpg",
+      "alt": "Quarto Triplo Standard com parede listrada, poltrona azul e duas camas",
+      "category": "Acomodações"
+    },
+    {
+      "file": "triplo-standard-03-camas-porta-varanda.jpg",
+      "alt": "Quarto Triplo Standard com camas separadas e porta para a área externa",
+      "category": "Acomodações"
+    },
+    {
+      "file": "triplo-standard-04-quadros-armario.jpg",
+      "alt": "Quarto Triplo Standard com quadros na parede, armário e camas arrumadas",
+      "category": "Acomodações"
+    },
+    {
+      "file": "triplo-standard-05-camas-armario-tv.jpg",
+      "alt": "Quarto Triplo Standard com camas, armário embutido e TV de tela plana",
+      "category": "Acomodações"
+    },
+    {
+      "file": "triplo-standard-06-camas-quadro-colorido.jpg",
+      "alt": "Quarto Triplo Standard com camas, quadro colorido e ventilador de teto",
+      "category": "Acomodações"
+    },
+    {
+      "file": "triplo-standard-07-camas-escrivaninha.jpg",
+      "alt": "Quarto Triplo Standard com camas, escrivaninha e cadeira de trabalho",
+      "category": "Acomodações"
     }
   ],
   "amenities": [
@@ -595,7 +850,7 @@
       "scope": "quarto"
     },
     {
-      "title": "Piscina aquecida para hóspedes",
+      "title": "Piscina climatizada para hóspedes",
       "icon": "i-pool",
       "scope": "hotel"
     },
@@ -637,14 +892,14 @@
   ],
   "differentials": [
     {
-      "title": "Piscina aquecida para relaxar",
+      "title": "Piscina climatizada para relaxar",
       "kind": "destaque",
       "image": "@media:piscina-guarda-sois-mesas.jpg"
     },
     {
       "title": "35 apartamentos renovados",
       "kind": "destaque",
-      "image": "@media:quarto-forro-madeira-duas-camas.jpg"
+      "image": "@media:quadruplo-standard-01-painel-ripado-camas.jpg"
     },
     {
       "title": "Carregador para carros elétricos",
@@ -792,6 +1047,15 @@
       "category": "localizacao"
     },
     {
+      "question": "E se o estacionamento da pousada estiver cheio?",
+      "answer": {
+        "@rich": [
+          "A pousada dispõe de um estacionamento a 150 metros para quando o interno estiver lotado. Se precisar, basta falar com a recepção na chegada."
+        ]
+      },
+      "category": "geral"
+    },
+    {
       "question": "O estacionamento é gratuito?",
       "answer": {
         "@rich": [
@@ -804,7 +1068,7 @@
       "question": "A pousada tem piscina?",
       "answer": {
         "@rich": [
-          "Sim. A pousada tem piscina aquecida para relaxar entre um passeio e outro. É um espaço gostoso para sentar, conversar e descansar, principalmente no fim de tarde."
+          "Sim. A pousada tem piscina climatizada para relaxar entre um passeio e outro. É um espaço gostoso para sentar, conversar e descansar, principalmente no fim de tarde."
         ]
       },
       "category": "geral"
@@ -832,19 +1096,43 @@
       },
       "photos": [
         {
-          "image": "@media:duplo-standard-cabeceira-papel-floral.jpg"
+          "image": "@media:duplo-standard-01-cabeceira-floral-poltrona.jpg"
         },
         {
-          "image": "@media:duplo-standard-cama-casal-acesso-externo.jpg"
+          "image": "@media:duplo-standard-02-parede-listrada.jpg"
         },
         {
-          "image": "@media:duplo-standard-cama-tv-poltrona.jpg"
+          "image": "@media:duplo-standard-03-cabeceira-floral-ar.jpg"
         },
         {
-          "image": "@media:duplo-standard-cama-casal-forro-madeira.jpg"
+          "image": "@media:duplo-standard-04-lambri-madeira-cama.jpg"
         },
         {
-          "image": "@media:duplo-standard-banheiro-privativo.jpg"
+          "image": "@media:duplo-standard-05-cabeceira-floral-tv.jpg"
+        },
+        {
+          "image": "@media:duplo-standard-06-lambri-janela.jpg"
+        },
+        {
+          "image": "@media:duplo-standard-07-parede-clara-poltrona.jpg"
+        },
+        {
+          "image": "@media:duplo-standard-08-lambri-poltrona-verde.jpg"
+        },
+        {
+          "image": "@media:duplo-standard-09-armario-frigobar.jpg"
+        },
+        {
+          "image": "@media:duplo-standard-10-acesso-externo-deque.jpg"
+        },
+        {
+          "image": "@media:duplo-standard-11-banheiro-marmore.jpg"
+        },
+        {
+          "image": "@media:duplo-standard-12-banheiro-box-vidro.jpg"
+        },
+        {
+          "image": "@media:duplo-standard-13-banheiro-nicho.jpg"
         }
       ],
       "amenities": [
@@ -870,13 +1158,16 @@
       },
       "photos": [
         {
-          "image": "@media:duplo-com-varanda-cama-casal-varanda-mobiliada.jpg"
+          "image": "@media:duplo-varanda-01-listrado-cama-casal.jpg"
         },
         {
-          "image": "@media:duplo-com-varanda-cama-tv-saida-externa.jpg"
+          "image": "@media:duplo-varanda-02-cama-saida-varanda.jpg"
         },
         {
-          "image": "@media:duplo-com-varanda-cama-tv-frigobar-varanda.jpg"
+          "image": "@media:duplo-varanda-03-cama-tv-porta.jpg"
+        },
+        {
+          "image": "@media:duplo-varanda-04-tv-armario-varanda.jpg"
         }
       ],
       "amenities": [
@@ -901,19 +1192,25 @@
       },
       "photos": [
         {
-          "image": "@media:triplo-standard-camas-separadas-poltrona.jpg"
+          "image": "@media:triplo-standard-01-listrado-tres-camas.jpg"
         },
         {
-          "image": "@media:triplo-standard-camas-tv-porta.jpg"
+          "image": "@media:triplo-standard-02-listrado-poltrona-azul.jpg"
         },
         {
-          "image": "@media:triplo-standard-camas-arrumadas-quadros.jpg"
+          "image": "@media:triplo-standard-03-camas-porta-varanda.jpg"
         },
         {
-          "image": "@media:triplo-standard-camas-escrivaninha-janela.jpg"
+          "image": "@media:triplo-standard-04-quadros-armario.jpg"
         },
         {
-          "image": "@media:triplo-standard-camas-tv-ventilador.jpg"
+          "image": "@media:triplo-standard-05-camas-armario-tv.jpg"
+        },
+        {
+          "image": "@media:triplo-standard-06-camas-quadro-colorido.jpg"
+        },
+        {
+          "image": "@media:triplo-standard-07-camas-escrivaninha.jpg"
         }
       ],
       "amenities": [
@@ -938,22 +1235,49 @@
       },
       "photos": [
         {
-          "image": "@media:quadruplo-standard-camas-cabeceira-iluminada.jpg"
+          "image": "@media:quadruplo-standard-01-painel-ripado-camas.jpg"
         },
         {
-          "image": "@media:quadruplo-standard-cama-cabeceira-madeira.jpg"
+          "image": "@media:quadruplo-standard-02-forro-madeira-floral.jpg"
         },
         {
-          "image": "@media:quadruplo-standard-camas-forro-madeira-janela.jpg"
+          "image": "@media:quadruplo-standard-03-lambri-luz-indireta.jpg"
         },
         {
-          "image": "@media:quadruplo-standard-camas-painel-madeira-ventilador.jpg"
+          "image": "@media:quadruplo-standard-04-camas-almofadas-floridas.jpg"
         },
         {
-          "image": "@media:quadruplo-standard-rede-armada-varanda.jpg"
+          "image": "@media:quadruplo-standard-05-painel-ripado-ventilador.jpg"
         },
         {
-          "image": "@media:quadruplo-standard-banheiro-privativo.jpg"
+          "image": "@media:quadruplo-standard-06-janela-camas-antigas.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-07-entrada-corredor.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-08-palhinha-escrivaninha.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-09-poltrona-verde-varanda.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-10-camas-cadeira-madeira.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-11-mezanino-ventilador.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-12-quatro-camas-janela.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-13-tv-armario-madeira.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-14-banheiro-verde.jpg"
+        },
+        {
+          "image": "@media:quadruplo-standard-15-rede-varanda.jpg"
         }
       ],
       "amenities": [
@@ -978,25 +1302,34 @@
       },
       "photos": [
         {
-          "image": "@media:familia-varanda-mezanino-escada-acesso-mezanino.jpg"
+          "image": "@media:familia-mezanino-01-varanda-vista-verde.jpg"
         },
         {
-          "image": "@media:familia-varanda-mezanino-area-tv-poltrona.jpg"
+          "image": "@media:familia-mezanino-02-escada-mezanino.jpg"
         },
         {
-          "image": "@media:familia-varanda-mezanino-cama-telhado-madeira-aparente.jpg"
+          "image": "@media:familia-mezanino-03-escada-poltrona-rosa.jpg"
         },
         {
-          "image": "@media:familia-varanda-mezanino-dormitorio-mezanino.jpg"
+          "image": "@media:familia-mezanino-04-duas-camas-ventilador.jpg"
         },
         {
-          "image": "@media:familia-varanda-mezanino-cama-mezanino-tv-janela.jpg"
+          "image": "@media:familia-mezanino-05-area-tv-poltrona.jpg"
         },
         {
-          "image": "@media:familia-varanda-mezanino-camas-pe-direito-alto.jpg"
+          "image": "@media:familia-mezanino-06-camas-tv-porta.jpg"
         },
         {
-          "image": "@media:familia-varanda-mezanino-varanda-vista.jpg"
+          "image": "@media:familia-mezanino-07-mezanino-telhado-madeira.jpg"
+        },
+        {
+          "image": "@media:familia-mezanino-08-mezanino-tv-janela.jpg"
+        },
+        {
+          "image": "@media:familia-mezanino-09-dormitorio-mezanino.jpg"
+        },
+        {
+          "image": "@media:familia-mezanino-10-banheiro-box.jpg"
         }
       ],
       "amenities": [
@@ -1029,7 +1362,7 @@
         "@rich": [
           "É com grande alegria que damos as boas-vindas a você, visitante do blog da Pousada Recanto do Jabaquara! Este espaço foi criado para quem deseja descobrir as belezas de Paraty e aproveitar ao máximo tudo o que a cidade e a nossa pousada têm para oferecer. A cada novo conteúdo, vamos compartilhar dicas sobre a região, atrações imperdíveis e detalhes que tornam a experiência de se hospedar em Paraty ainda mais especial.",
           "Nosso objetivo é ajudar você a planejar cada etapa da viagem, trazendo informações úteis para garantir dias tranquilos e cheios de boas descobertas. A Pousada Recanto do Jabaquara é um refúgio acolhedor, onde conforto e praticidade caminham juntos para criar um ambiente ideal para descansar e recarregar as energias depois de um dia inteiro de passeios. Com quartos recentemente renovados e um atendimento próximo, a pousada foi pensada para receber casais, famílias e grupos de amigos com a mesma atenção.",
-          "As acomodações do Recanto do Jabaquara reúnem tudo o que você precisa para uma estadia completa, com ambientes confortáveis e bem cuidados. Além disso, a piscina aquecida garante momentos de puro relaxamento, seja depois de uma manhã na praia ou de uma tarde inteira caminhando pelas ruas de pedra do centro histórico.",
+          "As acomodações do Recanto do Jabaquara reúnem tudo o que você precisa para uma estadia completa, com ambientes confortáveis e bem cuidados. Além disso, a piscina climatizada garante momentos de puro relaxamento, seja depois de uma manhã na praia ou de uma tarde inteira caminhando pelas ruas de pedra do centro histórico.",
           "A região ao redor da pousada é um verdadeiro convite à exploração. Paraty é um destino perfeito para quem busca praias tranquilas, mas também encanta por sua riqueza cultural e histórica. Do Centro Histórico, com seus casarios coloniais e igrejas centenárias, até as trilhas e cachoeiras que levam à Serra da Bocaina, a cidade reserva experiências para todos os gostos. Você pode viver a calma das águas da Baía de Paraty ou se aventurar por caminhos que atravessam a Mata Atlântica.",
           "Paraty também é rica em tradições locais, com manifestações culturais, festas populares e uma gastronomia que carrega a identidade da região. Se você procura um destino que combine natureza exuberante e uma cidade cheia de história, Paraty é, sem dúvida, uma escolha certeira para a sua próxima viagem.",
           "Nosso blog vai continuar trazendo conteúdos para inspirar seus próximos passeios por Paraty, com dicas de lazer e tudo o que faz da Pousada Recanto do Jabaquara a companhia ideal para a sua estadia. A cada nova publicação, você vai encontrar boas ideias para aproveitar este destino com ainda mais liberdade.",
@@ -1048,7 +1381,7 @@
           "Paraty é um destino encantador para quem busca desfrutar de momentos de tranquilidade entre mar, história e natureza. E neste cenário, a Pousada Recanto do Jabaquara oferece tudo o que você precisa para uma hospedagem confortável e inesquecível, seja para uma viagem em casal, em família ou entre amigos.",
           "Confira abaixo por que a Pousada Recanto do Jabaquara se destaca como uma opção certeira para viver Paraty com conforto:",
           "Localização privilegiada no Bairro Jabaquara — A pousada fica no Bairro Jabaquara, perto da praia e com fácil acesso ao Centro Histórico de Paraty. Assim, você aproveita o melhor da cidade sem abrir mão do conforto e da praticidade na hora de ir e voltar dos passeios.",
-          "Piscina aquecida para relaxar — Depois de um dia de praia ou de caminhada pelo centro histórico, nada como uma pausa na piscina aquecida. O espaço é perfeito para relaxar ao fim da tarde e recarregar as energias antes do próximo passeio.",
+          "Piscina climatizada para relaxar — Depois de um dia de praia ou de caminhada pelo centro histórico, nada como uma pausa na piscina climatizada. O espaço é perfeito para relaxar ao fim da tarde e recarregar as energias antes do próximo passeio.",
           "Café da manhã incluso e variado — A hospedagem já inclui um café da manhã completo, com pães, bolos, frutas, frios, queijos, geleias, ovos, sucos, café, leite e chás. O começo ideal para um dia de descobertas por Paraty.",
           "Estacionamento interno gratuito — Quem viaja de carro encontra um estacionamento interno gratuito, no formato rotativo. A comodidade facilita a rotina de quem quer sair cedo para conhecer as praias e o centro histórico, sem se preocupar com o veículo.",
           "Quartos renovados para cada tipo de viagem — Os 35 apartamentos foram recentemente renovados, com opções para casais, famílias e pequenos grupos. Cada quarto conta com ar-condicionado, TV de tela plana e frigobar de uso livre, garantindo conforto durante toda a estadia.",
@@ -1067,7 +1400,7 @@
       "showNewsletter": true,
       "newsletterVariant": "home",
       "seoTitle": "Pousada em Paraty, RJ | Recanto do Jabaquara",
-      "seoDescription": "Pousada em Paraty, RJ com piscina aquecida e café da manhã. Sinta a calma do Jabaquara e reserve direto pelo site oficial.",
+      "seoDescription": "Pousada em Paraty, RJ com piscina climatizada e café da manhã. Sinta a calma do Jabaquara e reserve direto pelo site oficial.",
       "layout": [
         {
           "blockType": "hero",
@@ -1077,7 +1410,7 @@
           "blockType": "aboutMosaic",
           "eyebrow": "A Pousada",
           "title": "Pousada Recanto do Jabaquara",
-          "text": "Escolher uma pousada em Paraty muda o jeito de viver o destino. Na Pousada Recanto do Jabaquara, o descanso começa no Bairro Jabaquara, onde a atmosfera acolhedora e a atenção próxima marcam a estadia desde a chegada. Os quartos renovados convidam a desacelerar depois do mar, das ruas de pedra e dos passeios pela região.\n\nPara quem busca hospedagem em Paraty com tranquilidade, a rotina é simples: chegar, respirar e sentir a cidade no tempo dela. A piscina aquecida marca presença no fim de tarde, e o café da manhã abre o dia com variedade. O resultado é uma experiência que une praticidade e descanso — o ponto de partida ideal para explorar Paraty.",
+          "text": "Escolher uma pousada em Paraty muda o jeito de viver o destino. Na Pousada Recanto do Jabaquara, o descanso começa no Bairro Jabaquara, onde a atmosfera acolhedora e a atenção próxima marcam a estadia desde a chegada. Os quartos renovados convidam a desacelerar depois do mar, das ruas de pedra e dos passeios pela região.\n\nPara quem busca hospedagem em Paraty com tranquilidade, a rotina é simples: chegar, respirar e sentir a cidade no tempo dela. A piscina climatizada marca presença no fim de tarde, e o café da manhã abre o dia com variedade. O resultado é uma experiência que une praticidade e descanso — o ponto de partida ideal para explorar Paraty.",
           "ctaLabel": "Faça uma reserva",
           "ctaUsesEngine": true,
           "images": [
@@ -1161,11 +1494,11 @@
       "showNewsletter": true,
       "newsletterVariant": "inner",
       "seoTitle": "Pousada em Paraty, RJ | Estrutura e serviços",
-      "seoDescription": "Hospedagem em Paraty com atendimento acolhedor, piscina aquecida e estacionamento interno. Conheça a pousada e escolha seu quarto.",
+      "seoDescription": "Hospedagem em Paraty com atendimento acolhedor, piscina climatizada e estacionamento interno. Conheça a pousada e escolha seu quarto.",
       "layout": [
         {
           "blockType": "pageHero",
-          "image": "@media:pousada-aerea-jabaquara-baia.jpg",
+          "image": "@media:pousada-aerea-piscina-telhados.jpg",
           "title": "A Pousada",
           "variant": "page"
         },
@@ -1173,7 +1506,7 @@
           "blockType": "aboutMosaic",
           "eyebrow": "A Pousada",
           "title": "Pousada Recanto do Jabaquara",
-          "text": "A Pousada Recanto do Jabaquara convida a viver Paraty no ritmo do Bairro Jabaquara, com atmosfera acolhedora, atendimento próximo e espaços pensados para o descanso. Entre a praia e o Centro Histórico, a estadia ganha praticidade: é fácil ir e voltar sem abrir mão da tranquilidade.\n\nDepois de um dia de passeios, a piscina aquecida completa o retorno, e os quartos renovados ajudam a recuperar as energias para o dia seguinte.",
+          "text": "A Pousada Recanto do Jabaquara convida a viver Paraty no ritmo do Bairro Jabaquara, com atmosfera acolhedora, atendimento próximo e espaços pensados para o descanso. Entre a praia e o Centro Histórico, a estadia ganha praticidade: é fácil ir e voltar sem abrir mão da tranquilidade.\n\nDepois de um dia de passeios, a piscina climatizada completa o retorno, e os quartos renovados ajudam a recuperar as energias para o dia seguinte.",
           "ctaLabel": "Faça uma reserva",
           "ctaUsesEngine": true,
           "images": [
@@ -1305,8 +1638,8 @@
       "showTestimonials": true,
       "showNewsletter": true,
       "newsletterVariant": "inner",
-      "seoTitle": "Pousada em Paraty, RJ | Piscina aquecida",
-      "seoDescription": "Pousada em Paraty com lazer para desacelerar. Piscina aquecida para relaxar após a praia e os passeios. Confira horários e reserve.",
+      "seoTitle": "Pousada em Paraty, RJ | Piscina climatizada",
+      "seoDescription": "Pousada em Paraty com lazer para desacelerar. Piscina climatizada para relaxar após a praia e os passeios. Confira horários e reserve.",
       "layout": [
         {
           "blockType": "pageHero",
@@ -1318,8 +1651,8 @@
           "blockType": "splitContent",
           "eyebrow": "Lazer",
           "title": "Lazer na Pousada Recanto do Jabaquara",
-          "text": "Depois da praia e das caminhadas, a vontade é desacelerar. A piscina aquecida convida a mergulhar sem pressa e a sentar ao redor, enquanto a noite chega em Paraty.",
-          "note": "Piscina aquecida — disponível das 10h às 22h",
+          "text": "Depois da praia e das caminhadas, a vontade é desacelerar. A piscina climatizada convida a mergulhar sem pressa e a sentar ao redor, enquanto a noite chega em Paraty.",
+          "note": "Piscina climatizada — disponível das 10h às 22h",
           "background": "white",
           "images": [
             {
@@ -1358,7 +1691,7 @@
       "layout": [
         {
           "blockType": "pageHero",
-          "image": "@media:pousada-aerea-orla.jpg",
+          "image": "@media:pousada-aerea-baia-serra.jpg",
           "title": "Localização",
           "variant": "page"
         },

@@ -26,7 +26,8 @@
     "trocar:midia": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/trocar-midia.ts",
     "db:wal": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/db-wal.ts",
     "db:destravar": "cross-env NODE_OPTIONS=--no-deprecation node src/scripts/destravar-push.mjs",
-    "remover:midia": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/remover-midia.ts"
+    "remover:midia": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/remover-midia.ts",
+    "limpar:orfaos": "cross-env NODE_OPTIONS=--no-deprecation tsx limpar-orfaos.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.88.0",
