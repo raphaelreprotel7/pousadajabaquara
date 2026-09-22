@@ -178,7 +178,7 @@
       },
       {
         "style": "image",
-        "image": "@media:selo-iso-9001-2015.png",
+        "image": "@media:selo-iso-9001-2015-qms.png",
         "label": "Certificação ISO 9001:2015 — sistema de gestão da qualidade"
       }
     ],
@@ -814,7 +814,7 @@
       "category": "Acomodações"
     },
     {
-      "file": "selo-iso-9001-2015.png",
+      "file": "selo-iso-9001-2015-qms.png",
       "alt": "Selo de certificação ISO 9001:2015",
       "category": null
     }
