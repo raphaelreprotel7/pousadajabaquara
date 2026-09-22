@@ -108,6 +108,10 @@
         "href": "/lazer"
       },
       {
+        "label": "Passeios",
+        "href": "/passeios"
+      },
+      {
         "label": "Fotos",
         "href": "/fotos"
       },
@@ -1734,6 +1738,83 @@
               "image": "@media:pousada-aerea-orla.jpg"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "Passeios",
+      "slug": "passeios",
+      "showBookingBar": true,
+      "showTestimonials": false,
+      "showNewsletter": true,
+      "newsletterVariant": "inner",
+      "seoTitle": "Passeios em Paraty | Pousada Recanto do Jabaquara",
+      "seoDescription": "Escuna pelas ilhas, jeep 4x4 por cachoeiras e alambiques e o dia em Trindade. Conheca os passeios de Paraty durante sua hospedagem.",
+      "layout": [
+        {
+          "blockType": "pageHero",
+          "image": "@media:baia-paraty-aerea-casario.jpg",
+          "title": "Passeios",
+          "variant": "page",
+          "showTagline": false
+        },
+        {
+          "blockType": "splitContent",
+          "eyebrow": "Experiências em Paraty",
+          "title": "Viva Paraty através de experiências inesquecíveis",
+          "text": "Durante sua estadia na Pousada Recanto do Jabaquara, aproveite para conhecer as belezas naturais de Paraty com a Aventura Turismo, agência especializada em passeios pela região.\n\nA agência oferece experiências para diferentes estilos de viajantes, passando pelo mar, pelas cachoeiras, pela Mata Atlântica, pelos alambiques tradicionais e pelas praias paradisíacas de Trindade.\n\nPara tornar sua estadia ainda mais especial, a Pousada Recanto do Jabaquara apresenta algumas das principais opções de passeios:",
+          "images": [
+            {
+              "image": "@media:paraty-cais-barcos-anoitecer.jpg"
+            }
+          ]
+        },
+        {
+          "blockType": "splitContent",
+          "eyebrow": "Escuna Capitão Gancho",
+          "title": "Praias e ilhas de Paraty",
+          "reverse": true,
+          "background": "gray",
+          "text": "Conheça a beleza da Baía de Paraty a bordo da Escuna Capitão Gancho, em um passeio perfeito para quem deseja aproveitar o mar, relaxar e conhecer algumas das paisagens mais bonitas da região.\n\nDurante a navegação, são realizadas paradas em praias e ilhas, sendo elas Praia da Lula, Praia Vermelha, Ilha dos Cocos, Lagoa Azul e Ilha Comprida, com tempo para mergulhar, nadar, relaxar nas águas tranquilas e apreciar a natureza.\n\nÉ uma experiência para aproveitar Paraty de um jeito diferente, cercado pelo mar, pela Mata Atlântica e por cenários que tornam o passeio inesquecível.\n\nUma ótima opção para famílias, casais e grupos de amigos que querem passar um dia agradável no mar.",
+          "images": [
+            {
+              "image": "@media:baia-paraty-aerea-casario.jpg"
+            }
+          ]
+        },
+        {
+          "blockType": "splitContent",
+          "eyebrow": "Jeep 4x4",
+          "title": "Cachoeiras e alambiques",
+          "text": "Para quem gosta de natureza, aventura e cultura local, o Jeep Tour pelas cachoeiras e alambiques é uma das experiências mais completas em Paraty.\n\nO passeio percorre a região da Serra da Bocaina, passando por belas cachoeiras e poços naturais, além de pontos históricos relacionados ao antigo Caminho do Ouro.\n\nO roteiro também inclui a visita a alambiques tradicionais de Paraty, onde é possível conhecer um pouco mais sobre a produção da famosa cachaça da região e, conforme o local, participar de degustações de cachaças e licores.\n\nEntre os locais visitados estão a Cachoeira Pedra Branca, Poço da Usina, Cachoeira do Tobogã e Poço do Tarzan, além dos alambiques e outros pontos do roteiro. O passeio conta com acompanhamento de guia/motorista local credenciado pelo Cadastur.\n\nNatureza, história, aventura e os sabores de Paraty em um único passeio.",
+          "images": [
+            {
+              "image": "@media:paraty-casario-iluminado-anoitecer.jpg"
+            }
+          ]
+        },
+        {
+          "blockType": "splitContent",
+          "eyebrow": "Trindade",
+          "title": "Praias, natureza e águas cristalinas",
+          "reverse": true,
+          "background": "gray",
+          "text": "A poucos quilômetros de Paraty está Trindade, um dos destinos mais procurados da região para quem deseja conhecer praias cercadas pela Mata Atlântica e paisagens naturais impressionantes.\n\nO passeio leva você para conhecer algumas das principais praias de Trindade, com tempo para aproveitar o mar, caminhar, relaxar e contemplar a natureza.\n\nEntre os lugares que podem fazer parte do roteiro estão a Praia dos Ranchos, Praia do Meio, Praia do Cachadaço e a Piscina Natural do Caixa d’Aço, de acordo com o roteiro e as condições do passeio.\n\nTrindade é uma excelente escolha para quem quer passar um dia em contato com a natureza e descobrir um dos lugares mais encantadores do litoral da Costa Verde.",
+          "images": [
+            {
+              "image": "@media:praia-jabaquara-aerea-orla.jpg"
+            }
+          ]
+        },
+        {
+          "blockType": "regionCard",
+          "eyebrow": "Escolha sua experiência",
+          "title": "Escolha sua experiência em Paraty",
+          "text": "Mar, ilhas, cachoeiras, Mata Atlântica, história, cultura e praias paradisíacas. Com a Aventura Turismo, você pode conhecer diferentes faces de Paraty durante sua hospedagem.\n\nConsulte nossa equipe na Pousada Recanto do Jabaquara e saiba mais sobre os passeios, horários, disponibilidade e reservas.",
+          "image": "@media:pousada-aerea-baia-serra.jpg",
+          "ctaLabel": "Falar com a equipe",
+          "ctaHref": "/contato",
+          "align": "left"
         }
       ]
     },

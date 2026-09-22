@@ -42,6 +42,30 @@ type Ctx = {
 const fundoSecao = (valor?: string | null) =>
   valor === 'gray' ? ' sec--gray' : valor === 'brand' ? ' sec--verde' : ''
 
+/**
+ * Texto de bloco em parágrafos.
+ *
+ * Os campos de texto são `textarea`: quem escreve separa parágrafos com uma
+ * linha em branco, e tudo caía num `<p>` só — as quebras sumiam e o texto
+ * virava um bloco maciço. Aqui a linha em branco volta a valer.
+ */
+const Paragrafos = ({ texto, classe = 'body-text' }: { texto?: string | null; classe?: string }) => {
+  if (!texto) return null
+  const partes = String(texto)
+    .split(/\n\s*\n/)
+    .map((t) => t.trim())
+    .filter(Boolean)
+  return (
+    <>
+      {partes.map((par, i) => (
+        <p className={classe || undefined} key={i}>
+          {par}
+        </p>
+      ))}
+    </>
+  )
+}
+
 const Head = ({ title }: { title?: string | null }) => {
   if (!title) return null
   const { head, tail } = splitHighlight(title)
@@ -232,7 +256,7 @@ export const RenderBlocks = async ({
                 <div className="regioncard__card">
                   {b.eyebrow ? <p className="eyebrow">{b.eyebrow}</p> : null}
                   <h2 className="regioncard__title">{b.title}</h2>
-                  {b.text ? <p>{b.text}</p> : null}
+                  <Paragrafos texto={b.text} classe="" />
                   <Cta label={b.ctaLabel} booking={booking} href={b.ctaHref ?? undefined} />
                 </div>
               </div>
@@ -327,7 +351,7 @@ export const RenderBlocks = async ({
                   <h2 className="h-block">
                     {head} <strong>{tail}</strong>
                   </h2>
-                  {b.text ? <p className="body-text">{b.text}</p> : null}
+                  <Paragrafos texto={b.text} />
                   {amenities.length > 0 && (
                     <ul className="amen">
                       {amenities.map((a) => (
@@ -526,7 +550,7 @@ export const RenderBlocks = async ({
                   <div className="shell roomintro">
                     {b.intro?.title ? <h2 className="h-block">{b.intro.title}</h2> : null}
                     <div className="roomintro__lado">
-                      {b.intro?.text ? <p className="body-text">{b.intro.text}</p> : null}
+                      <Paragrafos texto={b.intro?.text} />
                       <Cta label={b.intro?.ctaLabel} useEngine booking={booking} />
                     </div>
                   </div>
@@ -821,7 +845,7 @@ export const RenderBlocks = async ({
                     <h2 className="h-block">
                       {head} <strong>{tail}</strong>
                     </h2>
-                    {b.text ? <p className="body-text">{b.text}</p> : null}
+                    <Paragrafos texto={b.text} />
                     <div className="loc__actions">
                       <a
                         href={engineUrl(booking)}
@@ -1015,7 +1039,7 @@ export const RenderBlocks = async ({
                   <h2 className="h-block">
                     {head} <strong>{tail}</strong>
                   </h2>
-                  {b.text ? <p className="body-text">{b.text}</p> : null}
+                  <Paragrafos texto={b.text} />
 
                   {typeof b.form === 'object' && b.form ? (
                     <PayloadForm
