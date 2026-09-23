@@ -1,3 +1,4 @@
+import FOTOS from './fotos-locais.json'
 type Any = Record<string, any>
 
 /** Origem do próprio site, para reconhecer o que não é upload externo. */
@@ -16,9 +17,42 @@ const ORIGEM = (process.env.NEXT_PUBLIC_SERVER_URL || '').replace(/\/$/, '')
  * Em produção com Vercel Blob a URL é de outro host e passa intacta — é para
  * ela que existe o `remotePatterns` do next.config.mjs.
  */
+/**
+ * Fotos servidas pelo próprio projeto, em vez do armazenamento externo.
+ *
+ * Interruptor de emergência: com NEXT_PUBLIC_FOTOS_LOCAIS=1, toda imagem que
+ * exista em public/fotos passa a sair de lá. Existe porque o store de Blob foi
+ * suspenso por cobrança inativa e o site ficou sem metade das fotos — e o
+ * otimizador, sem conseguir buscar o original, devolvia 502.
+ *
+ * É chave, não reescrita: tirando a variável e publicando, tudo volta ao Blob
+ * sem tocar em código, em conteúdo ou no banco.
+ */
+const FOTOS_LOCAIS = process.env.NEXT_PUBLIC_FOTOS_LOCAIS === '1'
+
+/**
+ * Nome do arquivo sem o sufixo de duplicata.
+ *
+ * O Payload grava `foto-1.jpg` quando acha o nome ocupado, e em produção
+ * praticamente toda imagem tem esse `-1`. Em public/fotos os nomes são os
+ * originais. Nenhum arquivo do acervo termina em dígito, então tirar um
+ * `-N` final é seguro.
+ */
+const nomeLocal = (url: string): string => {
+  const arquivo = (url.split('?')[0].split('/').pop() ?? '')
+  const ponto = arquivo.lastIndexOf('.')
+  if (ponto < 1) return ''
+  return arquivo.slice(0, ponto).replace(/-\d+$/, '') + arquivo.slice(ponto)
+}
+
 export const mediaUrl = (value: unknown): string => {
   const bruta = !value ? '' : typeof value === 'string' ? value : ((value as Any)?.url ?? '')
   if (!bruta) return ''
+  if (FOTOS_LOCAIS) {
+    const nome = nomeLocal(bruta)
+    // só redireciona o que existe: sem a lista, trocaríamos 502 por 404
+    if (nome && (FOTOS as string[]).includes(nome)) return `/fotos/${nome}`
+  }
   if (ORIGEM && bruta.startsWith(ORIGEM)) return bruta.slice(ORIGEM.length) || '/'
   return bruta
 }
