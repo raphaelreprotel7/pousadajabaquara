@@ -181,12 +181,14 @@
     "seals": [
       {
         "style": "image",
-        "image": "@media:selo-kayak-travel-awards.png",
+        "src": "/selos/kayak-travel-awards.png",
+        "image": null,
         "label": "KAYAK Travel Awards"
       },
       {
         "style": "image",
-        "image": "@media:selo-iso-9001-2015-qms.png",
+        "src": "/selos/iso-9001-2015.png",
+        "image": null,
         "label": "Certificação ISO 9001:2015 — sistema de gestão da qualidade"
       }
     ],
@@ -561,11 +563,6 @@
       "category": "Estrutura"
     },
     {
-      "file": "selo-kayak-travel-awards.png",
-      "alt": "Selo KAYAK Travel Awards",
-      "category": null
-    },
-    {
       "file": "duplo-standard-01-cabeceira-floral-poltrona.jpg",
       "alt": "Quarto Duplo Standard com cabeceira de papel floral, cama de casal e poltrona de apoio",
       "category": "Acomodações"
@@ -819,11 +816,6 @@
       "file": "triplo-standard-07-camas-escrivaninha.jpg",
       "alt": "Quarto Triplo Standard com camas, escrivaninha e cadeira de trabalho",
       "category": "Acomodações"
-    },
-    {
-      "file": "selo-iso-9001-2015-qms.png",
-      "alt": "Selo de certificação ISO 9001:2015",
-      "category": null
     },
     {
       "file": "passeio-escuna-01-escuna-ancorada-ilha.jpg",

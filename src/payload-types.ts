@@ -2488,6 +2488,10 @@ export interface Footer {
         style?: ('image' | 'text') | null;
         image?: (number | null) | Media;
         /**
+         * Caminho em /public, ex.: /selos/iso-9001-2015.png. Preenchido, vence a imagem — serve para selos de marca, que não passam pelo armazenamento externo.
+         */
+        src?: string | null;
+        /**
          * Em imagem, é o texto alternativo. Em texto, é o que aparece.
          */
         label: string;
@@ -2766,6 +2770,7 @@ export interface FooterSelect<T extends boolean = true> {
     | {
         style?: T;
         image?: T;
+        src?: T;
         label?: T;
         href?: T;
         id?: T;

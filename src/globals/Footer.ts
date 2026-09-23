@@ -145,6 +145,17 @@ export const Footer: GlobalConfig = {
               },
             },
             {
+              name: 'src',
+              label: 'Arquivo do projeto',
+              type: 'text',
+              admin: {
+                width: '20%',
+                condition: (_, sibling) => sibling?.style !== 'text',
+                description:
+                  'Caminho em /public, ex.: /selos/iso-9001-2015.png. Preenchido, vence a imagem — serve para selos de marca, que não passam pelo armazenamento externo.',
+              },
+            },
+            {
               name: 'label',
               label: 'Descrição',
               type: 'text',

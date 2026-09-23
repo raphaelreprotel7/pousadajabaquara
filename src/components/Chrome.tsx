@@ -254,9 +254,13 @@ export const SiteFooter = ({ settings, footer }: { settings: Any; footer: Any })
               s.style === 'text' ? (
                 <span className="footer__selo footer__selo--texto">{s.label}</span>
               ) : (
+                /* `src` (arquivo do projeto) vence o upload: os selos de marca
+                   eram, junto com o logo, as únicas imagens que iam direto ao
+                   armazenamento externo — sem otimizador e sem cache na frente,
+                   foram as primeiras a sumir quando ele bloqueou. */
                 <img
                   className="footer__selo"
-                  src={mediaUrl(s.image)}
+                  src={s.src || mediaUrl(s.image)}
                   alt={s.label}
                   loading="lazy"
                   decoding="async"
