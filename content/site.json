@@ -1267,19 +1267,19 @@
       "category": "localizacao"
     },
     {
-      "question": "E se o estacionamento da pousada estiver cheio?",
+      "question": "O estacionamento é gratuito?",
       "answer": {
         "@rich": [
-          "A pousada dispõe de um estacionamento a 150 metros para quando o interno estiver lotado. Se precisar, basta falar com a recepção na chegada."
+          "Sim. O estacionamento interno funciona no formato rotativo e sem custo para hóspedes, ajudando no dia a dia de quem chega de carro e quer circular com mais praticidade pela cidade."
         ]
       },
       "category": "geral"
     },
     {
-      "question": "O estacionamento é gratuito?",
+      "question": "E se o estacionamento da pousada estiver cheio?",
       "answer": {
         "@rich": [
-          "Sim. O estacionamento interno funciona no formato rotativo e sem custo para hóspedes, ajudando no dia a dia de quem chega de carro e quer circular com mais praticidade pela cidade."
+          "A pousada dispõe de um estacionamento a 150 metros para quando o interno estiver lotado. Se precisar, basta falar com a recepção na chegada."
         ]
       },
       "category": "geral"
