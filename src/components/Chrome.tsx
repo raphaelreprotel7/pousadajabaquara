@@ -21,6 +21,22 @@ import {
 
 type Any = Record<string, any>
 
+/**
+ * Caminho do logo.
+ *
+ * O padrão é o arquivo estático do projeto, servido junto com a aplicação. O
+ * logo era a única imagem que ia direto ao armazenamento externo, sem passar
+ * pelo otimizador — e portanto sem cache nenhum na frente. Quando o
+ * armazenamento caiu, todas as outras imagens seguiram aparecendo pelo cache e
+ * só o logo sumiu, deixando o site sem identidade.
+ *
+ * São 36 KB e é a marca: não é conteúdo que o editor troca toda semana. Mas
+ * se alguém subir um logo no admin, esse vence — o campo continua valendo.
+ */
+const LOGO_ESTATICO = '/logo.png'
+const logoSrc = (settings: Any) =>
+  settings?.logo ? mediaUrl(settings.logo) : LOGO_ESTATICO
+
 /* ------------------------------- HEADER -------------------------------- */
 
 export const SiteHeader = ({
@@ -61,19 +77,15 @@ export const SiteHeader = ({
       <header className={`topbar${sobreBanner ? '' : ' topbar--solido'}`}>
         <div className="topbar__inner">
           <a className="brand" href="/">
-            {settings?.logo ? (
-              /* Logo do topo: 3 KB, acima da dobra. Fica fora do lazy e sem
-                 srcset — a altura é fixa em 34px, não há corte a escolher. */
-              <img
-                className="brand__logo"
-                src={mediaUrl(settings.logo)}
-                alt={settings?.hotelName ?? 'Hotel'}
-                decoding="async"
-                fetchPriority="high"
-              />
-            ) : (
-              <span className="brand__mark">N</span>
-            )}
+            {/* Acima da dobra: fora do lazy e sem srcset — a altura é fixa,
+                não há corte a escolher. */}
+            <img
+              className="brand__logo"
+              src={logoSrc(settings)}
+              alt={settings?.hotelName ?? 'Hotel'}
+              decoding="async"
+              fetchPriority="high"
+            />
           </a>
 
           <nav className="nav">
@@ -142,15 +154,13 @@ export const SiteFooter = ({ settings, footer }: { settings: Any; footer: Any })
         <div className="footer__top">
           <div className="footer__brand">
             <a className="brand" href="/">
-              {settings?.logo ? (
-                <img
-                  className="brand__logo"
-                  src={mediaUrl(settings.logo)}
-                  alt={settings?.hotelName ?? 'Hotel'}
-                  loading="lazy"
-                  decoding="async"
-                />
-              ) : null}
+              <img
+                className="brand__logo"
+                src={logoSrc(settings)}
+                alt={settings?.hotelName ?? 'Hotel'}
+                loading="lazy"
+                decoding="async"
+              />
             </a>
             {footer?.about ? <p>{footer.about}</p> : null}
           </div>

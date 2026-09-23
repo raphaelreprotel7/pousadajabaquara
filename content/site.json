@@ -48,7 +48,7 @@
   "site": {
     "hotelName": "Pousada Recanto do Jabaquara",
     "tagline": "o melhor preço garantido",
-    "logo": "@media:logo.png",
+    "logo": null,
     "phoneLabel": "(24) 99264-2862",
     "phoneE164": "+5524992642862",
     "reservationsLabel": "(24) 99264-2862",
@@ -255,10 +255,6 @@
     }
   ],
   "media": [
-    {
-      "file": "logo.png",
-      "alt": "Logotipo da Pousada Recanto do Jabaquara"
-    },
     {
       "file": "carregador-carro-eletrico.jpg",
       "alt": "Carregador sendo conectado a um carro elétrico no estacionamento",
