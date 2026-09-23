@@ -177,6 +177,18 @@ export const PageView = async ({ slug, locale }: { slug: string; locale: Locale 
       />
 
       <main>
+        {/* Só o banner de página emite <h1>. A home (que abre com banner sem
+            título) e as páginas sem banner ficavam sem nenhum — cada página
+            precisa de um, para leitor de tela e para busca. Este fica fora da
+            tela e não muda o desenho. */}
+        {!(page.layout as Record<string, any>[] | undefined)?.some(
+          (b) => b.blockType === 'pageHero',
+        ) ? (
+          <h1 className="visualmente-oculto">
+            {slug === 'home' ? (settings?.hotelName ?? page.title) : page.title}
+          </h1>
+        ) : null}
+
         {/* Por padrão os depoimentos vêm depois de todos os blocos. A home do
             cliente os coloca antes das dúvidas frequentes, então a página pode
             dizer após qual bloco a seção entra. */}

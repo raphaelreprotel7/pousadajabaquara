@@ -306,8 +306,17 @@ export const TestimonialsSectionView = ({
             {head} <strong>{tail}</strong>
           </h2>
           {section?.lead ? <p className="reviews__lead">{section.lead}</p> : null}
-          {section?.ctaLabel ? (
-            <a className="btn btn--ghost reviews__cta" href={section.ctaHref || '#'}>
+          {/* Sem destino, o botão não entra. Antes ele caía em href="#": o
+              visitante clicava em "Ver mais avaliações" e a página só piscava.
+              Um botão que não leva a lugar nenhum é pior do que nenhum botão —
+              e a URL do Tripadvisor nunca chegou. */}
+          {section?.ctaLabel && section?.ctaHref ? (
+            <a
+              className="btn btn--ghost reviews__cta"
+              href={section.ctaHref}
+              target="_blank"
+              rel="noopener"
+            >
               {section.ctaLabel}
             </a>
           ) : null}
