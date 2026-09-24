@@ -111,6 +111,29 @@ const run = async () => {
     return null
   }
 
+  /**
+   * Todas as mídias já cadastradas, lidas uma vez só.
+   *
+   * Antes isto era um `where: { filename: { like: base } }` por imagem. O D1
+   * recusa padrão de LIKE acima de ~50 caracteres — e vários nomes do acervo
+   * passam disso ("familia-varanda-mezanino-cama-telhado-madeira-aparente") —,
+   * então o seed morria no meio. Como o casamento fino sempre foi feito em
+   * JavaScript logo abaixo, a consulta servia só de pré-filtro: trazer a lista
+   * inteira uma vez resolve o limite do D1 e troca ~200 consultas por uma.
+   */
+  let catalogo: Any[] | null = null
+  const catalogoMidias = async (): Promise<Any[]> => {
+    if (!catalogo) {
+      const todas = await payload.find({
+        collection: 'media',
+        pagination: false,
+        depth: 0,
+      })
+      catalogo = todas.docs as Any[]
+    }
+    return catalogo
+  }
+
   /** Sobe a imagem uma vez e guarda o id. Sem arquivo, avisa e segue. */
   const midiaId = async (nome: string): Promise<string | number | null> => {
     if (midias.has(nome)) return midias.get(nome)!
@@ -121,12 +144,7 @@ const run = async () => {
        viraram 124 na primeira vez que o seed rodou duas vezes. Aceitar o
        sufixo aqui é o que torna o seed idempotente de verdade. */
     const [base, ext] = [nome.replace(/\.[^.]+$/, ''), nome.slice(nome.lastIndexOf('.'))]
-    const candidatos = await payload.find({
-      collection: 'media',
-      where: { filename: { like: base } },
-      limit: 50,
-      depth: 0,
-    })
+    const candidatos = { docs: await catalogoMidias() }
     const mesmaOrigem = (arquivo: string) => {
       if (!arquivo.toLowerCase().endsWith(ext.toLowerCase())) return false
       const semExt = arquivo.slice(0, -ext.length)
@@ -186,6 +204,9 @@ const run = async () => {
       filePath: arquivo,
     })
     midias.set(nome, criada.id)
+    // O catálogo foi lido antes desta criação; sem acrescentar aqui, o
+    // reencontro pelo sufixo `-N` não enxergaria o que acabou de entrar.
+    if (catalogo) catalogo.push(criada)
     conta('media')
     return criada.id
   }

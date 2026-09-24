@@ -1,0 +1,42 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pousadajabaquara",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-08-15",
+
+  // `nodejs_compat` é o que permite ao Payload usar APIs de Node dentro do
+  // Worker. `global_fetch_strictly_public` faz o fetch interno sair pela
+  // internet pública, que é o que o Next espera ao buscar as próprias rotas.
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+
+  // Tudo que hoje está em public/ (logo, selos e as 155 fotos) é servido como
+  // arquivo estático pela borda, sem passar pelo Worker.
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+
+  "d1_databases": [
+    {
+      "binding": "D1",
+      "database_name": "pousadajabaquara",
+      "database_id": "66f60253-8669-4e6d-ac10-4b2d20ed7507",
+      "remote": true
+    }
+  ],
+
+  "r2_buckets": [
+    {
+      "binding": "R2",
+      "bucket_name": "pousadajabaquara"
+    }
+  ],
+
+  "observability": {
+    "enabled": true
+  },
+
+  "vars": {
+    "USAR_CLOUDFLARE": "1"
+  }
+}

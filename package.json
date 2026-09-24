@@ -27,30 +27,37 @@
     "db:wal": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/db-wal.ts",
     "db:destravar": "cross-env NODE_OPTIONS=--no-deprecation node src/scripts/destravar-push.mjs",
     "remover:midia": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/remover-midia.ts",
-    "limpar:orfaos": "cross-env NODE_OPTIONS=--no-deprecation tsx limpar-orfaos.ts"
+    "limpar:orfaos": "cross-env NODE_OPTIONS=--no-deprecation tsx limpar-orfaos.ts",
+    "cf:build": "cross-env NODE_OPTIONS=--no-deprecation USAR_CLOUDFLARE=1 opennextjs-cloudflare build",
+    "cf:preview": "cross-env NODE_OPTIONS=--no-deprecation USAR_CLOUDFLARE=1 opennextjs-cloudflare preview",
+    "cf:deploy": "cross-env NODE_OPTIONS=--no-deprecation USAR_CLOUDFLARE=1 opennextjs-cloudflare deploy",
+    "seed:cloudflare": "cross-env NODE_OPTIONS=--no-deprecation USAR_CLOUDFLARE=1 tsx src/scripts/seed-site.ts"
   },
   "dependencies": {
-    "@payloadcms/db-postgres": "^3.88.0",
-    "@payloadcms/db-sqlite": "3.88.0",
-    "@payloadcms/next": "3.88.0",
-    "@payloadcms/plugin-form-builder": "3.88.0",
-    "@payloadcms/plugin-redirects": "3.88.0",
-    "@payloadcms/plugin-seo": "3.88.0",
-    "@payloadcms/richtext-lexical": "3.88.0",
-    "@payloadcms/storage-vercel-blob": "^3.88.0",
-    "@payloadcms/ui": "3.88.0",
+    "@payloadcms/db-d1-sqlite": "3.90.2",
+    "@payloadcms/db-postgres": "3.90.2",
+    "@payloadcms/db-sqlite": "3.90.2",
+    "@payloadcms/next": "3.90.2",
+    "@payloadcms/plugin-form-builder": "3.90.2",
+    "@payloadcms/plugin-redirects": "3.90.2",
+    "@payloadcms/plugin-seo": "3.90.2",
+    "@payloadcms/richtext-lexical": "3.90.2",
+    "@payloadcms/storage-r2": "3.90.2",
+    "@payloadcms/storage-vercel-blob": "3.90.2",
+    "@payloadcms/ui": "3.90.2",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
     "graphql": "^16.9.0",
     "leaflet": "^1.9.4",
-    "next": "16.3.0",
-    "payload": "3.88.0",
+    "next": "^16.3.3",
+    "payload": "3.90.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "sharp": "^0.34.0",
     "turndown": "^7.2.4"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.6",
     "@types/leaflet": "^1.9.12",
     "@types/node": "^22.9.0",
     "@types/react": "^19.0.0",
@@ -58,13 +65,17 @@
     "@types/turndown": "^5.0.6",
     "rimraf": "^6.0.1",
     "tsx": "^4.19.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "wrangler": "^4.125.0"
   },
   "allowScripts": {
     "sharp@0.35.3": true,
     "sharp@0.34.5": true,
     "esbuild@0.18.20": true,
     "esbuild@0.28.2": true,
-    "esbuild@0.25.12": true
+    "esbuild@0.25.12": true,
+    "esbuild@0.25.4": true,
+    "esbuild@0.28.1": true,
+    "workerd@1.20260921.1": true
   }
 }

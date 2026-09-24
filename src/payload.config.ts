@@ -1,10 +1,11 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { buildConfig } from 'payload'
-import sharp from 'sharp'
 
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
+import { sqliteD1Adapter } from '@payloadcms/db-d1-sqlite'
+import { r2Storage } from '@payloadcms/storage-r2'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 import { redirectsPlugin } from '@payloadcms/plugin-redirects'
@@ -59,6 +60,43 @@ const csrf = Array.from(
   ),
 )
 
+/**
+ * Bindings da Cloudflare (D1 e R2).
+ *
+ * Eles não existem no escopo do módulo de um Worker: só aparecem no contexto
+ * de request. Dentro da aplicação servida pelo OpenNext quem entrega isso é
+ * `getCloudflareContext`; fora dela — build, CLI do Payload, `seed:site` —
+ * quem entrega é o `getPlatformProxy` do wrangler, que sobe um miniflare com
+ * as mesmas ligações declaradas em wrangler.jsonc.
+ *
+ * O import do wrangler é escondido do bundler de propósito (a concatenação
+ * impede a análise estática), porque o wrangler é dependência de
+ * desenvolvimento e não pode entrar no bundle do Worker.
+ */
+const USANDO_CLOUDFLARE = process.env.USAR_CLOUDFLARE === '1'
+
+const contextoCloudflare = async () => {
+  try {
+    const { getCloudflareContext } = await import('@opennextjs/cloudflare')
+    return await getCloudflareContext({ async: true })
+  } catch {
+    const { getPlatformProxy } = await import(
+      /* webpackIgnore: true */ `${'__wrangler'.replaceAll('_', '')}`
+    )
+    return await getPlatformProxy({ environment: process.env.CLOUDFLARE_ENV })
+  }
+}
+
+const cloudflare = USANDO_CLOUDFLARE ? await contextoCloudflare() : null
+
+/**
+ * `sharp` é binário nativo e não roda em Workers — o template oficial da
+ * Cloudflare também não o passa. Sem ele o Payload continua aceitando upload,
+ * mas deixa de gerar os tamanhos derivados; por isso o import é dinâmico e só
+ * acontece fora da Cloudflare.
+ */
+const sharp = USANDO_CLOUDFLARE ? undefined : (await import('sharp')).default
+
 export default buildConfig({
   serverURL,
   csrf,
@@ -86,6 +124,9 @@ export default buildConfig({
    *
    * O conteúdo não mora no banco, e sim em content/site.json, então trocar de
    * banco não é migrar dados: é apontar o `seed:site` para o novo endereço.
+   *
+   * Na Cloudflare o banco é o D1, que também é SQLite — por isso a troca não
+   * exige migração de dados: basta rodar o `seed:site` apontado para lá.
    */
   db: (() => {
     const postgres =
@@ -102,6 +143,8 @@ export default buildConfig({
        push voltaria a ligar — num banco com dados, isso é destrutivo. */
     const limpo = (process.env.PAYLOAD_DB_PUSH ?? '').replace(/^﻿/, '').trim()
     const push = limpo !== 'false'
+
+    if (cloudflare) return sqliteD1Adapter({ binding: cloudflare.env.D1, push })
 
     if (postgres) return postgresAdapter({ pool: { connectionString: postgres }, push })
 
@@ -161,12 +204,26 @@ export default buildConfig({
   },
 
   plugins: [
-    vercelBlobStorage({
-      enabled: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
-      collections: { media: { disablePayloadAccessControl: true } },
-      token: process.env.BLOB_READ_WRITE_TOKEN,
-      clientUploads: true,
-    }),
+    /* Os dois adaptadores de mídia convivem, mas só um fica ligado: na
+       Cloudflare é o R2, em qualquer outro lugar é o Vercel Blob. Manter os
+       dois declarados (em vez de trocar um pelo outro) é o que deixa o mesmo
+       código servir as duas hospedagens sem edição. */
+    ...(cloudflare
+      ? [
+          r2Storage({
+            bucket: cloudflare.env.R2,
+            collections: { media: { disablePayloadAccessControl: true } },
+            clientUploads: true,
+          }),
+        ]
+      : [
+          vercelBlobStorage({
+            enabled: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+            collections: { media: { disablePayloadAccessControl: true } },
+            token: process.env.BLOB_READ_WRITE_TOKEN,
+            clientUploads: true,
+          }),
+        ]),
 
     seoPlugin({
       collections: ['pages', 'suites', 'posts', 'offers'],

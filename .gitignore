@@ -37,3 +37,7 @@ tsconfig.tsbuildinfo
 
 # Capturas soltas de verificacao, quando um script roda a partir da raiz.
 q-*.png
+
+# Build do adaptador da Cloudflare
+.open-next
+.wrangler

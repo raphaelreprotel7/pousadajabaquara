@@ -16,6 +16,11 @@ dotenv.config({ path: '.env.local', override: true })
 
 /** Nome curto do banco em uso, para os scripts dizerem onde vão escrever. */
 export const bancoEmUso = () => {
+  // A Cloudflare tem precedência: quando USAR_CLOUDFLARE está ligado o
+  // payload.config ignora qualquer URL e vai para o D1. Sem este caso o script
+  // anunciaria "SQLite local" enquanto escrevia no banco de produção.
+  if (process.env.USAR_CLOUDFLARE === '1') return 'D1 pousadajabaquara (Cloudflare)'
+
   const url =
     process.env.TURSO_DATABASE_URL ||
     process.env.DATABASE_URI ||
