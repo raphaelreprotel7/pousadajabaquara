@@ -25,10 +25,16 @@
     }
   ],
 
+  // `remote: true` nos dois, e isso não é detalhe: sem ele o `getPlatformProxy`
+  // usado pelo seed grava num miniflare local em vez do recurso de verdade.
+  // Com o marcador só no D1, os registros foram para o banco remoto e os
+  // arquivos ficaram na máquina — o Worker achava a mídia no banco, não achava
+  // o objeto no bucket, e devolvia 500 em toda imagem.
   "r2_buckets": [
     {
       "binding": "R2",
-      "bucket_name": "pousadajabaquara"
+      "bucket_name": "pousadajabaquara",
+      "remote": true
     }
   ],
 

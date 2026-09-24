@@ -210,10 +210,16 @@ export default buildConfig({
        código servir as duas hospedagens sem edição. */
     ...(cloudflare
       ? [
+          /* Sem `disablePayloadAccessControl` aqui, ao contrário do Blob.
+             Aquela opção existe para quando o armazenamento tem URL pública
+             própria e o Payload sai do caminho — é o caso do Vercel Blob. O
+             adaptador de R2 não expõe URL pública nenhuma (a interface não tem
+             sequer campo para isso): todo arquivo sai pela rota do Payload,
+             lendo o objeto pelo binding. Desligar o controle de acesso ali só
+             quebrava a rota. */
           r2Storage({
             bucket: cloudflare.env.R2,
-            collections: { media: { disablePayloadAccessControl: true } },
-            clientUploads: true,
+            collections: { media: true },
           }),
         ]
       : [

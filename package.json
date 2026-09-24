@@ -28,9 +28,9 @@
     "db:destravar": "cross-env NODE_OPTIONS=--no-deprecation node src/scripts/destravar-push.mjs",
     "remover:midia": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/remover-midia.ts",
     "limpar:orfaos": "cross-env NODE_OPTIONS=--no-deprecation tsx limpar-orfaos.ts",
-    "cf:build": "cross-env NODE_OPTIONS=--no-deprecation USAR_CLOUDFLARE=1 opennextjs-cloudflare build",
-    "cf:preview": "cross-env NODE_OPTIONS=--no-deprecation USAR_CLOUDFLARE=1 opennextjs-cloudflare preview",
-    "cf:deploy": "cross-env NODE_OPTIONS=--no-deprecation USAR_CLOUDFLARE=1 opennextjs-cloudflare deploy",
+    "cf:build": "cross-env NODE_OPTIONS=--no-deprecation USAR_CLOUDFLARE=1 NEXT_PUBLIC_USAR_CLOUDFLARE=1 opennextjs-cloudflare build",
+    "cf:preview": "cross-env NODE_OPTIONS=--no-deprecation USAR_CLOUDFLARE=1 NEXT_PUBLIC_USAR_CLOUDFLARE=1 opennextjs-cloudflare preview",
+    "cf:deploy": "cross-env NODE_OPTIONS=--no-deprecation USAR_CLOUDFLARE=1 NEXT_PUBLIC_USAR_CLOUDFLARE=1 opennextjs-cloudflare deploy",
     "seed:cloudflare": "cross-env NODE_OPTIONS=--no-deprecation USAR_CLOUDFLARE=1 tsx src/scripts/seed-site.ts"
   },
   "dependencies": {

@@ -21,8 +21,28 @@ const DEVICE_SIZES = [640, 750, 828, 1080, 1200, 1920] as const
 /** Precisa existir em `images.qualities` no next.config.mjs. */
 const QUALITY = 75
 
+/**
+ * Na Cloudflare não existe `/_next/image`.
+ *
+ * O otimizador do Next reencoda com `sharp`, binário nativo que não roda em
+ * Worker — então a rota simplesmente não é servida e toda imagem voltava 404.
+ * Como as URLs aqui são montadas à mão (e não por `next/image`), o
+ * `images.unoptimized` do next.config não alcança este arquivo: o desvio
+ * precisa ser explícito.
+ *
+ * A variável é `NEXT_PUBLIC_` porque este módulo também roda no browser; uma
+ * variável só de servidor daria markup diferente entre servidor e cliente.
+ *
+ * O que se perde enquanto isso durar: AVIF/WebP e os cortes por largura. As
+ * fotos vão no tamanho original. A recuperação é o Cloudflare Images, que
+ * transforma por URL (`/cdn-cgi/image/...`) e devolveria os dois.
+ */
+const SEM_OTIMIZADOR = process.env.NEXT_PUBLIC_USAR_CLOUDFLARE === '1'
+
 const endpoint = (src: string, width: number): string =>
-  `/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=${QUALITY}`
+  SEM_OTIMIZADOR
+    ? src
+    : `/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=${QUALITY}`
 
 export type OptimizedImg = {
   src: string
@@ -52,8 +72,15 @@ export const imgProps = (
 
   return {
     src: endpoint(src, 1920),
-    srcSet: DEVICE_SIZES.map((w) => `${endpoint(src, w)} ${w}w`).join(', '),
-    sizes,
+    /* Sem otimizador só existe um arquivo, então um srcSet apontando seis
+       vezes para a mesma URL não daria escolha nenhuma ao browser — só o
+       faria acreditar que há cortes. Melhor omitir e deixar a <img> simples. */
+    ...(SEM_OTIMIZADOR
+      ? {}
+      : {
+          srcSet: DEVICE_SIZES.map((w) => `${endpoint(src, w)} ${w}w`).join(', '),
+          sizes,
+        }),
     decoding: 'async',
     ...(priority ? { fetchPriority: 'high' as const } : { loading: 'lazy' as const }),
   }
