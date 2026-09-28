@@ -1117,6 +1117,23 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
   opacity:.92;transition:opacity .2s}
 .footer__social a:hover{background:none;border:0;opacity:1}
 .footer__social svg{width:21px;height:21px;fill:#fff}
+/* ---- Selo ISO: canto superior direito ----
+   Fica sobreposto ao rodapé em vez de entrar na grade de quatro colunas, que
+   o empurraria para dentro de uma delas. Repete por conta própria a largura e
+   o respiro lateral da `.shell` para encostar exatamente na mesma borda
+   direita das colunas. O `:has` abre o espaço de cima só quando o selo existe:
+   sem ele, esse respiro extra seria um vão vazio. */
+.footer{position:relative}
+.footer:has(.footer__iso){padding-top:150px}
+.footer__iso{
+  position:absolute;top:34px;left:0;right:0;
+  max-width:var(--shell);margin:0 auto;padding:0 24px;
+  display:flex;justify-content:flex-end;
+  /* A caixa atravessa a largura toda; só o selo pode receber o clique. */
+  pointer-events:none;
+}
+.footer__iso .footer__selo-link{pointer-events:auto}
+
 /* `.footer .shell` transforma qualquer `.shell` do rodapé numa grade de quatro
    colunas, e vence `.footer__selos` por especificidade — os selos viravam itens
    dessa grade e cada um caía numa coluna. Por isso o seletor duplo. */
@@ -1474,6 +1491,13 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
   .igstrip__moldura{flex:0 0 calc((100% - 5px)/2);width:calc((100% - 5px)/2);height:340px}
 }
 @media (max-width:900px){
+  /* No mobile o rodapé vira uma coluna só e o logo sobe para o topo à
+     esquerda. O selo continua no canto, mas menor — em 64px ele disputava
+     tamanho com o logo em vez de acompanhá-lo. */
+  .footer:has(.footer__iso){padding-top:112px}
+  .footer__iso{top:26px}
+  .footer__iso .footer__selo{height:46px}
+
   .mosaic{padding:64px 0 68px}
   .mosaic__grid,.mosaic__grid--rev{grid-template-columns:1fr;gap:40px}
   .mosaic__grid--rev .mosaic__tiles{order:0}
