@@ -205,6 +205,8 @@ export const PageView = async ({ slug, locale }: { slug: string; locale: Locale 
             settings,
             booking,
             showBookingBar: page.showBookingBar !== false,
+            // A Hero mostra o selo de certificação, que é cadastrado no rodapé.
+            footer,
           }
           const depoimentos = page.showTestimonials !== false && (
             <TestimonialsSectionView section={testimonialsCfg} items={testimonials} />

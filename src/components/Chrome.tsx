@@ -148,52 +148,8 @@ export const SiteHeader = ({
 export const SiteFooter = ({ settings, footer }: { settings: Any; footer: Any }) => {
   const socials: Any[] = settings?.socials ?? []
 
-  /* Sem arte oficial, o selo é composto com a letra do site. Dizer a
-     certificação por escrito é honesto; desenhar um brasão parecido com o de
-     um organismo certificador não seria. */
-  const renderSelo = (s: Any) => {
-    const selo =
-      s.style === 'text' ? (
-        <span className="footer__selo footer__selo--texto">{s.label}</span>
-      ) : (
-        /* `src` (arquivo do projeto) vence o upload: os selos de marca eram,
-           junto com o logo, as únicas imagens que iam direto ao armazenamento
-           externo — sem otimizador e sem cache na frente, foram as primeiras a
-           sumir quando ele bloqueou. */
-        <img
-          className="footer__selo"
-          src={s.src || mediaUrl(s.image)}
-          alt={s.label}
-          loading="lazy"
-          decoding="async"
-        />
-      )
-    return s.href ? (
-      <a className="footer__selo-link" key={s.label} href={s.href} target="_blank" rel="noopener">
-        {selo}
-      </a>
-    ) : (
-      <span className="footer__selo-link" key={s.label}>
-        {selo}
-      </span>
-    )
-  }
-
-  /* O selo ISO ocupa o canto superior direito, separado dos demais. É
-     reconhecido pelo arquivo e pelo rótulo (não pela posição na lista), para
-     continuar funcionando se alguém reordenar os selos no admin. */
-  const ehIso = (s: Any) => /iso[\s-]?9001/i.test(`${s?.src ?? ''} ${s?.label ?? ''}`)
-  const todosOsSelos = (footer?.seals ?? []) as Any[]
-  const seloIso = todosOsSelos.find(ehIso)
-  const selosDaFila = todosOsSelos.filter((s) => !ehIso(s))
-
   return (
     <footer className="footer">
-      {/* Fora da `.shell` de propósito: aquela vira uma grade de quatro colunas
-          no rodapé, e o selo viraria item dela. Aqui ele é posicionado sobre o
-          rodapé, repetindo a largura e o respiro da shell por conta própria. */}
-      {seloIso ? <div className="footer__iso">{renderSelo(seloIso)}</div> : null}
-
       <div className="shell">
         <div className="footer__top">
           <div className="footer__brand">
@@ -287,10 +243,38 @@ export const SiteFooter = ({ settings, footer }: { settings: Any; footer: Any })
       </div>
 
       {/* Selos: discretos, acima da linha final. Em cinza, ganham cor ao
-          passar o mouse — presença sem competir com o resto do rodapé.
-          O ISO sai desta fila e vai para o canto superior direito (abaixo). */}
-      {selosDaFila.length ? (
-        <div className="shell footer__selos">{selosDaFila.map(renderSelo)}</div>
+          passar o mouse — presença sem competir com o resto do rodapé. */}
+      {(footer?.seals ?? []).length ? (
+        <div className="shell footer__selos">
+          {(footer.seals as Any[]).map((s) => {
+            /* Sem arte oficial, o selo é composto com a letra do site. Dizer a
+               certificação por escrito é honesto; desenhar um brasão parecido
+               com o de um organismo certificador não seria. */
+            const selo =
+              s.style === 'text' ? (
+                <span className="footer__selo footer__selo--texto">{s.label}</span>
+              ) : (
+                /* `src` (arquivo do projeto) vence o upload: os selos de marca
+                   eram, junto com o logo, as únicas imagens que iam direto ao
+                   armazenamento externo — sem otimizador e sem cache na frente,
+                   foram as primeiras a sumir quando ele bloqueou. */
+                <img
+                  className="footer__selo"
+                  src={s.src || mediaUrl(s.image)}
+                  alt={s.label}
+                  loading="lazy"
+                  decoding="async"
+                />
+              )
+            return s.href ? (
+              <a className="footer__selo-link" key={s.label} href={s.href} target="_blank" rel="noopener">
+                {selo}
+              </a>
+            ) : (
+              <span className="footer__selo-link" key={s.label}>{selo}</span>
+            )
+          })}
+        </div>
       ) : null}
 
       {footer?.bottomText ? <div className="footer__bar">{footer.bottomText}</div> : null}

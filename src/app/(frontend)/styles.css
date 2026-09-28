@@ -835,6 +835,22 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
 .topbar__cta .btn--dark{background:var(--red);border:0;color:#fff}
 .topbar__cta .btn--dark:hover{background:var(--red-dark)}
 
+/* ---- Selo ISO: canto superior direito da Hero ----
+   Fica abaixo do cabeçalho, que é transparente e tem 120px sobrepostos à foto.
+   A borda direita acompanha a da `.shell`: o `max()` mantém o respiro de 24px
+   quando a janela é mais estreita que o container. `--shell` pode vir do
+   Design System, então a conta usa a variável em vez de um número fixo.
+   O topo da foto já tem um escurecimento no `.hero__scrim`, o que sustenta o
+   selo sem precisar de caixa ou sombra por baixo dele. */
+.hero__selo{
+  position:absolute;z-index:10;
+  top:calc(120px + 26px);
+  right:max(24px, calc(50% - var(--shell)/2 + 24px));
+  height:78px;width:auto;
+  opacity:.92;
+  filter:drop-shadow(0 2px 10px rgba(0,0,0,.45));
+}
+
 /* Sem o card lateral, o formulário não deve esticar a linha inteira:
    passa a uma coluna de leitura confortável. */
 .contact__grid--so-form{grid-template-columns:minmax(0,760px)}
@@ -1117,23 +1133,6 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
   opacity:.92;transition:opacity .2s}
 .footer__social a:hover{background:none;border:0;opacity:1}
 .footer__social svg{width:21px;height:21px;fill:#fff}
-/* ---- Selo ISO: canto superior direito ----
-   Fica sobreposto ao rodapé em vez de entrar na grade de quatro colunas, que
-   o empurraria para dentro de uma delas. Repete por conta própria a largura e
-   o respiro lateral da `.shell` para encostar exatamente na mesma borda
-   direita das colunas. O `:has` abre o espaço de cima só quando o selo existe:
-   sem ele, esse respiro extra seria um vão vazio. */
-.footer{position:relative}
-.footer:has(.footer__iso){padding-top:150px}
-.footer__iso{
-  position:absolute;top:34px;left:0;right:0;
-  max-width:var(--shell);margin:0 auto;padding:0 24px;
-  display:flex;justify-content:flex-end;
-  /* A caixa atravessa a largura toda; só o selo pode receber o clique. */
-  pointer-events:none;
-}
-.footer__iso .footer__selo-link{pointer-events:auto}
-
 /* `.footer .shell` transforma qualquer `.shell` do rodapé numa grade de quatro
    colunas, e vence `.footer__selos` por especificidade — os selos viravam itens
    dessa grade e cada um caía numa coluna. Por isso o seletor duplo. */
@@ -1432,6 +1431,11 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
   /* O menu em gaveta cobre o topo fixo, então começa abaixo dele. */
   .mobilenav{padding-top:82px}
 
+  /* No celular o cabeçalho é fixo e sai do fluxo da Hero: o `body` já recebeu
+     os 64px, então o topo da foto é o topo da seção e o selo mede a partir
+     dali. Menor também, para não tomar a foto. */
+  .hero__selo{top:20px;right:16px;height:54px}
+
   /* A barra de reserva não aparece no celular. Empilhada ela tem ~470px e
      tomava a tela inteira; a reserva fica com o botão "Reservar" da barra de
      ações, no rodapé. A âncora sai junto, senão o espaço dela continua
@@ -1491,13 +1495,6 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
   .igstrip__moldura{flex:0 0 calc((100% - 5px)/2);width:calc((100% - 5px)/2);height:340px}
 }
 @media (max-width:900px){
-  /* No mobile o rodapé vira uma coluna só e o logo sobe para o topo à
-     esquerda. O selo continua no canto, mas menor — em 64px ele disputava
-     tamanho com o logo em vez de acompanhá-lo. */
-  .footer:has(.footer__iso){padding-top:112px}
-  .footer__iso{top:26px}
-  .footer__iso .footer__selo{height:46px}
-
   .mosaic{padding:64px 0 68px}
   .mosaic__grid,.mosaic__grid--rev{grid-template-columns:1fr;gap:40px}
   .mosaic__grid--rev .mosaic__tiles{order:0}

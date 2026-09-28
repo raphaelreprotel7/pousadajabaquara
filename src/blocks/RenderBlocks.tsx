@@ -36,6 +36,9 @@ type Ctx = {
   settings: Any
   booking: BookingConfig
   showBookingBar: boolean
+  /* Os selos de certificação são cadastrados no global do rodapé, que segue
+     sendo o único lugar onde se mexe neles. A Hero apenas lê de lá. */
+  footer?: Any
 }
 
 /** Classe de fundo da seção. No verde da marca o texto inverte para branco. */
@@ -125,7 +128,14 @@ export const RenderBlocks = async ({
 
       switch (b.blockType) {
         /* ------------------------------ BANNERS ------------------------- */
-        case 'hero':
+        case 'hero': {
+          /* Selo de certificação no canto superior direito. A fonte é o
+             global do rodapé — o selo continua se cadastrando num lugar só, e
+             aqui é apenas exibido. Reconhecido pelo arquivo e pelo rótulo,
+             não pela posição na lista, para sobreviver a uma reordenação. */
+          const seloIso = ((ctx.footer?.seals ?? []) as Any[]).find((s) =>
+            /iso[\s-]?9001/i.test(`${s?.src ?? ''} ${s?.label ?? ''}`),
+          )
           return (
             <section className="hero" id="inicio" key={key}>
               {/* Elemento LCP da home: única imagem que sai do lazy. */}
@@ -135,9 +145,23 @@ export const RenderBlocks = async ({
                 alt={mediaAlt(b.image)}
               />
               <div className="hero__scrim" />
+              {seloIso ? (
+                <img
+                  className="hero__selo"
+                  src={seloIso.src || mediaUrl(seloIso.image)}
+                  alt={seloIso.label}
+                  /* Lazy mesmo estando acima da dobra: dentro da viewport o
+                     browser carrega na hora de qualquer jeito, e sem `lazy` o
+                     React emitiria um preload que disputaria banda com a foto
+                     da Hero, que é o LCP da página. */
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : null}
               {showBookingBar && <BookingBar config={booking} />}
             </section>
           )
+        }
 
         case 'pageHero': {
           const isArticle = b.variant === 'article'
