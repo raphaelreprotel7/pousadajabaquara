@@ -16,7 +16,7 @@ import {
   splitHighlight,
   telUrl,
   telUrlReservas,
-  waUrl,
+  WHATSAPP_PATH,
 } from '@/utilities/site'
 
 type Any = Record<string, any>
@@ -198,7 +198,7 @@ export const SiteFooter = ({ settings, footer }: { settings: Any; footer: Any })
               {settings?.whatsapp ? (
                 <li>
                   <Icon name="i-wa" />
-                  <a href={waUrl(settings)} target="_blank" rel="noopener">
+                  <a href={WHATSAPP_PATH}>
                     {settings.phoneLabel ?? 'WhatsApp'}
                   </a>
                 </li>
@@ -432,7 +432,7 @@ export const FloatingActionsView = ({
   const hrefFor = (item: Any) => {
     if (item.action === 'phone') return telUrl(settings)
     if (item.action === 'reservations') return telUrlReservas(settings)
-    if (item.action === 'whatsapp') return waUrl(settings)
+    if (item.action === 'whatsapp') return WHATSAPP_PATH
     if (item.action === 'engine') return engineUrl(booking)
     return item.href ?? '#'
   }
@@ -450,9 +450,7 @@ export const FloatingActionsView = ({
       {actions?.showWhatsapp ? (
         <a
           className="wa"
-          href={waUrl(settings)}
-          target="_blank"
-          rel="noopener"
+          href={WHATSAPP_PATH}
           aria-label="Fale conosco pelo WhatsApp"
         >
           <Icon name="i-wa" />
@@ -465,9 +463,7 @@ export const FloatingActionsView = ({
             <a
               key={item.label + i}
               href={hrefFor(item)}
-              {...(item.action === 'whatsapp' || item.action === 'engine'
-                ? { target: '_blank', rel: 'noopener' }
-                : {})}
+              {...(item.action === 'engine' ? { target: '_blank', rel: 'noopener' } : {})}
             >
               <Icon name={iconFor(item)} />
               {item.label}

@@ -2,15 +2,20 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { getPayload } from 'payload'
 import config from '@payload-config'
+import Script from 'next/script'
 
 import { DesignTokens } from '@/components/DesignTokens'
 import { Motion } from '@/components/Motion'
 import { HotelAgentTools } from '@/components/HotelAgentTools'
+import { WhatsappChatLinks } from '@/components/WhatsappChat'
 import { fontVariables } from '@/fonts'
 
 import './styles.css'
 import './popup.css'
 import './promotions.css'
+
+/** Contêiner do Google Tag Manager — carregado em todas as páginas do site, fora o admin. */
+const GTM_ID = 'GTM-P8GVVML3'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'),
@@ -46,8 +51,20 @@ export default async function FrontendLayout({ children }: { children: React.Rea
       <head>
         <DesignTokens />
         <Motion />
+        <Script id="gtm" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
       </head>
       <body>
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+        <WhatsappChatLinks />
         <HotelAgentTools
           hotel={{
             name: settings.hotelName || 'Pousada Recanto do Jabaquara',

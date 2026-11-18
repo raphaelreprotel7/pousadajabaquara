@@ -1527,3 +1527,12 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
   .booking--fixa{width:calc(100% - 16px)}
   .booking .booking__btn,.booking--fixa .booking__btn{border-radius:0 0 14px 14px}
 }
+/* ============================================================
+   PASSAGEM PARA O WHATSAPP (/whatsapp e /whatsapp-crm-*)
+   ============================================================ */
+.wa-redirect{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:40px 16px;background:var(--gray-bg)}
+.wa-redirect__box{max-width:440px;text-align:center;background:#fff;border:1px solid var(--gray-line);padding:44px 32px 40px}
+.wa-redirect__icon{display:inline-grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--wa);color:#fff;margin-bottom:22px}
+.wa-redirect__icon svg{width:30px;height:30px;fill:#fff}
+.wa-redirect__title{font-family:var(--ff-head);font-size:24px;font-weight:400;line-height:1.3;margin:0 0 12px}
+.wa-redirect__text{color:var(--gray-text);font-weight:300;font-size:15px;line-height:1.6;margin:0 0 26px}

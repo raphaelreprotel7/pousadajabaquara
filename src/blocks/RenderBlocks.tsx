@@ -25,7 +25,7 @@ import {
   splitHighlight,
   telUrl,
   telUrlReservas,
-  waUrl,
+  WHATSAPP_PATH,
 } from '@/utilities/site'
 
 type Any = Record<string, any>
@@ -879,12 +879,7 @@ export const RenderBlocks = async ({
                       >
                         Fazer reserva
                       </a>
-                      <a
-                        href={waUrl(settings)}
-                        target="_blank"
-                        rel="noopener"
-                        className="btn btn--wa"
-                      >
+                      <a href={WHATSAPP_PATH} className="btn btn--wa">
                         <Icon name="i-wa" />
                         WhatsApp
                       </a>
@@ -1137,12 +1132,7 @@ export const RenderBlocks = async ({
                       </div>
                     </li>
                   </ul>
-                  <a
-                    href={waUrl(settings)}
-                    target="_blank"
-                    rel="noopener"
-                    className="btn btn--wa btn--block"
-                  >
+                  <a href={WHATSAPP_PATH} className="btn btn--wa btn--block">
                     <Icon name="i-wa" />
                     WhatsApp
                   </a>
@@ -1164,8 +1154,8 @@ export const RenderBlocks = async ({
                   </div>
                   <h2>{b.title}</h2>
                   {b.text ? <p>{b.text}</p> : null}
-                  {b.ctaLabel ? (
-                    <div className="loc__actions" style={{ justifyContent: 'center' }}>
+                  <div className="loc__actions" style={{ justifyContent: 'center' }}>
+                    {b.ctaLabel ? (
                       <a
                         href={engineUrl(booking)}
                         target="_blank"
@@ -1174,8 +1164,14 @@ export const RenderBlocks = async ({
                       >
                         {b.ctaLabel}
                       </a>
-                    </div>
-                  ) : null}
+                    ) : null}
+                    {settings?.whatsapp ? (
+                      <a href={WHATSAPP_PATH} className="btn btn--wa">
+                        <Icon name="i-wa" />
+                        Falar no WhatsApp
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
               </div>
             </section>

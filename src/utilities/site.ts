@@ -101,6 +101,13 @@ export const engineUrlWithDates = (
 export const waUrl = (settings: Any): string =>
   settings?.whatsapp ? `https://wa.me/${settings.whatsapp}` : '#'
 
+/**
+ * Destino dos botões de WhatsApp do site. A página /whatsapp abre o chat do
+ * CRM (carregado pelo GTM), que registra o contato antes de levar a pessoa ao
+ * WhatsApp — por isso os botões não apontam mais direto para o wa.me.
+ */
+export const WHATSAPP_PATH = '/whatsapp'
+
 /** Telefone da recepção — rodapé e página de Localização. */
 export const telUrl = (settings: Any): string =>
   settings?.phoneE164 ? `tel:${settings.phoneE164}` : '#'
