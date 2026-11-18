@@ -8,6 +8,7 @@ import { DesignTokens } from '@/components/DesignTokens'
 import { Motion } from '@/components/Motion'
 import { HotelAgentTools } from '@/components/HotelAgentTools'
 import { WhatsappChatLinks } from '@/components/WhatsappChat'
+import { SCRIPT_CRM } from '@/utilities/formularios-crm'
 import { fontVariables } from '@/fonts'
 
 import './styles.css'
@@ -16,6 +17,16 @@ import './promotions.css'
 
 /** Contêiner do Google Tag Manager — carregado em todas as páginas do site, fora o admin. */
 const GTM_ID = 'GTM-P8GVVML3'
+
+/*
+ * O script dos formulários do CRM entra aqui, e com `beforeInteractive`, por
+ * dois motivos. O primeiro é que ele serve o site inteiro: a newsletter está
+ * no rodapé de todas as páginas. O segundo é ordem — ele mantém o iframe
+ * escondido até o formulário avisar que carregou, e esse aviso só chega uma
+ * vez. Carregado depois do iframe (era o caso com `afterInteractive`), perde o
+ * aviso e o formulário nunca aparece. `beforeInteractive` o põe no HTML
+ * inicial, antes de qualquer iframe existir, e acaba com a corrida.
+ */
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'),
@@ -51,6 +62,7 @@ export default async function FrontendLayout({ children }: { children: React.Rea
       <head>
         <DesignTokens />
         <Motion />
+        <Script id="crm-form-embed" src={SCRIPT_CRM} strategy="beforeInteractive" />
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
         </Script>

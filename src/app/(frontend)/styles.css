@@ -844,6 +844,12 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
    e travaria o redimensionamento. */
 .form-crm{width:100%}
 .form-crm iframe{display:block;width:100%;border:0}
+/* O formulário do CRM vem com o conteúdo centralizado numa coluna de 700px:
+   numa caixa mais larga que isso ele flutua no meio e desalinha do título e
+   do texto da seção. Limitar a caixa à largura do próprio formulário encosta
+   os campos na margem esquerda, junto com o resto da página. */
+.form-crm--contact{max-width:700px}
+
 /* Na newsletter o fundo é escuro e a seção é centralizada; o formulário do CRM
    vem com fundo próprio, então ganha a mesma largura do nativo para não
    atravessar a faixa inteira. */

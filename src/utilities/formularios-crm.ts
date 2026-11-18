@@ -10,10 +10,13 @@
  * em /api/form-submissions e repassa ao CRM pelo hook `ghlForwarder`. É o caso
  * de "Trabalhe Conosco": não existe embed do CRM para ele.
  *
- * `altura` é o `data-height` do código de incorporação, usado como altura
- * inicial. O `form_embed.js` redimensiona o iframe depois que o formulário
- * carrega; sem um valor de partida razoável, a seção colapsaria e voltaria a
- * crescer, empurrando o conteúdo abaixo.
+ * `altura` é a altura reservada para o iframe até o `form_embed.js` medir o
+ * formulário e ajustá-la. Não é o `data-height` do código de incorporação: o
+ * do contato vinha com 957px para um formulário que ocupa pouco menos de
+ * 500px, e essa diferença aparece duas vezes — como um salto no layout
+ * quando o script mede, e como um vão em branco embaixo do formulário
+ * quando ele não chega a medir. Os valores abaixo foram medidos no site.
+ * Erre para mais: sobrar espaço é feio, faltar corta o formulário.
  */
 export type FormularioCrm = {
   id: string
@@ -23,7 +26,7 @@ export type FormularioCrm = {
 }
 
 const POR_TITULO: Record<string, FormularioCrm> = {
-  contato: { id: 'oYvpF1wq20wJoXeTLTW6', altura: 957, nome: 'Contato - Site' },
+  contato: { id: 'oYvpF1wq20wJoXeTLTW6', altura: 560, nome: 'Contato - Site' },
   newsletter: { id: 'zIwpaToWygBnYZE5tyJ6', altura: 1025, nome: 'Newsletter - Site' },
 }
 

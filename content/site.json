@@ -212,16 +212,12 @@
     "limit": 3
   },
   "floatingActions": {
-    "showWhatsapp": true,
+    "showWhatsapp": false,
     "showActionBar": true,
     "actionBar": [
       {
         "label": "Ligar",
         "action": "phone"
-      },
-      {
-        "label": "WhatsApp",
-        "action": "whatsapp"
       },
       {
         "label": "Promoções",
