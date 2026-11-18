@@ -657,7 +657,10 @@ input,select,textarea{font:inherit}
   .news__row{grid-template-columns:1fr}
   .collage{min-height:330px}
   .cform{grid-template-columns:1fr}
-  .actionbar{display:grid;grid-template-columns:repeat(4,1fr)}
+  /* As colunas seguem a quantidade de itens da barra — quem decide quantos
+     são é o CMS. Fixar quatro deixava uma coluna vazia sobrando à direita
+     quando um item saía. */
+  .actionbar{display:grid;grid-auto-flow:column;grid-auto-columns:1fr}
   .wa{bottom:78px}
   .cookie{left:12px;right:12px;bottom:78px;max-width:none}
   .sec{padding:64px 0}
@@ -1497,7 +1500,7 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
   .central{padding:32px 24px}
   .central span,.central span a{overflow-wrap:anywhere}
 
-  .actionbar{grid-template-columns:repeat(4,1fr);background:var(--ink-3)}
+  .actionbar{background:var(--ink-3)}
   .actionbar a{justify-content:center;gap:6px;padding:10px 4px;min-height:64px;
     font-family:var(--ff-body);font-style:normal;font-size:11px;font-weight:400;
     letter-spacing:.02em;text-transform:none;line-height:1.2;text-align:center;
