@@ -835,6 +835,20 @@ body{font-family:var(--ff-body);font-size:var(--fs-body);
 .topbar__cta .btn--dark{background:var(--red);border:0;color:#fff}
 .topbar__cta .btn--dark:hover{background:var(--red-dark)}
 
+/* ---- Formulários servidos pelo CRM ----
+   O conteúdo vem num iframe de outro domínio, então o CSS do site não alcança
+   o que está dentro: aqui só se cuida da caixa. A altura inicial vem do
+   `data-height` do código de incorporação e o `form_embed.js` reajusta depois
+   que o formulário carrega — por isso `height` fica no inline style, que o
+   script sobrescreve, e não numa regra daqui, que venceria por especificidade
+   e travaria o redimensionamento. */
+.form-crm{width:100%}
+.form-crm iframe{display:block;width:100%;border:0}
+/* Na newsletter o fundo é escuro e a seção é centralizada; o formulário do CRM
+   vem com fundo próprio, então ganha a mesma largura do nativo para não
+   atravessar a faixa inteira. */
+.form-crm--news{max-width:660px;margin:0 auto}
+
 /* ---- Selo ISO: canto superior direito da Hero ----
    Fica abaixo do cabeçalho, que é transparente e tem 120px sobrepostos à foto.
    A borda direita acompanha a da `.shell`: o `max()` mantém o respiro de 24px

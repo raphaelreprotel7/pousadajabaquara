@@ -7,7 +7,7 @@ import {
   MobileNav,
   type BookingConfig,
 } from './Interactive'
-import { PayloadForm, type PayloadFormDoc } from './PayloadForm'
+import { Formulario, type PayloadFormDoc } from './Formulario'
 import { imgProps, SIZES } from '@/utilities/image'
 import {
   engineUrl,
@@ -381,7 +381,7 @@ export const NewsletterView = ({
         {/* Com formulário ligado, o envio grava no Payload e segue o redirect
             configurado. Sem ele, o markup fica inerte — útil só para prévia. */}
         {typeof section?.form === 'object' && section?.form ? (
-          <PayloadForm
+          <Formulario
             form={section.form as PayloadFormDoc}
             variant="news"
             consentText={section?.consentText}

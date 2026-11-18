@@ -14,7 +14,7 @@ import {
   SuitesTrack,
   type BookingConfig,
 } from '@/components/Interactive'
-import { PayloadForm, type PayloadFormDoc } from '@/components/PayloadForm'
+import { Formulario, type PayloadFormDoc } from '@/components/Formulario'
 import { imgProps, SIZES } from '@/utilities/image'
 import {
   engineUrl,
@@ -1061,7 +1061,7 @@ export const RenderBlocks = async ({
                   <Paragrafos texto={b.text} />
 
                   {typeof b.form === 'object' && b.form ? (
-                    <PayloadForm
+                    <Formulario
                       form={b.form as PayloadFormDoc}
                       variant="contact"
                       consentText={

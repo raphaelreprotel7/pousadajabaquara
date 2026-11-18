@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react'
 
-import { PayloadForm, type PayloadFormDoc } from './PayloadForm'
+import { Formulario, type PayloadFormDoc } from './Formulario'
 
 type Any = Record<string, any>
 
@@ -209,7 +209,7 @@ export const Popup = ({
 
       {popup.variant === 'form' && popup.form ? (
         <div className="popup__form">
-          <PayloadForm
+          <Formulario
             form={popup.form as PayloadFormDoc}
             variant="popup"
             consentText={popup.consentText}

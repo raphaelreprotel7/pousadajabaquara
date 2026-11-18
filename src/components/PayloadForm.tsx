@@ -13,6 +13,8 @@ type FormField = {
 
 export type PayloadFormDoc = {
   id: string | number
+  /** Título no admin. É por ele que `Formulario` decide se o CRM serve este. */
+  title?: string | null
   fields?: FormField[]
   submitButtonLabel?: string
   confirmationType?: 'message' | 'redirect'
